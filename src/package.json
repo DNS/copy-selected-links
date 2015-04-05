@@ -1,0 +1,15 @@
+{
+	"name": "copy-selected-links",
+	"title": "Copy Selected Links",
+	"icon": "data/icon-48.png",
+	"icon64": "data/icon-64.png",
+	"id": "jid1-vs5odTmtIydjMg",
+	"description": "Right-click selected text to copy the URL of any links it contains.",
+	"author": "Marnes <marnick.leau@gmail.com>",
+	"contributors": ["Visual Pharm (http://icons8.com/)"],
+	"license": "GPLv3",
+	"version": "1.0.5",
+	"permissions": {
+		"private-browsing": true
+	}
+}
