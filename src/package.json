@@ -6,7 +6,6 @@
 	"id": "jid1-vs5odTmtIydjMg",
 	"description": "Right-click selected text to copy the URL of any links it contains.",
 	"author": "Marnes <marnick.leau@gmail.com>",
-	"contributors": ["Visual Pharm (http://icons8.com/)"],
 	"license": "GPLv3",
 	"version": "1.0.5",
 	"permissions": {
