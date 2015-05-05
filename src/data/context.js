@@ -3,8 +3,9 @@ self.on("click", function(node, data) {
 	let links = [];
 	let doclinks = document.getElementsByTagName("a");
 	for (var i = 0;i < doclinks.length;i++) {
-		if (selection.containsNode(doclinks[i], true)) {
-			links.push(doclinks[i].href);
+		let link = doclinks[i];
+		if (selection.containsNode(link, true)) {
+			links.push(link.href);
 		}
 	}
 	self.postMessage({links: links});

@@ -12,7 +12,7 @@ exports.main = function() {
 		contentScriptFile: self.data.url("context.js"),
 		onMessage: function(msg) {
 			let links = [];
-			for (var i = 0;i < msg.links.length;i++) {
+			for (let i = 0;i < msg.links.length;i++) {
 				let link = msg.links[i];
 				if (urls.isValidURI(link)) {
 					links.push(link);
