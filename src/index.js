@@ -5,6 +5,8 @@ exports.main = function() {
 	const clipboard = require("sdk/clipboard");
 	const cm = require("sdk/context-menu");
 	
+	const iconUrl = self.data.url("icon-64.png");
+	
 	cm.Item({
 		label: "Copy URLs of selected links",
 		image: self.data.url("icon-16.png"),
@@ -18,10 +20,12 @@ exports.main = function() {
 					links.push(link);
 				}
 			}
-			clipboard.set(links.join("\n"));
+			if (links.length > 0) {
+				clipboard.set(links.join("\n"));
+			}
 			notifications.notify({
-				title: "Copied " + links.length + " link" + (links.length > 1? "s": "") + "!",
-				iconURL: self.data.url("icon-64.png")
+				title: "Copied " + links.length + " link" + (links.length == 1? "": "s") + "!",
+				iconURL: iconUrl
 			});
 		}
 	});
