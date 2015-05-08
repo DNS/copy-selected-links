@@ -10,5 +10,12 @@
 	"version": "1.0.6",
 	"permissions": {
 		"private-browsing": true
-	}
+	},
+	"preferences": [
+	{
+		"name": "debug",
+		"title": "Enable debug logging",
+		"type": "bool",
+		"value": false
+	}]
 }
