@@ -32,7 +32,7 @@ exports.main = function() {
 					links.push(link);
 				}
 			}
-			debug("after parsing:", links);
+			debug("after validating:", links);
 			if (links.length > 0) {
 				clipboard.set(links.join("\n"));
 			}
