@@ -14,7 +14,7 @@ exports.main = function() {
 			for (let i = 0;i < arguments.length;i++) {
 				msg += " " + arguments[i];
 			}
-			console.log(msg);
+			console.debug(msg);
 		}
 	}
 	
