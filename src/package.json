@@ -5,9 +5,9 @@
 	"icon64": "data/icon-64.png",
 	"id": "jid1-vs5odTmtIydjMg@jetpack",
 	"description": "Right-click selected text to copy the URL of any links it contains.",
-	"author": "Marnes <marnick.leau@gmail.com>",
+	"author": ""Faziri/Marnes <marnick.leau@gmail.com>"",
 	"license": "GPLv3",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"permissions": {
 		"private-browsing": true
 	},
