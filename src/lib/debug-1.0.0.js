@@ -1,9 +1,5 @@
 "use strict";
 
-module.metadata = {
-	"stability": "Unstable"
-};
-
 const PREFS = require("sdk/simple-prefs").prefs;
 const SELF = require("sdk/self");
 
