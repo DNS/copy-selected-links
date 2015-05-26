@@ -1,12 +1,13 @@
-self.on("click", function(node, data) {
-	let selection = window.getSelection();
-	let links = [];
-	let doclinks = document.getElementsByTagName("a");
-	for (var i = 0;i < doclinks.length;i++) {
-		let link = doclinks[i];
-		if (selection.containsNode(link, true)) {
-			links.push(link.href);
-		}
-	}
-	self.postMessage({links: links});
-});
+const filter = link => selection.containsNode(link, true)
+const toHref = link => link.href
+
+const onClick = (node, data) => {
+	selection = getSelection();
+	self.postMessage({
+		links: Array.from(document.getElementsByTagName("a")).filter(filter).map(toHref)
+	});
+};
+
+let selection;
+
+self.on("click", onClick);
