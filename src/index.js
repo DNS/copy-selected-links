@@ -5,7 +5,9 @@ exports.main = function() {
 	const clipboard = require("sdk/clipboard");
 	const cm = require("sdk/context-menu");
 	
-	const {debug} = require("./lib/debug-1.0.0.js");
+	const debug = (...args) => {
+		if (prefs.prefs.debug) console.debug(...args);
+	};
 	
 	const iconUrl = self.data.url("icon-64.png");
 	
