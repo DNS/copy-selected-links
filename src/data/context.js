@@ -1,10 +1,10 @@
-const filter = link => selection.containsNode(link, true)
-const toHref = link => link.href
+const isSelected = link => selection.containsNode(link, true);
+const toHref = link => link.href;
 
 const onClick = (node, data) => {
 	selection = getSelection();
 	self.postMessage({
-		links: Array.from(document.getElementsByTagName("a")).filter(filter).map(toHref)
+		links: Array.from(document.getElementsByTagName("a")).filter(isSelected).map(toHref)
 	});
 };
 
