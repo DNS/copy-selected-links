@@ -30,8 +30,7 @@ const main = () => {
 			popupSuccess: false,
 			popupFail: true,
 		}, options => {
-			if (response && response.links && response.links.length > 0) {
-				copyToClipboard(response.links.join("\n"));
+			if (response.links.length > 0) {
 				if (options.popupSuccess) {
 					notify("", "Copied " + response.links.length + " links to clipboard.");
 				}
