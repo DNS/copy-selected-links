@@ -3,17 +3,6 @@
 const main = () => {
 	const CONTEXT_ID = "copySelected";
 	
-	const onInstalled = details => {
-		debug("create context menu");
-		
-		chrome.contextMenus.create({
-			type: "normal",
-			id: CONTEXT_ID,
-			title: "Copy selected links",
-			contexts: ["selection", "link"]
-		});
-	};
-	
 	const notify = (title, message) => {
 		chrome.notifications.create({
 			type: "basic",
@@ -50,13 +39,20 @@ const main = () => {
 			
 			chrome.tabs.sendMessage(tab.id, {
 				subject: "copyRequested",
-				linkUrl: info.linkUrl !== undefined? info.linkUrl: null
+				linkUrl: info.linkUrl !== ""? info.linkUrl: null
 			}, onResponse);
 			
 			return true;
 		}
 	};
 	
-	chrome.runtime.onInstalled.addListener(onInstalled);
 	chrome.contextMenus.onClicked.addListener(onClicked);
+
+	debug("create context menu");
+	chrome.contextMenus.create({
+		type: "normal",
+		id: CONTEXT_ID,
+		title: "Copy selected links",
+		contexts: ["selection", "link"]
+	});
 };
