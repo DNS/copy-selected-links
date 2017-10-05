@@ -31,7 +31,7 @@ const copyToClipboard = text => {
 			if (selectedLinks.length > 0) {
 				out = selectedLinks.map(toHref);
 			} else {
-				out = msg.linkUrl !== null? [msg.linkUrl]: [];
+				out = (msg.linkUrl !== undefined && msg.linkUrl !== null)? [msg.linkUrl]: [];
 			}
 
 			if (out.length > 0) {
