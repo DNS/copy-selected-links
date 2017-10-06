@@ -23,9 +23,12 @@
 		if (keys.length > 0) {
 			debug("resetting", overwrite);
 
-			chrome.storage.sync.set(overwrite, chrome.runtime.openOptionsPage);
+			chrome.storage.sync.set(overwrite, () => {
+				chrome.runtime.openOptionsPage();
+				main();
+			});
+		} else {
+			main();
 		}
-
-		main();
 	});
 })();
