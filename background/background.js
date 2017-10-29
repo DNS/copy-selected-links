@@ -13,8 +13,6 @@ const main = () => {
 	};
 	
 	const onResponse = response => {
-		debug("response:", response);
-
 		chrome.storage.sync.get({
 			popupSuccess: false,
 			popupFail: true,
@@ -32,11 +30,7 @@ const main = () => {
 	};
 
 	const onClicked = (info, tab) => {
-		debug("context menu clicked:", info, tab);
-		
 		if (info.menuItemId === CONTEXT_ID) {
-			debug("request copy");
-			
 			chrome.tabs.sendMessage(tab.id, {
 				subject: "copyRequested",
 				linkUrl: info.linkUrl !== ""? info.linkUrl: null
@@ -48,7 +42,6 @@ const main = () => {
 	
 	chrome.contextMenus.onClicked.addListener(onClicked);
 
-	debug("create context menu");
 	chrome.contextMenus.create({
 		type: "normal",
 		id: CONTEXT_ID,

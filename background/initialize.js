@@ -21,8 +21,6 @@
 		
 		const keys = Object.keys(overwrite);
 		if (keys.length > 0) {
-			debug("resetting", overwrite);
-
 			chrome.storage.sync.set(overwrite, () => {
 				chrome.runtime.openOptionsPage();
 				main();
