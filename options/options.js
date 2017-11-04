@@ -3,16 +3,16 @@
 (() => {
 	const popupSuccess = document.getElementById("popupSuccess");
 	const popupFail = document.getElementById("popupFail");
-	
+
 	//
-	
+
 	chrome.storage.sync.get({
 		popupSuccess: false,
 		popupFail: true,
 	}, options => {
 		popupSuccess.checked = options.popupSuccess;
 		popupFail.checked = options.popupFail;
-		
+
 		//
 
 		popupSuccess.addEventListener("change", event => {

@@ -17,12 +17,12 @@
 		"48": "images/icon-48.png",
 		"128": "images/icon-128.png"
 	},
-	
+
 	"options_ui": {
 		"page": "options/options.html",
 		"chrome_style": true
 	},
-	
+
 	"content_scripts": [
 		{
 			"matches": ["*://*/*"],
@@ -31,12 +31,12 @@
 			"all_frames": true
 		}
 	],
-	
+
 	"background": {
 		"page": "background/background.html",
 		"persistent": false
 	},
-	
+
 	"permissions": [
 		"notifications",
 		"clipboardWrite",

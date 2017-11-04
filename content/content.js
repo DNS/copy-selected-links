@@ -4,13 +4,13 @@
 const copyToClipboard = text => {
     const oncopy = event => {
 		document.removeEventListener("copy", oncopy, true);
-		
+
         event.stopImmediatePropagation();
 		event.preventDefault();
-		
+
         event.clipboardData.setData("text/plain", text);
 	};
-	
+
     document.addEventListener("copy", oncopy, true);
     document.execCommand("copy");
 };
@@ -25,9 +25,9 @@ const copyToClipboard = text => {
 		if (msg.subject === "copyRequested") {
 			selection = getSelection();
 			const selectedLinks = Array.from(document.links).filter(isSelected);
-			
+
 			let out;
-			
+
 			if (selectedLinks.length > 0) {
 				out = selectedLinks.map(toHref);
 			} else {
@@ -37,7 +37,7 @@ const copyToClipboard = text => {
 			if (out.length > 0) {
 				copyToClipboard(out.join("\n"));
 			}
-			
+
 			sendResponse({
 				links: out
 			});

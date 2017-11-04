@@ -6,19 +6,19 @@
 		popupFail: true
 	}, options => {
 		const overwrite = {};
-		
+
 		//
 
 		if (typeof(options.popupSuccess) !== "boolean") {
 			overwrite.popupSuccess = false;
 		}
-		
+
 		if (typeof(options.popupFail) !== "boolean") {
 			overwrite.popupFail = true;
 		}
-		
+
 		//
-		
+
 		const keys = Object.keys(overwrite);
 		if (keys.length > 0) {
 			chrome.storage.sync.set(overwrite, () => {

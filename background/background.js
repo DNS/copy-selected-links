@@ -2,7 +2,7 @@
 
 const main = () => {
 	const CONTEXT_ID = "copySelected";
-	
+
 	const notify = (title, message) => {
 		chrome.notifications.create({
 			type: "basic",
@@ -11,7 +11,7 @@ const main = () => {
 			iconUrl: "/images/icon-128.png"
 		});
 	};
-	
+
 	const onResponse = response => {
 		chrome.storage.sync.get({
 			popupSuccess: false,
@@ -35,11 +35,11 @@ const main = () => {
 				subject: "copyRequested",
 				linkUrl: info.linkUrl !== ""? info.linkUrl: null
 			}, onResponse);
-			
+
 			return true;
 		}
 	};
-	
+
 	chrome.contextMenus.onClicked.addListener(onClicked);
 
 	chrome.contextMenus.create({
