@@ -2,8 +2,8 @@
 
 (() => {
 	chrome.storage.sync.get({
-		popupSuccess: false,
-		popupFail: true
+		popupSuccess: null,
+		popupFail: null
 	}, options => {
 		const overwrite = {};
 
