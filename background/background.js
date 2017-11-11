@@ -40,6 +40,20 @@ const main = () => {
 		}
 	};
 
+	const onMessage = function(msg, sender, sendResponse) {
+		switch (msg.subject) {
+			case "linksSelected":
+				chrome.contextMenus.update(CONTEXT_ID, {
+					title: "Copy " + msg.linkCount + " selected links"
+				});
+				break;
+			default:
+				throw new Error("unknown message subject: " + msg.subject);
+		}
+	};
+
+	const onCreated = () => chrome.runtime.onMessage.addListener(onMessage);
+
 	chrome.contextMenus.onClicked.addListener(onClicked);
 
 	chrome.contextMenus.create({
@@ -47,5 +61,5 @@ const main = () => {
 		id: CONTEXT_ID,
 		title: "Copy selected links",
 		contexts: ["selection", "link"]
-	});
+	}, onCreated);
 };

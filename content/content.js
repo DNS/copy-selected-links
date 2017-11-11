@@ -15,34 +15,55 @@ const copyToClipboard = text => {
     document.execCommand("copy");
 };
 
-(() => {
-	let selection;
+const getLinksInSelection = () => {
+	const selection = getSelection();
 
-	const isSelected = link => selection.containsNode(link, true);
-	const toHref = link => link.href;
+	return Array.from(document.links).filter(link => selection.containsNode(link, true));
+};
 
-	const onMessage = (msg, sender, sendResponse) => {
-		if (msg.subject === "copyRequested") {
-			selection = getSelection();
-			const selectedLinks = Array.from(document.links).filter(isSelected);
+const toHref = link => link.href;
 
-			let out;
+const onMessage = (msg, sender, sendResponse) => {
+	if (msg.subject === "copyRequested") {
+		const selectedLinks = getLinksInSelection();
 
-			if (selectedLinks.length > 0) {
-				out = selectedLinks.map(toHref);
-			} else {
-				out = (msg.linkUrl !== undefined && msg.linkUrl !== null)? [msg.linkUrl]: [];
-			}
+		let out;
 
-			if (out.length > 0) {
-				copyToClipboard(out.join("\n"));
-			}
-
-			sendResponse({
-				links: out
-			});
+		if (selectedLinks.length > 0) {
+			out = selectedLinks.map(toHref);
+		} else {
+			out = (msg.linkUrl !== undefined && msg.linkUrl !== null)? [msg.linkUrl]: [];
 		}
-	};
 
-	chrome.runtime.onMessage.addListener(onMessage);
-})();
+		if (out.length > 0) {
+			copyToClipboard(out.join("\n"));
+		}
+
+		sendResponse({
+			links: out
+		});
+	}
+};
+
+let timeOut = null;
+
+const onTimeout = () => {
+	timeOut = null;
+
+	const count = getLinksInSelection().length;
+
+	chrome.runtime.sendMessage({
+		subject: "linksSelected",
+		linkCount: count
+	});
+};
+
+document.addEventListener("selectionchange", function() {
+	if (timeOut) {
+		clearTimeout(timeOut);
+	}
+
+	timeOut = setTimeout(onTimeout, 100);
+});
+
+chrome.runtime.onMessage.addListener(onMessage);
