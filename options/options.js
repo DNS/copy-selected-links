@@ -7,8 +7,8 @@
 	//
 
 	chrome.storage.sync.get({
-		popupSuccess: false,
-		popupFail: true,
+		popupSuccess: null,
+		popupFail: null,
 	}, options => {
 		popupSuccess.checked = options.popupSuccess;
 		popupFail.checked = options.popupFail;

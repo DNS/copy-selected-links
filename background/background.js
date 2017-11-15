@@ -14,8 +14,8 @@ const main = () => {
 
 	const onResponse = response => {
 		chrome.storage.sync.get({
-			popupSuccess: false,
-			popupFail: true,
+			popupSuccess: null,
+			popupFail: null,
 		}, options => {
 			if (response.links.length > 0) {
 				if (options.popupSuccess) {
