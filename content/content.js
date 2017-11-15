@@ -66,4 +66,22 @@ document.addEventListener("selectionchange", function() {
 	timeOut = setTimeout(onTimeout, 100);
 });
 
+const onContextMenu = event => {
+	let nodeToInspect = event.target;
+
+	while (nodeToInspect != null) {
+		if (nodeToInspect.nodeName === "A") {
+			chrome.runtime.sendMessage({
+				subject: "linksSelected",
+				linkCount: 1
+			});
+			break;
+		}
+
+		nodeToInspect = nodeToInspect.parentNode;
+	}
+};
+
+document.addEventListener("contextmenu", onContextMenu);
+
 chrome.runtime.onMessage.addListener(onMessage);
