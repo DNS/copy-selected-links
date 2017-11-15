@@ -33,7 +33,7 @@ const main = () => {
 		if (info.menuItemId === CONTEXT_ID) {
 			chrome.tabs.sendMessage(tab.id, {
 				subject: "copyRequested",
-				linkUrl: info.linkUrl !== ""? info.linkUrl: null
+				linkUrl: info.linkUrl != null && info.linkUrl !== ""? info.linkUrl: null
 			}, onResponse);
 
 			return true;

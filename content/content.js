@@ -32,7 +32,7 @@ const onMessage = (msg, sender, sendResponse) => {
 		if (selectedLinks.length > 0) {
 			out = selectedLinks.map(toHref);
 		} else {
-			out = (msg.linkUrl !== undefined && msg.linkUrl !== null)? [msg.linkUrl]: [];
+			out = msg.linkUrl? [msg.linkUrl]: [];
 		}
 
 		if (out.length > 0) {
