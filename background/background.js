@@ -1,7 +1,7 @@
 "use strict";
 
 const main = () => {
-	const CONTEXT_ID = "copySelected";
+	const contextMenuId = "copySelectedLinksContextMenuItem";
 
 	const notify = (title, message) => {
 		chrome.notifications.create({
@@ -12,14 +12,14 @@ const main = () => {
 		});
 	};
 
-	const onResponse = response => {
+	const afterCopying = response => {
 		chrome.storage.sync.get({
 			popupSuccess: null,
 			popupFail: null,
 		}, options => {
-			if (response.links.length > 0) {
+			if (response.linksCopied.length > 0) {
 				if (options.popupSuccess) {
-					notify("", "Copied " + response.links.length + " links to clipboard.");
+					notify("", "Copied " + response.linksCopied.length + " links to clipboard.");
 				}
 			} else {
 				if (options.popupFail) {
@@ -29,37 +29,27 @@ const main = () => {
 		});
 	};
 
-	const onClicked = (info, tab) => {
-		if (info.menuItemId === CONTEXT_ID) {
-			chrome.tabs.sendMessage(tab.id, {
-				subject: "copyRequested",
-				linkUrl: info.linkUrl != null && info.linkUrl !== ""? info.linkUrl: null
-			}, onResponse);
+	const onContextMenuClicked = (info, tab) => {
+		switch (info.menuItemId) {
+			case contextMenuId:
+				chrome.tabs.sendMessage(tab.id, {
+					subject: "copyRequested",
+					linkUrl: info.linkUrl != null && info.linkUrl !== ""? info.linkUrl: null
+				}, afterCopying);
+				return true;
 
-			return true;
-		}
-	};
-
-	const onMessage = function(msg, sender, sendResponse) {
-		switch (msg.subject) {
-			case "linksSelected":
-				chrome.contextMenus.update(CONTEXT_ID, {
-					title: "Copy " + msg.linkCount + " selected links"
-				});
-				break;
 			default:
-				throw new Error("unknown message subject: " + msg.subject);
+				throw new Error("unknown context menu id: " + info.menuItemId);
 		}
 	};
 
-	const onCreated = () => chrome.runtime.onMessage.addListener(onMessage);
-
-	chrome.contextMenus.onClicked.addListener(onClicked);
+	chrome.contextMenus.onClicked.addListener(onContextMenuClicked);
 
 	chrome.contextMenus.create({
 		type: "normal",
-		id: CONTEXT_ID,
+		id: contextMenuId,
 		title: "Copy selected links",
-		contexts: ["selection", "link"]
-	}, onCreated);
+		contexts: ["selection", "link"],
+		documentUrlPatterns: ["*://*/*", "file:///*"]
+	});
 };

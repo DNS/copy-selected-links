@@ -1,8 +1,8 @@
 "use strict";
 
 (() => {
-	const popupSuccess = document.getElementById("popupSuccess");
-	const popupFail = document.getElementById("popupFail");
+	const popupSuccessCheckbox = document.getElementById("popupSuccess");
+	const popupFailCheckbox = document.getElementById("popupFail");
 
 	//
 
@@ -10,20 +10,20 @@
 		popupSuccess: null,
 		popupFail: null,
 	}, options => {
-		popupSuccess.checked = options.popupSuccess;
-		popupFail.checked = options.popupFail;
+		popupSuccessCheckbox.checked = options.popupSuccess;
+		popupFailCheckbox.checked = options.popupFail;
 
 		//
 
-		popupSuccess.addEventListener("change", event => {
+		popupSuccessCheckbox.addEventListener("change", event => {
 			chrome.storage.sync.set({
-				popupSuccess: popupSuccess.checked
+				popupSuccess: popupSuccessCheckbox.checked
 			});
 		});
 
-		popupFail.addEventListener("change", event => {
+		popupFailCheckbox.addEventListener("change", event => {
 			chrome.storage.sync.set({
-				popupFail: popupFail.checked
+				popupFail: popupFailCheckbox.checked
 			});
 		});
 	});
