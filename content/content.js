@@ -25,9 +25,13 @@ const onCopyRequested = (msg, sendResponse) => {
 	const foundLinks = [];
 
 	// forEach(foundLinks.push) doesn't work
-	getLinksInSelection().map(link => link.href).forEach(url => foundLinks.push(url));
+	getLinksInSelection().map(link => link.href).forEach(url => {
+		if (foundLinks.indexOf(url) === -1) {
+			foundLinks.push(url);
+		}
+	});
 
-	if (msg.linkUrl != null) {
+	if (msg.linkUrl != null && foundLinks.indexOf(msg.linkUrl) === -1) {
 		foundLinks.push(msg.linkUrl);
 	}
 
