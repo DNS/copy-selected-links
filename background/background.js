@@ -32,10 +32,14 @@ const main = () => {
 	const onContextMenuClicked = (info, tab) => {
 		switch (info.menuItemId) {
 			case contextMenuId:
-				chrome.tabs.sendMessage(tab.id, {
-					subject: "copyRequested",
-					linkUrl: info.linkUrl != null && info.linkUrl !== ""? info.linkUrl: null
-				}, afterCopying);
+				chrome.runtime.getPlatformInfo(info => {
+					chrome.tabs.sendMessage(tab.id, {
+						subject: "copyRequested",
+						linkUrl: info.linkUrl != null && info.linkUrl !== ""? info.linkUrl: null,
+						isWindows: info.os === chrome.runtime.PlatformOs.WIN
+					}, afterCopying);
+				});
+
 				return true;
 
 			default:

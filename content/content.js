@@ -32,7 +32,7 @@ const onCopyRequested = (msg, sendResponse) => {
 	}
 
 	if (foundLinks.length > 0) {
-		copyToClipboard(foundLinks.join("\n"));
+		copyToClipboard(foundLinks.join(msg.isWindows? "\r\n": "\n"));
 	}
 
 	sendResponse({
