@@ -29,13 +29,13 @@ const main = () => {
 		});
 	};
 
-	const onContextMenuClicked = (info, tab) => {
-		switch (info.menuItemId) {
+	const onContextMenuClicked = (contextMenuInfo, tab) => {
+		switch (contextMenuInfo.menuItemId) {
 			case contextMenuId:
 				chrome.runtime.getPlatformInfo(platformInfo => {
 					chrome.tabs.sendMessage(tab.id, {
 						subject: "copyRequested",
-						linkUrl: info.linkUrl != null && info.linkUrl !== ""? info.linkUrl: null,
+						linkUrl: contextMenuInfo.linkUrl != null && contextMenuInfo.linkUrl !== ""? contextMenuInfo.linkUrl: null,
 						isWindows: platformInfo.os === chrome.runtime.PlatformOs.WIN
 					}, afterCopying);
 				});
@@ -43,7 +43,7 @@ const main = () => {
 				return true;
 
 			default:
-				throw new Error("unknown context menu id: " + info.menuItemId);
+				throw new Error("unknown context menu id: " + contextMenuInfo.menuItemId);
 		}
 	};
 
