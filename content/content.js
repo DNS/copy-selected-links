@@ -24,7 +24,6 @@ const getLinksInSelection = () => {
 const onCopyRequested = (msg, sendResponse) => {
 	const foundLinks = [];
 
-	// forEach(foundLinks.push) doesn't work
 	getLinksInSelection().map(link => link.href).forEach(url => {
 		if (foundLinks.indexOf(url) === -1) {
 			foundLinks.push(url);
