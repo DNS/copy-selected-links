@@ -9,7 +9,7 @@
 
 	"name": "Copy Selected Links",
 	"short_name": "CSL",
-	"version": "2.0.4",
+	"version": "2.0.5",
 	"description": "Right-click selected text to copy the URL of any links it contains.",
 	"author": "marnick.leau@gmail.com",
 	"icons": {
