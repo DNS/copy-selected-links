@@ -3,13 +3,6 @@
 const main = () => {
 	const contextMenuId = "copySelectedLinks_CopySelectedLinks";
 
-	const onInstalled = details => chrome.contextMenus.create({
-		type: "normal",
-		id: contextMenuId,
-		title: "Copy selected links",
-		contexts: ["selection", "link"]
-	});
-
 	const notify = (title, message) => {
 		chrome.notifications.create({
 			type: "basic",
@@ -59,6 +52,20 @@ const main = () => {
 
 		chrome.contextMenus.onClicked.addListener(onContextMenuClicked);
 
-		chrome.runtime.onInstalled.addListener(onInstalled);
+		const onCreate = () => {
+			const error = chrome.runtime.lastError != null? chrome.runtime.lastError.message: null;
+			if (error === "Cannot create item with duplicate id " + contextMenuId) {
+				// ignore
+			} else if (error != null) {
+				throw new Error(error);
+			}
+		};
+
+		chrome.contextMenus.create({
+			type: "normal",
+			id: contextMenuId,
+			title: "Copy selected links",
+			contexts: ["selection", "link"]
+		}, onCreate);
 	});
 };
