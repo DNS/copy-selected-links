@@ -17,9 +17,9 @@ const main = () => {
 			popupSuccess: null,
 			popupFail: null,
 		}, options => {
-			if (response.linksCopied.length > 0) {
+			if (response.linksCopied > 0) {
 				if (options.popupSuccess) {
-					notify("", "Copied " + response.linksCopied.length + " links to clipboard.");
+					notify("", "Copied " + response.linksCopied + " links to clipboard.");
 				}
 			} else {
 				if (options.popupFail) {

@@ -39,7 +39,7 @@ const onCopyRequested = (msg, sendResponse) => {
 	}
 
 	sendResponse({
-		linksCopied: foundLinks
+		linksCopied: foundLinks.length
 	});
 };
 
