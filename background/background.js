@@ -29,40 +29,44 @@ const main = () => {
 		});
 	};
 
-	const onContextMenuClicked = (contextMenuInfo, tab) => {
-		switch (contextMenuInfo.menuItemId) {
-			case contextMenuId:
-				chrome.runtime.getPlatformInfo(platformInfo => {
+	chrome.runtime.getPlatformInfo(platformInfo => {
+		const isWindows = platformInfo.os === chrome.runtime.PlatformOs.WIN;
+
+		const onContextMenuClicked = (contextMenuInfo, tab) => {
+			switch (contextMenuInfo.menuItemId) {
+				case contextMenuId:
+					const linkUrl = contextMenuInfo.linkUrl != null && contextMenuInfo.linkUrl !== ""? contextMenuInfo.linkUrl: null;
+
 					chrome.tabs.sendMessage(tab.id, {
 						subject: "copyRequested",
-						linkUrl: contextMenuInfo.linkUrl != null && contextMenuInfo.linkUrl !== ""? contextMenuInfo.linkUrl: null,
-						isWindows: platformInfo.os === chrome.runtime.PlatformOs.WIN
+						linkUrl: linkUrl,
+						isWindows: isWindows
 					}, afterCopying);
-				});
 
-				return true;
+					return true;
 
-			default:
-				throw new Error("unknown context menu id: " + contextMenuInfo.menuItemId);
-		}
-	};
+				default:
+					throw new Error("unknown context menu id: " + contextMenuInfo.menuItemId);
+			}
+		};
 
-	chrome.contextMenus.onClicked.addListener(onContextMenuClicked);
+		chrome.contextMenus.onClicked.addListener(onContextMenuClicked);
 
-	const onCreate = () => {
-		const error = chrome.runtime.lastError != null? chrome.runtime.lastError.message: null;
-		if (error === "Cannot create item with duplicate id " + contextMenuId) {
-			// ignore
-		} else if (error != null) {
-			throw new Error(error);
-		}
-	};
+		const onCreate = () => {
+			const error = chrome.runtime.lastError != null? chrome.runtime.lastError.message: null;
+			if (error === "Cannot create item with duplicate id " + contextMenuId) {
+				// ignore
+			} else if (error != null) {
+				throw new Error(error);
+			}
+		};
 
-	chrome.contextMenus.create({
-		type: "normal",
-		id: contextMenuId,
-		title: "Copy selected links",
-		contexts: ["selection", "link"],
-		documentUrlPatterns: ["*://*/*", "file:///*"]
-	}, onCreate);
+		chrome.contextMenus.create({
+			type: "normal",
+			id: contextMenuId,
+			title: "Copy selected links",
+			contexts: ["selection", "link"],
+			documentUrlPatterns: ["*://*/*", "file:///*"]
+		}, onCreate);
+	});
 };
