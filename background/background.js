@@ -65,7 +65,8 @@ const main = () => {
 			type: "normal",
 			id: contextMenuId,
 			title: "Copy selected links",
-			contexts: ["selection", "link"]
+			contexts: ["selection", "link"],
+			documentUrlPatterns: ["*://*/*", "file:///*"]
 		}, onCreate);
 	});
 };
