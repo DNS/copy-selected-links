@@ -41,6 +41,8 @@ const main = () => {
 						subject: "copyRequested",
 						linkUrl: linkUrl,
 						isWindows: isWindows
+					}, {
+						frameId: contextMenuInfo.frameId
 					}, afterCopying);
 
 					return true;
