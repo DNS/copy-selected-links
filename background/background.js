@@ -35,11 +35,8 @@ const main = () => {
 		const onContextMenuClicked = (contextMenuInfo, tab) => {
 			switch (contextMenuInfo.menuItemId) {
 				case contextMenuId:
-					const linkUrl = contextMenuInfo.linkUrl != null && contextMenuInfo.linkUrl !== ""? contextMenuInfo.linkUrl: null;
-
 					chrome.tabs.sendMessage(tab.id, {
 						subject: "copyRequested",
-						linkUrl: linkUrl,
 						isWindows: isWindows
 					}, {
 						frameId: contextMenuInfo.frameId
@@ -67,7 +64,7 @@ const main = () => {
 			type: "normal",
 			id: contextMenuId,
 			title: "Copy selected links",
-			contexts: ["selection", "link"],
+			contexts: ["selection"],
 			documentUrlPatterns: ["*://*/*", "file:///*"]
 		}, onCreate);
 	});

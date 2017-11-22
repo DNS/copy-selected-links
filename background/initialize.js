@@ -2,7 +2,8 @@
 
 chrome.storage.sync.get({
 	popupSuccess: null,
-	popupFail: null
+	popupFail: null,
+	finalNewline: null
 }, options => {
 	const overwrite = {};
 
@@ -12,6 +13,10 @@ chrome.storage.sync.get({
 
 	if (typeof(options.popupFail) !== "boolean") {
 		overwrite.popupFail = true;
+	}
+
+	if (typeof(options.finalNewline) !== "boolean") {
+		overwrite.finalNewline = true;
 	}
 
 	const keys = Object.keys(overwrite);

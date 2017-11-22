@@ -21,21 +21,34 @@ const getLinksInSelection = () => {
 	return Array.from(document.links).filter(link => selection.containsNode(link, true));
 };
 
-const onCopyRequested = (msg, sendResponse) => {
-	const foundLinks = [];
+const unique = () => {
+	const set = [];
 
-	getLinksInSelection().map(link => link.href).forEach(url => {
-		if (foundLinks.indexOf(url) === -1) {
-			foundLinks.push(url);
+	return x => {
+		const notYetPresent = set.indexOf(x) === -1;
+
+		if (notYetPresent) {
+			set.push(x);
 		}
-	});
 
-	if (msg.linkUrl != null && foundLinks.indexOf(msg.linkUrl) === -1) {
-		foundLinks.push(msg.linkUrl);
-	}
+		return notYetPresent;
+	};
+};
+
+const onCopyRequested = (msg, sendResponse) => {
+	const foundLinks = getLinksInSelection()
+		.map(link => link.href)
+		.filter(unique());
 
 	if (foundLinks.length > 0) {
-		copyToClipboard(foundLinks.join(msg.isWindows? "\r\n": "\n"));
+		chrome.storage.sync.get({
+			finalNewline: null
+		}, options => {
+			const newline = msg.isWindows? "\r\n": "\n";
+			const joined = foundLinks.join(newline);
+
+			copyToClipboard(options.finalNewline? joined + newline: joined);
+		});
 	}
 
 	sendResponse({
