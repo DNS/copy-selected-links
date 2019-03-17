@@ -1,0 +1,26 @@
+{
+	"name": "copy-selected-links",
+	"version": "0.0.0",
+	"repository": "https://gitlab.com/Marnes/copy-selected-links.git",
+	"author": "Marnes <marnick.leau@gmail.com>",
+	"license": "MPL-2.0",
+	"private": true,
+	"devDependencies": {
+		"bestzip": "^2.1.2",
+		"concurrently": "^4.1.0",
+		"ts-loader": "^5.3.3",
+		"tslint": "^5.12.1",
+		"typescript": "^3.3.3",
+		"web-ext": "^2.9.3",
+		"webpack": "^4.29.4",
+		"webpack-cli": "^3.2.3"
+	},
+	"scripts": {
+		"build": "tslint -p . && webpack && web-ext build",
+		"develop": "concurrently \"tslint -p .\" \"webpack -w\" \"web-ext run\"",
+		"src": "bestzip src.zip extension ts package.json README.md tsconfig.json tslint.json web-ext-config.js webpack.config.js yarn.lock"
+	},
+	"dependencies": {
+		"webextension-polyfill-ts": "^0.8.9"
+	}
+}

@@ -1,0 +1,25 @@
+{
+	"defaultSeverity": "error",
+	"extends": [
+		"tslint:recommended"
+	],
+	"jsRules": {},
+	"rules": {
+		"arrow-parens": false,
+		"indent": [
+			true,
+			"tabs"
+		],
+		"max-line-length": false,
+		"no-unbound-method": [true, "ignore-static"],
+		"object-literal-shorthand": false,
+		"trailing-comma": [
+			true,
+			{
+				"multiline": "never",
+				"singleline": "never"
+			}
+		]
+	},
+	"rulesDirectory": []
+}
