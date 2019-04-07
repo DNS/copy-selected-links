@@ -28,8 +28,7 @@ export class CopyHandler {
 			}
 
 			browser.tabs.sendMessage(tab.id, new PerformCopyMessage(isWindows), {
-				// TODO https://github.com/Lusito/webextension-polyfill-ts/issues/16
-				frameId: (contextMenuInfo as any).frameId
+				frameId: contextMenuInfo.frameId
 			}).then(CopyHandler.prototype.afterCopying.bind(this));
 		});
 	}
