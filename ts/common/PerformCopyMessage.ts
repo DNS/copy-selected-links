@@ -1,4 +1,6 @@
 export class PerformCopyMessage {
+	private static readonly SUBJECT = "copyRequested";
+
 	public static parse(data: any) {
 		if (typeof data.isWindows === "boolean") {
 			return new PerformCopyMessage(data.isWindows);
@@ -11,7 +13,6 @@ export class PerformCopyMessage {
 		return this.SUBJECT === data.subject;
 	}
 
-	private static readonly SUBJECT = "copyRequested";
 	private readonly subject = PerformCopyMessage.SUBJECT;
 
 	public constructor(public readonly isWindows: boolean) {}

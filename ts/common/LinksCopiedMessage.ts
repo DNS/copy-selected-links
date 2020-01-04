@@ -1,4 +1,6 @@
 export class LinksCopiedMessage {
+	private static readonly SUBJECT = "linksCopied";
+
 	public static parse(data: any) {
 		if (typeof data.linksCopied === "number") {
 			return new LinksCopiedMessage(data.linksCopied);
@@ -11,7 +13,6 @@ export class LinksCopiedMessage {
 		return this.SUBJECT === data.subject;
 	}
 
-	private static readonly SUBJECT = "linksCopied";
 	private readonly subject = LinksCopiedMessage.SUBJECT;
 
 	public constructor(public readonly linksCopied: number) {}
