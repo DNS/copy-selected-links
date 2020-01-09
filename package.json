@@ -21,6 +21,6 @@
 		"src": "bestzip src.zip extension ts package.json README.md tsconfig.json tslint.json web-ext-config.js webpack.config.js yarn.lock"
 	},
 	"dependencies": {
-		"webextension-polyfill-ts": "^0.9.0"
+		"webextension-polyfill-ts": "^0.11.0"
 	}
 }
