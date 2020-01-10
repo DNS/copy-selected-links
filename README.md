@@ -12,19 +12,20 @@ Official downloads:
 ### Minimum setup
 
 1. install [yarn](https://yarnpkg.com)
-2. execute `yarn install`
+1. execute `yarn install --frozen-lockfile`
+   1. if necessary, check `.node-version`, or install [nvs](https://github.com/jasongin/nvs) and execute `nvs use`
 
 ### Compiling to webext `.zip` file
 
 1. execute `yarn build`
-2. check `install` dir
+1. check `install` dir
 
 ### Testing
 
 #### Additional setup
 
 1. install [Firefox Developer Edition](https://www.mozilla.org/firefox/developer/)
-2. create blank profile called `dev`
+1. create blank profile called `dev`
 
 #### Running
 
