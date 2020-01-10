@@ -7,6 +7,10 @@ import {copyToClipboard} from "./content/ClipboardUtils";
 function onCopyRequested(msg: PerformCopyMessage) {
 	const selection = getSelection();
 
+	if (selection == null) {
+		throw new Error("selection disappeared?");
+	}
+
 	const hrefs = Array.from(document.links)
 		.filter(link => selection.containsNode(link, true))
 		.map(link => link.href);

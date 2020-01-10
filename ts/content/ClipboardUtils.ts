@@ -6,7 +6,7 @@ export function copyToClipboard(text: string) {
 		event.stopImmediatePropagation();
 		event.preventDefault();
 
-		event.clipboardData.setData("text/plain", text);
+		event.clipboardData!.setData("text/plain", text);
 	};
 
 	document.addEventListener("copy", onCopy, true);
