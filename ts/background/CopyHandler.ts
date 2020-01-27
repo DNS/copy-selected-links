@@ -26,10 +26,15 @@ export class CopyHandler {
 			if (tab == null || tab.id == null) {
 				throw new Error(`received context menu ${JSON.stringify(contextMenuInfo)} and tab ${JSON.stringify(tab)}?`);
 			}
+			const tabId = tab.id;
 
-			browser.tabs.sendMessage(tab.id, new PerformCopyMessage(isWindows), {
+			browser.tabs.executeScript(tabId, {
+				allFrames: true,
+				file: "/content/content.js",
+				runAt: "document_end"
+			}).then(() => browser.tabs.sendMessage(tabId, new PerformCopyMessage(isWindows), {
 				frameId: contextMenuInfo.frameId
-			}).then(CopyHandler.prototype.afterCopying.bind(this));
+			})).then(CopyHandler.prototype.afterCopying.bind(this));
 		});
 	}
 

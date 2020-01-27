@@ -23,15 +23,6 @@
 		"chrome_style": true
 	},
 
-	"content_scripts": [
-		{
-			"matches": ["<all_urls>"],
-			"js": ["/content/content.js"],
-			"run_at": "document_end",
-			"all_frames": true
-		}
-	],
-
 	"background": {
 		"page": "/background/background.html",
 		"persistent": true
@@ -42,6 +33,7 @@
 		"clipboardWrite",
 		"contextMenus",
 		"tabs",
-		"storage"
+		"storage",
+		"activeTab"
 	]
 }
