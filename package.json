@@ -18,7 +18,7 @@
 	"scripts": {
 		"build": "tslint -p . && webpack && web-ext build",
 		"develop": "concurrently \"webpack -w\" \"web-ext run\"",
-		"src": "bestzip src.zip extension ts package.json readme.md tsconfig.json tslint.json web-ext-config.js webpack.config.js yarn.lock .node-version .gitignore license.md"
+		"src": "bestzip src.zip .editorconfig .gitignore .node-version extension license.md package.json readme.md ts tsconfig.json tslint.json web-ext-config.js webpack.config.js yarn.lock"
 	},
 	"dependencies": {
 		"webextension-polyfill-ts": "^0.11.0"
