@@ -5,7 +5,6 @@ module.exports = {
 		overwriteDest: true
 	},
 	run: {
-		firefox: "firefoxdeveloperedition",
-		firefoxProfile: "dev"
+		firefox: "firefoxdeveloperedition"
 	}
 };

@@ -25,7 +25,6 @@ Official downloads:
 #### Additional setup
 
 1. install [Firefox Developer Edition](https://www.mozilla.org/firefox/developer/)
-1. create blank profile called `dev`
 
 #### Running
 
