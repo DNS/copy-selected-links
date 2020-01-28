@@ -22,10 +22,5 @@ Official downloads:
 
 ### Testing
 
-#### Additional setup
-
 1. install [Firefox Developer Edition](https://www.mozilla.org/firefox/developer/)
-
-#### Running
-
 1. execute `yarn develop`
