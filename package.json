@@ -17,7 +17,7 @@
 	},
 	"scripts": {
 		"build": "tslint -p . && webpack && web-ext build",
-		"develop": "concurrently \"tslint -p .\" \"webpack -w\" \"web-ext run\"",
+		"develop": "concurrently \"webpack -w\" \"web-ext run\"",
 		"src": "bestzip src.zip extension ts package.json readme.md tsconfig.json tslint.json web-ext-config.js webpack.config.js yarn.lock .node-version .gitignore license.md"
 	},
 	"dependencies": {
