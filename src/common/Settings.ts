@@ -1,15 +1,15 @@
-import {browser, Tabs} from "webextension-polyfill-ts";
+import {browser} from "webextension-polyfill-ts";
 
 export class Settings {
-    public static shim() {
+    public static shim(): Settings {
         return new Settings();
     }
 
-    public static parse(data: any) {
+    public static parse(data: any): Settings {
         return new Settings().assimilate(data);
     }
 
-    public static load() {
+    public static load(): Promise<Settings> {
         return browser.storage.sync.get(Settings.shim()).then(Settings.parse);
     }
 
@@ -19,18 +19,18 @@ export class Settings {
         public finalNewline = true
     ) {}
 
-    public save() {
+    public save(): Promise<void> {
         return browser.storage.sync.set(this);
     }
 
-    public equals(data: any) {
+    public equals(data: any): boolean {
         const other = data as Settings;
         return this.popupSuccess === other.popupSuccess
             && this.popupFail === other.popupFail
             && this.finalNewline === other.finalNewline;
     }
 
-    private assimilate(data: any) {
+    private assimilate(data: any): this {
         if (typeof (data.popupSuccess) === "boolean") {
             this.popupSuccess = data.popupSuccess;
         }

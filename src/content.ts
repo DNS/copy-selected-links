@@ -1,7 +1,9 @@
 import {browser} from "webextension-polyfill-ts";
 import {LinksCopiedMessage} from "./common/LinksCopiedMessage";
+import {Message} from "./common/MessageTypes";
 import {PerformCopyMessage} from "./common/PerformCopyMessage";
 import {Settings} from "./common/Settings";
+import {Subject} from "./common/Subject";
 import {copyToClipboard} from "./content/ClipboardUtils";
 
 const flag = Symbol.for("copy-selected-links-script-injection");
@@ -10,7 +12,7 @@ const register = window as {
 };
 
 if (register[flag] == null) {
-    function onCopyRequested(msg: PerformCopyMessage) {
+    function onCopyRequested(msg: PerformCopyMessage): Promise<LinksCopiedMessage> {
         const selection = getSelection();
 
         if (selection == null) {
@@ -35,9 +37,9 @@ if (register[flag] == null) {
         return Promise.resolve(new LinksCopiedMessage(foundLinks.length));
     }
 
-    function onMessageReceived(msg: any) {
-        if (PerformCopyMessage.isInstance(msg)) {
-            return onCopyRequested(PerformCopyMessage.parse(msg));
+    function onMessageReceived(msg: Message): Promise<LinksCopiedMessage> {
+        if (msg.subject === Subject.COPY_REQUESTED) {
+            return onCopyRequested(msg);
         } else {
             throw new Error(`unknown message ${JSON.stringify(msg)}`);
         }

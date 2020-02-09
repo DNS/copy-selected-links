@@ -1,5 +1,6 @@
 // https://github.com/mdn/webextensions-examples/blob/master/context-menu-copy-link-with-types/clipboard-helper.js
-export function copyToClipboard(text: string) {
+// TODO return promise?
+export function copyToClipboard(text: string): void {
     const onCopy = (event: ClipboardEvent) => {
         document.removeEventListener("copy", onCopy, true);
 

@@ -1,10 +1,11 @@
 import {browser, Menus, Tabs} from "webextension-polyfill-ts";
-import {LinksCopiedMessage} from "../common/LinksCopiedMessage";
+import {Message} from "../common/MessageTypes";
 import {PerformCopyMessage} from "../common/PerformCopyMessage";
 import {Settings} from "../common/Settings";
+import {Subject} from "../common/Subject";
 
 export class CopyHandler {
-    private static notify(title: string, message: string) {
+    private static notify(title: string, message: string): void {
         browser.notifications.create({
             iconUrl: "/images/icon-128.png",
             message: message,
@@ -21,7 +22,7 @@ export class CopyHandler {
         });
     }
 
-    public arrangeCopy(contextMenuInfo: Menus.OnClickData, tab?: Tabs.Tab) {
+    public arrangeCopy(contextMenuInfo: Menus.OnClickData, tab?: Tabs.Tab): void {
         this.isWindows.then(isWindows => {
             if (tab == null || tab.id == null) {
                 throw new Error(`received context menu ${JSON.stringify(contextMenuInfo)} and tab ${JSON.stringify(tab)}?`);
@@ -38,14 +39,12 @@ export class CopyHandler {
         });
     }
 
-    private afterCopying(data: any) {
-        if (LinksCopiedMessage.isInstance(data)) {
-            const response = LinksCopiedMessage.parse(data);
-
+    private afterCopying(data: Message): void {
+        if (data.subject === Subject.LINKS_COPIED) {
             Settings.load().then(settings => {
-                if (response.linksCopied > 0) {
+                if (data.linksCopied > 0) {
                     if (settings.popupSuccess) {
-                        CopyHandler.notify("", `Copied ${response.linksCopied} links to clipboard.`);
+                        CopyHandler.notify("", `Copied ${data.linksCopied} links to clipboard.`);
                     }
                 } else {
                     if (settings.popupFail) {

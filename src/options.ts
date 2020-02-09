@@ -1,6 +1,6 @@
 import {Settings} from "./common/Settings";
 
-function provideSuccessPopup(settings: Settings) {
+function provideSuccessPopup(settings: Settings): void {
     const popupSuccessCheckbox = document.getElementById("popupSuccess") as HTMLInputElement;
     popupSuccessCheckbox.checked = settings.popupSuccess;
 
@@ -10,7 +10,7 @@ function provideSuccessPopup(settings: Settings) {
     });
 }
 
-function provideFailurePopup(settings: Settings) {
+function provideFailurePopup(settings: Settings): void {
     const popupFailCheckbox = document.getElementById("popupFail") as HTMLInputElement;
     popupFailCheckbox.checked = settings.popupFail;
 
@@ -20,7 +20,7 @@ function provideFailurePopup(settings: Settings) {
     });
 }
 
-function provideFinalNewline(settings: Settings) {
+function provideFinalNewline(settings: Settings): void {
     const finalNewlineCheckbox = document.getElementById("finalNewline") as HTMLInputElement;
     finalNewlineCheckbox.checked = settings.finalNewline;
 

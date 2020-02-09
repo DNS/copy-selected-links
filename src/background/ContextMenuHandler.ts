@@ -4,7 +4,7 @@ import {CopyHandler} from "./CopyHandler";
 const CONTEXT_MENU_ID = "copySelectedLinks_CopySelectedLinks";
 
 export class ContextMenuHandler {
-    private static checkError() {
+    private static checkError(): void {
         if (browser.runtime.lastError == null) {
             return;
         }
@@ -21,7 +21,7 @@ export class ContextMenuHandler {
 
     private readonly copyHandler = new CopyHandler();
 
-    public register() {
+    public register(): void {
         browser.contextMenus.onClicked.addListener(ContextMenuHandler.prototype.onContextMenuClicked.bind(this));
 
         browser.contextMenus.create({
@@ -33,7 +33,7 @@ export class ContextMenuHandler {
         }, ContextMenuHandler.checkError);
     }
 
-    private onContextMenuClicked(contextMenuInfo: Menus.OnClickData, tab?: Tabs.Tab) {
+    private onContextMenuClicked(contextMenuInfo: Menus.OnClickData, tab?: Tabs.Tab): void {
         if (contextMenuInfo.menuItemId === CONTEXT_MENU_ID) {
             this.copyHandler.arrangeCopy(contextMenuInfo, tab);
         } else {

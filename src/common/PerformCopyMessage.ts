@@ -1,19 +1,8 @@
-export class PerformCopyMessage {
-    private static readonly SUBJECT = "copyRequested";
+import {Sendable} from "./MessageTypes";
+import {Subject} from "./Subject";
 
-    public static parse(data: any) {
-        if (typeof data.isWindows === "boolean") {
-            return new PerformCopyMessage(data.isWindows);
-        } else {
-            throw new Error(`invalid message ${data}`);
-        }
-    }
-
-    public static isInstance(data: any) {
-        return this.SUBJECT === data.subject;
-    }
-
-    private readonly subject = PerformCopyMessage.SUBJECT;
+export class PerformCopyMessage implements Sendable<Subject.COPY_REQUESTED, PerformCopyMessage> {
+    public readonly subject = Subject.COPY_REQUESTED;
 
     public constructor(public readonly isWindows: boolean) {}
 }

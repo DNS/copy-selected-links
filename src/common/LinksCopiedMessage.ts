@@ -1,19 +1,8 @@
-export class LinksCopiedMessage {
-    private static readonly SUBJECT = "linksCopied";
+import {Sendable} from "./MessageTypes";
+import {Subject} from "./Subject";
 
-    public static parse(data: any) {
-        if (typeof data.linksCopied === "number") {
-            return new LinksCopiedMessage(data.linksCopied);
-        } else {
-            throw new Error(`invalid message ${data}`);
-        }
-    }
-
-    public static isInstance(data: any) {
-        return this.SUBJECT === data.subject;
-    }
-
-    private readonly subject = LinksCopiedMessage.SUBJECT;
+export class LinksCopiedMessage implements Sendable<Subject.LINKS_COPIED, LinksCopiedMessage> {
+    public readonly subject = Subject.LINKS_COPIED;
 
     public constructor(public readonly linksCopied: number) {}
 }
