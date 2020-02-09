@@ -29,6 +29,8 @@ export class CopyHandler {
             }
             const tabId = tab.id;
 
+            // this throws an error if the content script doesnt return a jsonable result
+            // we cant guarantee the result of the content script because of bundling
             browser.tabs.executeScript(tabId, {
                 allFrames: true,
                 file: browser.extension.getURL("content.js"),
