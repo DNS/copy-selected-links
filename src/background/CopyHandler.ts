@@ -33,7 +33,7 @@ export class CopyHandler {
                 allFrames: true,
                 file: browser.extension.getURL("content.js"),
                 runAt: "document_end"
-            }).then(() => browser.tabs.sendMessage(tabId, new PerformCopyMessage(isWindows), {
+            }).catch(() => undefined).then(() => browser.tabs.sendMessage(tabId, new PerformCopyMessage(isWindows), {
                 frameId: contextMenuInfo.frameId
             })).then(CopyHandler.prototype.afterCopying.bind(this));
         });
