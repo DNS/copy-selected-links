@@ -19,9 +19,9 @@
 	"scripts": {
 		"clean": "del-cli dist extension .cache",
 		"lint:ts": "tslint -p .",
-		"build:parcel": "parcel build src/*.* src/images/* --out-dir extension --no-autoinstall",
+		"build:parcel": "parcel build src/*.* --out-dir extension --no-autoinstall",
 		"build:webext": "web-ext build",
-		"watch:parcel": "parcel watch src/*.* src/images/* --out-dir extension --no-autoinstall --no-hmr",
+		"watch:parcel": "parcel watch src/*.* --out-dir extension --no-autoinstall --no-hmr",
 		"watch:webext": "web-ext run",
 		"watch:webext:chrome": "web-ext run -t chromium",
 		"review": "bestzip dist/sources.zip .editorconfig .gitignore .node-version license.md package.json readme.md src tsconfig.json tslint.json web-ext-config.js yarn.lock",
