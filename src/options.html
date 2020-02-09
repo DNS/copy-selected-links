@@ -1,30 +1,31 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8"/>
-	<link rel="stylesheet" href="options.css"/>
-</head>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" href="options.scss"/>
+		<title>Copy Selected Links Options</title>
+	</head>
 
-<body>
-	<p>
-		<input type="checkbox" id="finalNewline"/>
-		<label for="finalNewline">Include final newline</label>
-	</p>
-
-	<fieldset>
-		<legend>Notifications</legend>
-
+	<body>
 		<p>
-			<input type="checkbox" id="popupSuccess"/>
-			<label for="popupSuccess">After copying at least 1 link</label>
+			<input type="checkbox" id="finalNewline"/>
+			<label for="finalNewline">Include final newline</label>
 		</p>
 
-		<p>
-			<input type="checkbox" id="popupFail" />
-			<label for="popupFail">If no links were copied</label>
-		</p>
-	</fieldset>
+		<fieldset>
+			<legend>Notifications</legend>
 
-	<script src="options.js"></script>
-</body>
+			<p>
+				<input type="checkbox" id="popupSuccess"/>
+				<label for="popupSuccess">After copying at least 1 link</label>
+			</p>
+
+			<p>
+				<input type="checkbox" id="popupFail"/>
+				<label for="popupFail">If no links were copied</label>
+			</p>
+		</fieldset>
+
+		<script src="options.ts"></script>
+	</body>
 </html>

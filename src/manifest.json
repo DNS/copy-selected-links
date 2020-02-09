@@ -13,18 +13,18 @@
 	"description": "Right-click selected text to copy the URL of any links it contains.",
 	"author": "marnick.leau@gmail.com",
 	"icons": {
-		"16": "/images/icon-16.png",
-		"48": "/images/icon-48.png",
-		"128": "/images/icon-128.png"
+		"16": "images/icon-16.png",
+		"48": "images/icon-48.png",
+		"128": "images/icon-128.png"
 	},
 
 	"options_ui": {
-		"page": "/options/options.html",
+		"page": "options.html",
 		"chrome_style": true
 	},
 
 	"background": {
-		"page": "/background/background.html",
+		"scripts": ["background.ts"],
 		"persistent": true
 	},
 
