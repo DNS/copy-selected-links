@@ -6,44 +6,44 @@ import {copyToClipboard} from "./content/ClipboardUtils";
 
 const flag = Symbol.for("copy-selected-links-script-injection");
 const register = window as {
-	[flag]?: true
+    [flag]?: true
 };
 
 if (register[flag] == null) {
-	function onCopyRequested(msg: PerformCopyMessage) {
-		const selection = getSelection();
+    function onCopyRequested(msg: PerformCopyMessage) {
+        const selection = getSelection();
 
-		if (selection == null) {
-			throw new Error("selection disappeared?");
-		}
+        if (selection == null) {
+            throw new Error("selection disappeared?");
+        }
 
-		const hrefs = Array.from(document.links)
-			.filter(link => selection.containsNode(link, true))
-			.map(link => link.href);
+        const hrefs = Array.from(document.links)
+            .filter(link => selection.containsNode(link, true))
+            .map(link => link.href);
 
-		const foundLinks = [...new Set(hrefs)];
+        const foundLinks = [...new Set(hrefs)];
 
-		if (foundLinks.length > 0) {
-			Settings.load().then(settings => {
-				const newline = msg.isWindows ? "\r\n" : "\n";
-				const joined = foundLinks.join(newline);
+        if (foundLinks.length > 0) {
+            Settings.load().then(settings => {
+                const newline = msg.isWindows ? "\r\n" : "\n";
+                const joined = foundLinks.join(newline);
 
-				copyToClipboard(settings.finalNewline ? joined + newline : joined);
-			});
-		}
+                copyToClipboard(settings.finalNewline ? joined + newline : joined);
+            });
+        }
 
-		return Promise.resolve(new LinksCopiedMessage(foundLinks.length));
-	}
+        return Promise.resolve(new LinksCopiedMessage(foundLinks.length));
+    }
 
-	function onMessageReceived(msg: any) {
-		if (PerformCopyMessage.isInstance(msg)) {
-			return onCopyRequested(PerformCopyMessage.parse(msg));
-		} else {
-			throw new Error(`unknown message ${JSON.stringify(msg)}`);
-		}
-	}
+    function onMessageReceived(msg: any) {
+        if (PerformCopyMessage.isInstance(msg)) {
+            return onCopyRequested(PerformCopyMessage.parse(msg));
+        } else {
+            throw new Error(`unknown message ${JSON.stringify(msg)}`);
+        }
+    }
 
-	browser.runtime.onMessage.addListener(onMessageReceived);
+    browser.runtime.onMessage.addListener(onMessageReceived);
 
-	register[flag] = true;
+    register[flag] = true;
 }

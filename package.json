@@ -1,35 +1,35 @@
 {
-	"name": "copy-selected-links",
-	"version": "0.0.0",
-	"repository": "https://gitlab.com/Marnes/copy-selected-links.git",
-	"author": "Marnes <marnick.leau@gmail.com>",
-	"license": "MPL-2.0",
-	"private": true,
-	"devDependencies": {
-		"bestzip": "^2.1.2",
-		"del-cli": "^3.0.0",
-		"npm-run-all": "^4.1.5",
-		"parcel-bundler": "^1.12.4",
-		"parcel-plugin-web-extension": "^1.6.1",
-		"sass": "^1.25.0",
-		"tslint": "^5.12.1",
-		"typescript": "^3.3.3",
-		"web-ext": "^2.9.3"
-	},
-	"scripts": {
-		"clean": "del-cli dist extension .cache",
-		"lint:ts": "tslint -p .",
-		"build:parcel": "parcel build src/*.* --out-dir extension --no-autoinstall",
-		"build:webext": "web-ext build",
-		"watch:parcel": "parcel watch src/*.* --out-dir extension --no-autoinstall --no-hmr",
-		"watch:webext": "web-ext run",
-		"watch:webext:chrome": "web-ext run -t chromium",
-		"review": "bestzip dist/sources.zip .editorconfig .gitignore .node-version license.md package.json readme.md src tsconfig.json tslint.json web-ext-config.js yarn.lock",
-		"build": "run-s clean lint:ts build:parcel build:webext review",
-		"develop": "npm-run-all clean build:parcel -plr watch:parcel watch:webext",
-		"develop:chrome": "npm-run-all clean build:parcel -plr watch:parcel watch:webext:chrome"
-	},
-	"dependencies": {
-		"webextension-polyfill-ts": "^0.11.0"
-	}
+    "name": "copy-selected-links",
+    "version": "0.0.0",
+    "repository": "https://gitlab.com/Marnes/copy-selected-links.git",
+    "author": "Marnes <marnick.leau@gmail.com>",
+    "license": "MPL-2.0",
+    "private": true,
+    "devDependencies": {
+        "bestzip": "^2.1.2",
+        "del-cli": "^3.0.0",
+        "npm-run-all": "^4.1.5",
+        "parcel-bundler": "^1.12.4",
+        "parcel-plugin-web-extension": "^1.6.1",
+        "sass": "^1.25.0",
+        "tslint": "^5.12.1",
+        "typescript": "^3.3.3",
+        "web-ext": "^2.9.3"
+    },
+    "scripts": {
+        "clean": "del-cli dist extension .cache",
+        "lint:ts": "tslint -p .",
+        "build:parcel": "parcel build src/*.* --out-dir extension --no-autoinstall",
+        "build:webext": "web-ext build",
+        "watch:parcel": "parcel watch src/*.* --out-dir extension --no-autoinstall --no-hmr",
+        "watch:webext": "web-ext run",
+        "watch:webext:chrome": "web-ext run -t chromium",
+        "review": "bestzip dist/sources.zip .editorconfig .gitignore .node-version license.md package.json readme.md src tsconfig.json tslint.json web-ext-config.js yarn.lock",
+        "build": "run-s clean lint:ts build:parcel build:webext review",
+        "develop": "npm-run-all clean build:parcel -plr watch:parcel watch:webext",
+        "develop:chrome": "npm-run-all clean build:parcel -plr watch:parcel watch:webext:chrome"
+    },
+    "dependencies": {
+        "webextension-polyfill-ts": "^0.11.0"
+    }
 }
