@@ -31,7 +31,7 @@ export class CopyHandler {
 
             browser.tabs.executeScript(tabId, {
                 allFrames: true,
-                file: browser.extension.getURL("content/content.js"),
+                file: browser.extension.getURL("content.js"),
                 runAt: "document_end"
             }).then(() => browser.tabs.sendMessage(tabId, new PerformCopyMessage(isWindows), {
                 frameId: contextMenuInfo.frameId
