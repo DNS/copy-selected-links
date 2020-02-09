@@ -1,4 +1,4 @@
-import {JsonObject} from "./JsonObject";
+import {JsonObject} from "../JsonObject";
 import {LinksCopiedMessage} from "./LinksCopiedMessage";
 import {PerformCopyMessage} from "./PerformCopyMessage";
 import {Subject} from "./Subject";

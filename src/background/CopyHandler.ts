@@ -1,8 +1,8 @@
 import {browser, Menus, Tabs} from "webextension-polyfill-ts";
-import {Message} from "../common/MessageTypes";
-import {PerformCopyMessage} from "../common/PerformCopyMessage";
+import {Message} from "../common/messaging/MessageTypes";
+import {PerformCopyMessage} from "../common/messaging/PerformCopyMessage";
+import {Subject} from "../common/messaging/Subject";
 import {Settings} from "../common/Settings";
-import {Subject} from "../common/Subject";
 
 export class CopyHandler {
     private static notify(title: string, message: string): void {

@@ -1,9 +1,9 @@
 import {browser} from "webextension-polyfill-ts";
-import {LinksCopiedMessage} from "./common/LinksCopiedMessage";
-import {Message} from "./common/MessageTypes";
-import {PerformCopyMessage} from "./common/PerformCopyMessage";
+import {LinksCopiedMessage} from "./common/messaging/LinksCopiedMessage";
+import {Message} from "./common/messaging/MessageTypes";
+import {PerformCopyMessage} from "./common/messaging/PerformCopyMessage";
+import {Subject} from "./common/messaging/Subject";
 import {Settings} from "./common/Settings";
-import {Subject} from "./common/Subject";
 import {copyToClipboard} from "./content/ClipboardUtils";
 
 const flag = Symbol.for("copy-selected-links-script-injection");
