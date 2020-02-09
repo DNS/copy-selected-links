@@ -16,9 +16,17 @@
 		"webpack-cli": "^3.2.3"
 	},
 	"scripts": {
-		"build": "tslint -p . && webpack && web-ext build",
-		"develop": "concurrently \"webpack -w\" \"web-ext run\"",
-		"src": "bestzip src.zip .editorconfig .gitignore .node-version extension license.md package.json readme.md ts tsconfig.json tslint.json web-ext-config.js webpack.config.js yarn.lock"
+		"clean": "del-cli dist extension .cache",
+		"lint:ts": "tslint -p .",
+		"build:parcel": "parcel build src/*.* src/images/* --out-dir extension --no-autoinstall",
+		"build:webext": "web-ext build",
+		"watch:parcel": "parcel watch src/*.* src/images/* --out-dir extension --no-autoinstall --no-hmr",
+		"watch:webext": "web-ext run",
+		"watch:webext:chrome": "web-ext run -t chromium",
+		"review": "bestzip dist/sources.zip .editorconfig .gitignore .node-version license.md package.json readme.md src tsconfig.json tslint.json web-ext-config.js yarn.lock",
+		"build": "run-s clean lint:ts build:parcel build:webext review",
+		"develop": "npm-run-all clean build:parcel -plr watch:parcel watch:webext",
+		"develop:chrome": "npm-run-all clean build:parcel -plr watch:parcel watch:webext:chrome"
 	},
 	"dependencies": {
 		"webextension-polyfill-ts": "^0.11.0"

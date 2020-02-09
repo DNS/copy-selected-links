@@ -1,6 +1,6 @@
 /*.iml
 /.idea
 /node_modules
-/extension/**/*.js
-/install
-/*.zip
+/extension
+/.cache
+/dist

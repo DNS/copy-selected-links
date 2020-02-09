@@ -10,8 +10,13 @@
 			true,
 			"tabs"
 		],
+		"interface-name": false,
 		"interface-over-type-literal": false,
-		"max-classes-per-file": [true, 1, "exclude-class-expressions"],
+		"max-classes-per-file": [
+			true,
+			1,
+			"exclude-class-expressions"
+		],
 		"max-line-length": false,
 		"member-ordering": [
 			true,
@@ -35,7 +40,10 @@
 				]
 			}
 		],
-		"no-unbound-method": [true, "ignore-static"],
+		"no-unbound-method": [
+			true,
+			"ignore-static"
+		],
 		"object-literal-shorthand": false,
 		"trailing-comma": [
 			true,
@@ -43,6 +51,10 @@
 				"multiline": "never",
 				"singleline": "never"
 			}
+		],
+		"typedef": [
+			true,
+			"call-signature"
 		]
 	},
 	"rulesDirectory": []

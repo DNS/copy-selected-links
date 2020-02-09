@@ -1,6 +1,6 @@
 module.exports = {
 	sourceDir: "extension",
-	artifactsDir: "install",
+	artifactsDir: "dist",
 	build: {
 		overwriteDest: true
 	},

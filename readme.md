@@ -18,9 +18,9 @@ Official downloads:
 ### Compiling to webext `.zip` file
 
 1. execute `yarn build`
-1. check `install` dir
+1. check `dist` dir
 
 ### Testing
 
-1. install [Firefox Developer Edition](https://www.mozilla.org/firefox/developer/)
-1. execute `yarn develop`
+1. install [Firefox Developer Edition](https://www.mozilla.org/firefox/developer/) or [your Chrome of choice](https://dev.chromium.org/getting-involved/dev-channel)
+1. execute `yarn develop` or `yarn develop:chrome`
