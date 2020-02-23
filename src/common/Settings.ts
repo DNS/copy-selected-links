@@ -1,3 +1,4 @@
+import {JsonObject} from "./JsonObject";
 import {browser} from "webextension-polyfill-ts";
 
 export class Settings {
@@ -5,21 +6,21 @@ export class Settings {
         return new Settings();
     }
 
-    public static parse(data: any): Settings {
+    public static parse(data: JsonObject<any>): Settings {
         return new Settings().assimilate(data);
     }
 
-    public static load(): Promise<Settings> {
+    public static async load(): Promise<Settings> {
         return browser.storage.sync.get(Settings.shim()).then(Settings.parse);
     }
 
     private constructor(public popupSuccess = false, public popupFail = true, public finalNewline = true) {}
 
-    public save(): Promise<void> {
+    public async save(): Promise<void> {
         return browser.storage.sync.set(this);
     }
 
-    public equals(data: any): boolean {
+    public equals(data: unknown): boolean {
         const other = data as Settings;
         return this.popupSuccess === other.popupSuccess && this.popupFail === other.popupFail && this.finalNewline === other.finalNewline;
     }

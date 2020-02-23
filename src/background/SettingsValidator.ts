@@ -1,4 +1,4 @@
-import {browser, Runtime} from "webextension-polyfill-ts";
+import {Runtime, browser} from "webextension-polyfill-ts";
 import {Settings} from "../common/Settings";
 import OnInstalledDetailsType = Runtime.OnInstalledDetailsType;
 

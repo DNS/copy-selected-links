@@ -1,17 +1,35 @@
-import {browser, Menus, Tabs} from "webextension-polyfill-ts";
+import {Menus, Tabs, browser} from "webextension-polyfill-ts";
 import {Message} from "../common/messaging/MessageTypes";
 import {PerformCopyMessage} from "../common/messaging/PerformCopyMessage";
-import {Subject} from "../common/messaging/Subject";
 import {Settings} from "../common/Settings";
+import {Subject} from "../common/messaging/Subject";
 
 export class CopyHandler {
     private static notify(title: string, message: string): void {
         browser.notifications.create({
             iconUrl: "/images/icon-128.png",
-            message: message,
-            title: title,
+            message,
+            title,
             type: "basic"
         });
+    }
+
+    private static afterCopying(data: Message): void {
+        if (data.subject === Subject.LINKS_COPIED) {
+            Settings.load().then(settings => {
+                if (data.linksCopied > 0) {
+                    if (settings.popupSuccess) {
+                        CopyHandler.notify("", `Copied ${data.linksCopied} links to clipboard.`);
+                    }
+                } else {
+                    if (settings.popupFail) {
+                        CopyHandler.notify("", "No links found.");
+                    }
+                }
+            });
+        } else {
+            throw new Error(`unknown response ${JSON.stringify(data)}`);
+        }
     }
 
     private readonly isWindows: Promise<boolean>;
@@ -38,30 +56,12 @@ export class CopyHandler {
                     runAt: "document_end"
                 })
                 .catch(() => undefined)
-                .then(() =>
+                .then(async () =>
                     browser.tabs.sendMessage(tabId, new PerformCopyMessage(isWindows), {
                         frameId: contextMenuInfo.frameId
                     })
                 )
-                .then(CopyHandler.prototype.afterCopying.bind(this));
+                .then(CopyHandler.afterCopying.bind(this));
         });
-    }
-
-    private afterCopying(data: Message): void {
-        if (data.subject === Subject.LINKS_COPIED) {
-            Settings.load().then(settings => {
-                if (data.linksCopied > 0) {
-                    if (settings.popupSuccess) {
-                        CopyHandler.notify("", `Copied ${data.linksCopied} links to clipboard.`);
-                    }
-                } else {
-                    if (settings.popupFail) {
-                        CopyHandler.notify("", "No links found.");
-                    }
-                }
-            });
-        } else {
-            throw new Error(`unknown response ${JSON.stringify(data)}`);
-        }
     }
 }
