@@ -1,23 +1,13 @@
 {
     "defaultSeverity": "error",
-    "extends": [
-        "tslint:recommended"
-    ],
+    "extends": ["tslint:recommended"],
     "jsRules": {},
     "rules": {
         "arrow-parens": false,
-        "indent": [
-            true,
-            "spaces",
-            4
-        ],
+        "indent": [true, "spaces", 4],
         "interface-name": false,
         "interface-over-type-literal": false,
-        "max-classes-per-file": [
-            true,
-            1,
-            "exclude-class-expressions"
-        ],
+        "max-classes-per-file": [true, 1, "exclude-class-expressions"],
         "max-line-length": false,
         "member-ordering": [
             true,
@@ -41,10 +31,7 @@
                 ]
             }
         ],
-        "no-unbound-method": [
-            true,
-            "ignore-static"
-        ],
+        "no-unbound-method": [true, "ignore-static"],
         "object-literal-shorthand": false,
         "trailing-comma": [
             true,
@@ -53,10 +40,7 @@
                 "singleline": "never"
             }
         ],
-        "typedef": [
-            true,
-            "call-signature"
-        ]
+        "typedef": [true, "call-signature"]
     },
     "rulesDirectory": []
 }

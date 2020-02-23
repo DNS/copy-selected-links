@@ -24,13 +24,16 @@ export class ContextMenuHandler {
     public register(): void {
         browser.contextMenus.onClicked.addListener(ContextMenuHandler.prototype.onContextMenuClicked.bind(this));
 
-        browser.contextMenus.create({
-            contexts: ["selection"],
-            documentUrlPatterns: ["*://*/*", "file:///*"],
-            id: CONTEXT_MENU_ID,
-            title: "Copy selected links",
-            type: "normal"
-        }, ContextMenuHandler.checkError);
+        browser.contextMenus.create(
+            {
+                contexts: ["selection"],
+                documentUrlPatterns: ["*://*/*", "file:///*"],
+                id: CONTEXT_MENU_ID,
+                title: "Copy selected links",
+                type: "normal"
+            },
+            ContextMenuHandler.checkError
+        );
     }
 
     private onContextMenuClicked(contextMenuInfo: Menus.OnClickData, tab?: Tabs.Tab): void {

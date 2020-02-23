@@ -8,7 +8,7 @@ import {copyToClipboard} from "./content/ClipboardUtils";
 
 const flag = Symbol.for("copy-selected-links-script-injection");
 const register = window as {
-    [flag]?: true
+    [flag]?: true;
 };
 
 if (register[flag] == null) {

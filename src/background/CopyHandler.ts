@@ -31,13 +31,19 @@ export class CopyHandler {
 
             // this throws an error if the content script doesnt return a jsonable result
             // we cant guarantee the result of the content script because of bundling
-            browser.tabs.executeScript(tabId, {
-                allFrames: true,
-                file: browser.extension.getURL("content.js"),
-                runAt: "document_end"
-            }).catch(() => undefined).then(() => browser.tabs.sendMessage(tabId, new PerformCopyMessage(isWindows), {
-                frameId: contextMenuInfo.frameId
-            })).then(CopyHandler.prototype.afterCopying.bind(this));
+            browser.tabs
+                .executeScript(tabId, {
+                    allFrames: true,
+                    file: browser.extension.getURL("content.js"),
+                    runAt: "document_end"
+                })
+                .catch(() => undefined)
+                .then(() =>
+                    browser.tabs.sendMessage(tabId, new PerformCopyMessage(isWindows), {
+                        frameId: contextMenuInfo.frameId
+                    })
+                )
+                .then(CopyHandler.prototype.afterCopying.bind(this));
         });
     }
 
