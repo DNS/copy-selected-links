@@ -4,8 +4,8 @@
 
 Official downloads:
 
--  [Firefox add-on](https://addons.mozilla.org/en-US/firefox/addon/copy-selected-links/)
--  [Chrome extension](https://chrome.google.com/webstore/detail/copy-selected-links/kddpiojgkjnpmgiegglncafdpnigcbij)
+-   [Firefox add-on](https://addons.mozilla.org/en-US/firefox/addon/copy-selected-links/)
+-   [Chrome extension](https://chrome.google.com/webstore/detail/copy-selected-links/kddpiojgkjnpmgiegglncafdpnigcbij)
 
 ## For developers/reviewers
 
@@ -13,7 +13,7 @@ Official downloads:
 
 1. install [yarn](https://yarnpkg.com)
 1. execute `yarn install --frozen-lockfile`
-   1. if necessary, check `.node-version`, or install [nvs](https://github.com/jasongin/nvs) and execute `nvs use`
+    1. if necessary, check `.node-version`, or install [nvs](https://github.com/jasongin/nvs) and execute `nvs use`
 
 ### Compiling to webext `.zip` file
 

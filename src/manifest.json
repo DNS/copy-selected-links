@@ -20,16 +20,8 @@
         "chrome_style": true
     },
     "background": {
-        "scripts": [
-            "background.ts"
-        ],
+        "scripts": ["background.ts"],
         "persistent": true
     },
-    "permissions": [
-        "notifications",
-        "clipboardWrite",
-        "contextMenus",
-        "storage",
-        "activeTab"
-    ]
+    "permissions": ["notifications", "clipboardWrite", "contextMenus", "storage", "activeTab"]
 }

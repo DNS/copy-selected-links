@@ -1,0 +1,131 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": ["eslint:all", "plugin:@typescript-eslint/all", "prettier/@typescript-eslint", "plugin:prettier/recommended"],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "project": "tsconfig.json",
+        "sourceType": "module"
+    },
+    "plugins": ["@typescript-eslint", "prettier"],
+    // https://github.com/eslint/eslint/tree/master/docs/rules
+    // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin/docs/rules
+    "rules": {
+        "@typescript-eslint/consistent-type-definitions": "off",
+        "@typescript-eslint/explicit-function-return-type": [
+            "error",
+            {
+                "allowExpressions": true,
+                "allowTypedFunctionExpressions": true
+            }
+        ],
+        // enforced through tsconfig
+        "@typescript-eslint/member-ordering": [
+            "error",
+            {
+                "default": [
+                    "signature",
+
+                    "public-static-field",
+                    "protected-static-field",
+                    "private-static-field",
+                    "static-field",
+
+                    "public-static-method",
+                    "protected-static-method",
+                    "private-static-method",
+                    "static-method",
+
+                    "public-instance-field",
+                    "protected-instance-field",
+                    "private-instance-field",
+                    "instance-field",
+
+                    "public-abstract-field",
+                    "protected-abstract-field",
+                    "private-abstract-field",
+                    "abstract-field",
+
+                    "public-field",
+                    "protected-field",
+                    "private-field",
+                    "field",
+
+                    "public-constructor",
+                    "protected-constructor",
+                    "private-constructor",
+                    "constructor",
+
+                    "public-instance-method",
+                    "protected-instance-method",
+                    "private-instance-method",
+                    "instance-method",
+
+                    "public-abstract-method",
+                    "protected-abstract-method",
+                    "private-abstract-method",
+                    "abstract-method",
+
+                    "public-method",
+                    "protected-method",
+                    "private-method",
+                    "method"
+                ]
+            }
+        ],
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-extraneous-class": "off",
+        // TODO enable?
+        "@typescript-eslint/no-floating-promises": "off",
+        "@typescript-eslint/no-magic-numbers": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/no-parameter-properties": "off",
+        "@typescript-eslint/no-type-alias": "off",
+        "@typescript-eslint/restrict-template-expressions": "off",
+        // enforced through tsconfig
+        "@typescript-eslint/typedef": "off",
+        "@typescript-eslint/unbound-method": [
+            "error",
+            {
+                "ignoreStatic": true
+            }
+        ],
+        "capitalized-comments": "off",
+        "complexity": "off",
+        "eqeqeq": ["error", "smart"],
+        "func-style": "off",
+        "id-length": [
+            "error",
+            {
+                "exceptions": ["i", "n", "x", "y", "_"]
+            }
+        ],
+        "lines-between-class-members": [
+            "error",
+            "always",
+            {
+                "exceptAfterSingleLine": true
+            }
+        ],
+        // TODO enable?
+        "max-params": "off",
+        "max-statements": "off",
+        "multiline-comment-style": "off",
+        "no-else-return": "off",
+        "no-eq-null": "off",
+        // not compatible with typescript static class methods, @typescript-eslint/unbound-method will catch instead
+        "no-invalid-this": "off",
+        "no-lonely-if": "off",
+        "no-ternary": "off",
+        "no-undefined": "off",
+        "no-void": "off",
+        "no-warning-comments": "off",
+        "one-var": ["error", "never"],
+        "prefer-named-capture-group": "off",
+        "prettier/prettier": "error"
+    }
+}
