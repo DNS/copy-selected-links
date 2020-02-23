@@ -24,12 +24,12 @@
     "private": true,
     "repository": "https://gitlab.com/Marnes/copy-selected-links.git",
     "scripts": {
-        "build": "run-s clean prettify lint build:parcel build:webext review",
-        "build:parcel": "parcel build src/*.* --out-dir extension --no-autoinstall",
-        "build:webext": "web-ext build",
+        "build": "run-s clean prettify lint compile bundle review",
+        "compile": "parcel build src/*.* --out-dir extension --no-autoinstall",
+        "bundle": "web-ext build",
         "clean": "del-cli dist extension .cache",
-        "develop": "npm-run-all clean build:parcel -plr watch:parcel watch:webext",
-        "develop:chrome": "npm-run-all clean build:parcel -plr watch:parcel watch:webext:chrome",
+        "develop": "npm-run-all clean compile -plr compile:watch bundle:watch",
+        "develop:chrome": "npm-run-all clean compile -plr compile:watch bundle:watch:chrome",
         "lint": "run-p lint:addon lint:project",
         "lint:addon": "eslint src/**/*.ts",
         "lint:project": "eslint *.js",
@@ -37,9 +37,9 @@
         "prettify:addon": "prettier src/**/*.{html,json,scss,ts} --write",
         "prettify:project": "prettier *.{js,json,md,yml} --write",
         "review": "bestzip dist/sources.zip .editorconfig .eslintrc.json .gitignore .node-version .prettierrc.json license.md package.json readme.md src tsconfig.json web-ext-config.js yarn.lock",
-        "watch:parcel": "parcel watch src/*.* --out-dir extension --no-autoinstall --no-hmr",
-        "watch:webext": "web-ext run",
-        "watch:webext:chrome": "web-ext run -t chromium"
+        "compile:watch": "parcel watch src/*.* --out-dir extension --no-autoinstall --no-hmr",
+        "bundle:watch": "web-ext run",
+        "bundle:watch:chrome": "web-ext run -t chromium"
     },
     "version": "0.0.0"
 }
