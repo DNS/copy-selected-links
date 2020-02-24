@@ -85,6 +85,7 @@
         "@typescript-eslint/no-non-null-assertion": "off",
         "@typescript-eslint/no-parameter-properties": "off",
         "@typescript-eslint/no-type-alias": "off",
+        "@typescript-eslint/require-await": "off",
         "@typescript-eslint/restrict-template-expressions": "off",
         // enforced through tsconfig
         "@typescript-eslint/typedef": "off",
@@ -115,6 +116,7 @@
         "max-params": "off",
         "max-statements": "off",
         "multiline-comment-style": "off",
+        "no-continue": "off",
         "no-else-return": "off",
         "no-eq-null": "off",
         // not compatible with typescript static class methods, @typescript-eslint/unbound-method will catch instead
