@@ -79,8 +79,7 @@
         ],
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-extraneous-class": "off",
-        // TODO enable?
-        "@typescript-eslint/no-floating-promises": "off",
+        "@typescript-eslint/no-floating-promises": "warn",
         "@typescript-eslint/no-magic-numbers": "off",
         "@typescript-eslint/no-non-null-assertion": "off",
         "@typescript-eslint/no-parameter-properties": "off",
@@ -112,8 +111,6 @@
                 "exceptAfterSingleLine": true
             }
         ],
-        // TODO enable?
-        "max-params": "off",
         "max-statements": "off",
         "multiline-comment-style": "off",
         "no-continue": "off",
