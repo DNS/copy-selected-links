@@ -39,7 +39,7 @@
         "prettify": "run-p prettify:addon prettify:project",
         "prettify:addon": "prettier src/**/*.{html,json,scss,ts} --write",
         "prettify:project": "prettier *.{js,json,md,yml} --write",
-        "review": "bestzip dist/sources.zip .editorconfig .eslintrc.json .gitignore .node-version .prettierrc.json license.md package.json readme.md src tsconfig.json web-ext-config.js yarn.lock"
+        "review": "bestzip dist/sources.zip .browserslistrc .editorconfig .eslintrc.json .gitignore .node-version .prettierrc.json license.md package.json readme.md src tsconfig.json web-ext-config.js yarn.lock"
     },
     "version": "0.0.0"
 }
