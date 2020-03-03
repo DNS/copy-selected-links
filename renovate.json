@@ -9,6 +9,6 @@
         "*/**/*.html"
     ],
     "nvm": {
-        "fileMatch": ["^\\.node\\-version$"]
+        "fileMatch": ["^\\.node-version$"]
     }
 }
