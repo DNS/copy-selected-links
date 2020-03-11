@@ -5,9 +5,7 @@
         ":pinVersions",
         ":prNotPending"
     ],
-    "ignorePaths": [
-        "*/**/*.html"
-    ],
+    "ignorePaths": ["*/**/*.html"],
     "nvm": {
         "fileMatch": ["^\\.node-version$"]
     }
