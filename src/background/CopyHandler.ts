@@ -57,7 +57,7 @@ export class CopyHandler {
                 })
                 .catch(() => undefined)
                 .then(async () =>
-                    browser.tabs.sendMessage(tabId, new PerformCopyMessage(isWindows), {
+                    browser.tabs.sendMessage(tabId, new PerformCopyMessage(isWindows, contextMenuInfo.linkUrl), {
                         frameId: contextMenuInfo.frameId
                     })
                 )

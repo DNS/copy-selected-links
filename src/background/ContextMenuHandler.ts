@@ -26,7 +26,7 @@ export class ContextMenuHandler {
 
         browser.contextMenus.create(
             {
-                contexts: ["selection"],
+                contexts: ["selection", "link"],
                 documentUrlPatterns: ["*://*/*", "file:///*"],
                 id: CONTEXT_MENU_ID,
                 title: "Copy selected links",

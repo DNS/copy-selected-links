@@ -22,6 +22,10 @@ async function onCopyRequested(msg: PerformCopyMessage): Promise<LinksCopiedMess
         .filter(link => selection.containsNode(link, true))
         .map(link => link.href);
 
+    if (msg.clickedLinkUrl != null) {
+        hrefs.unshift(msg.clickedLinkUrl);
+    }
+
     const foundLinks = [...new Set(hrefs)];
 
     if (foundLinks.length > 0) {
