@@ -1,12 +1,10 @@
 image: node:10.19.0-alpine
 
-before_script:
-    - "apk add git"
-    - "yarn install --frozen-lockfile"
-
-stages:
-    - build
-
-yarn-build:
-    stage: build
-    script: "yarn build"
+install-build-verify:
+    before_script:
+        - "apk add git"
+    script:
+        - "yarn install --frozen-lockfile"
+        - "yarn build"
+    after_script:
+        - "npx git-is-clean"
