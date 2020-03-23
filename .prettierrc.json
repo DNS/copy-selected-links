@@ -1,8 +1,9 @@
 {
+    "arrowParens": "avoid",
     "bracketSpacing": false,
-    "endOfLine": "lf",
     "htmlWhitespaceSensitivity": "ignore",
     "printWidth": 160,
     "proseWrap": "never",
-    "tabWidth": 4
+    "tabWidth": 4,
+    "trailingComma": "none"
 }
