@@ -24,7 +24,7 @@
         "review": "bestzip dist/sources.zip .browserslistrc .editorconfig .eslintrc.json .gitignore .node-version .prettierrc.json license.md package.json readme.md src tsconfig.json web-ext-config.js yarn.lock"
     },
     "dependencies": {
-        "webextension-polyfill-ts": "0.13.0"
+        "webextension-polyfill-ts": "0.14.0"
     },
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "2.21.0",
