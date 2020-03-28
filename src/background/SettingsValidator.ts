@@ -4,18 +4,13 @@ import OnInstalledDetailsType = Runtime.OnInstalledDetailsType;
 
 export class SettingsValidator {
     public static guard(): void {
-        browser.runtime.onInstalled.addListener(SettingsValidator.onInstall);
+        browser.runtime.onInstalled.addListener(details => void SettingsValidator.onInstall(details).catch(console.error));
     }
 
-    private static onInstall(details: OnInstalledDetailsType): void {
+    private static async onInstall(details: OnInstalledDetailsType): Promise<void> {
         if (details.reason === "install" || details.reason === "update") {
-            browser.storage.sync.get(Settings.shim()).then((data: any) => {
-                const settings = Settings.parse(data);
-
-                if (!settings.equals(data)) {
-                    settings.save().then(browser.runtime.openOptionsPage.bind(browser.runtime));
-                }
-            });
+            const valid = await Settings.validate();
+            return valid ? undefined : browser.runtime.openOptionsPage();
         }
     }
 }

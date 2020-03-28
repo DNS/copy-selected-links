@@ -2,16 +2,25 @@ import {JsonObject} from "./JsonObject";
 import {browser} from "webextension-polyfill-ts";
 
 export class Settings {
-    public static shim(): Settings {
-        return new Settings();
-    }
-
-    public static parse(data: JsonObject<any>): Settings {
-        return new Settings().assimilate(data);
-    }
-
     public static async load(): Promise<Settings> {
-        return browser.storage.sync.get(Settings.shim()).then(Settings.parse);
+        const raw = await this.loadRaw();
+        return new Settings().assimilate(raw);
+    }
+
+    public static async validate(): Promise<boolean> {
+        const [parsed, raw] = await Promise.all<Settings, JsonObject<Settings>>([Settings.load(), Settings.loadRaw()]);
+
+        if (parsed.equals(raw)) {
+            return true;
+        } else {
+            await parsed.save();
+            return false;
+        }
+    }
+
+    private static async loadRaw(): Promise<JsonObject<Settings>> {
+        const data = await browser.storage.sync.get(new Settings());
+        return data as JsonObject<Settings>;
     }
 
     private constructor(public popupSuccess = false, public popupFail = true, public finalNewline = true) {}
