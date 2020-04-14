@@ -1,21 +1,11 @@
 {
     "compilerOptions": {
-        "alwaysStrict": true,
         "esModuleInterop": true,
         "inlineSourceMap": false,
         "lib": ["dom", "dom.iterable", "es2019"],
         "module": "commonjs",
-        "noImplicitAny": true,
-        "noImplicitReturns": true,
-        "noImplicitThis": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
         "removeComments": false,
         "strict": true,
-        "strictBindCallApply": true,
-        "strictFunctionTypes": true,
-        "strictNullChecks": true,
-        "strictPropertyInitialization": true,
         "target": "es6"
     }
 }
