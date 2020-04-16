@@ -1,10 +1,7 @@
-import {LinksCopiedMessage} from "./common/messaging/LinksCopiedMessage";
-import {Message} from "./common/messaging/MessageTypes";
-import {PerformCopyMessage} from "./common/messaging/PerformCopyMessage";
-import {Settings} from "./common/Settings";
-import {Subject} from "./common/messaging/Subject";
+import {LinksCopiedMessage, Message, PerformCopyMessage, Subject} from "./common/messages";
+import {Settings} from "./common/settings";
 import {browser} from "webextension-polyfill-ts";
-import {copyToClipboard} from "./content/ClipboardUtils";
+import {copyToClipboard} from "./content/clipboard";
 
 const flag = Symbol.for("copy-selected-links-script-injection");
 const register = window as {
@@ -29,15 +26,14 @@ async function onCopyRequested(msg: PerformCopyMessage): Promise<LinksCopiedMess
     const foundLinks = [...new Set(hrefs)];
 
     if (foundLinks.length > 0) {
-        Settings.load().then(settings => {
-            const newline = msg.isWindows ? "\r\n" : "\n";
-            const joined = foundLinks.join(newline);
+        const settings = await Settings.load();
+        const newline = msg.isWindows ? "\r\n" : "\n";
+        const joined = foundLinks.join(newline);
 
-            copyToClipboard(settings.finalNewline ? joined + newline : joined);
-        });
+        await copyToClipboard(settings.get("finalNewline") ? joined + newline : joined);
     }
 
-    return Promise.resolve(new LinksCopiedMessage(foundLinks.length));
+    return new LinksCopiedMessage(foundLinks.length);
 }
 
 async function onMessageReceived(msg: Message): Promise<LinksCopiedMessage> {

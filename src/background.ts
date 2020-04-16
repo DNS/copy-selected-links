@@ -1,5 +1,5 @@
-import {ContextMenuHandler} from "./background/ContextMenuHandler";
-import {SettingsValidator} from "./background/SettingsValidator";
+import {registerMenu} from "./background/context-menu";
+import {validateSettingsOnInstall} from "./background/settings-validation";
 
-SettingsValidator.guard();
-new ContextMenuHandler().register();
+validateSettingsOnInstall();
+registerMenu();

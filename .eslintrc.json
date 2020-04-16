@@ -23,7 +23,6 @@
                 "allowTypedFunctionExpressions": true
             }
         ],
-        // enforced through tsconfig
         "@typescript-eslint/member-ordering": [
             "error",
             {
@@ -77,16 +76,9 @@
                 ]
             }
         ],
-        // TODO https://github.com/typescript-eslint/typescript-eslint/issues/1655
-        "@typescript-eslint/no-base-to-string": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/no-extraneous-class": "off",
-        "@typescript-eslint/no-floating-promises": "warn",
         "@typescript-eslint/no-magic-numbers": "off",
-        "@typescript-eslint/no-non-null-assertion": "off",
         "@typescript-eslint/no-parameter-properties": "off",
         "@typescript-eslint/no-type-alias": "off",
-        "@typescript-eslint/no-unsafe-member-access": "warn",
         "@typescript-eslint/prefer-readonly-parameter-types": [
             // TODO https://github.com/Microsoft/TypeScript/issues/22315
             "off",
@@ -94,16 +86,16 @@
                 "checkParameterProperties": false
             }
         ],
-        "@typescript-eslint/require-await": "off",
-        "@typescript-eslint/restrict-template-expressions": "off",
-        // enforced through tsconfig
-        "@typescript-eslint/typedef": "off",
-        "@typescript-eslint/unbound-method": [
+        "@typescript-eslint/restrict-template-expressions": [
             "error",
             {
-                "ignoreStatic": true
+                "allowBoolean": true,
+                "allowNullable": true,
+                "allowNumber": true
             }
         ],
+        // enforced through tsconfig
+        "@typescript-eslint/typedef": "off",
         "capitalized-comments": "off",
         "complexity": "off",
         "consistent-return": "off",
@@ -112,7 +104,7 @@
         "id-length": [
             "error",
             {
-                "exceptions": ["i", "n", "x", "y", "_"]
+                "exceptions": ["i", "_"]
             }
         ],
         "lines-between-class-members": [
@@ -122,6 +114,7 @@
                 "exceptAfterSingleLine": true
             }
         ],
+        "max-classes-per-file": "off",
         "max-statements": "off",
         "multiline-comment-style": "off",
         "no-console": [
@@ -133,15 +126,13 @@
         "no-continue": "off",
         "no-else-return": "off",
         "no-eq-null": "off",
-        // not compatible with typescript static class methods, @typescript-eslint/unbound-method will catch instead
-        "no-invalid-this": "off",
         "no-lonely-if": "off",
         "no-ternary": "off",
         "no-undefined": "off",
         "no-void": "off",
         "no-warning-comments": "off",
         "one-var": ["error", "never"],
-        "prefer-named-capture-group": "off",
-        "prettier/prettier": "error"
+        "prettier/prettier": "error",
+        "sort-imports": "off"
     }
 }

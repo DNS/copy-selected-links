@@ -24,6 +24,9 @@
         "review": "bestzip dist/sources.zip .browserslistrc .editorconfig .eslintrc.json .gitignore .node-version .prettierrc.json license.md package.json readme.md src tsconfig.json web-ext-config.js yarn.lock"
     },
     "dependencies": {
+        "fast-deep-equal": "3.1.1",
+        "ow": "0.17.0",
+        "type-fest": "0.13.1",
         "webextension-polyfill-ts": "0.14.0"
     },
     "devDependencies": {
@@ -40,6 +43,7 @@
         "prettier-plugin-package": "1.0.0",
         "rimraf": "3.0.2",
         "sass": "1.26.3",
+        "ts-essentials": "6.0.3",
         "typescript": "3.8.3",
         "web-ext": "4.1.0"
     }
