@@ -43,7 +43,7 @@
         "prettier-plugin-package": "1.0.0",
         "rimraf": "3.0.2",
         "sass": "1.26.5",
-        "ts-essentials": "6.0.4",
+        "ts-essentials": "6.0.5",
         "typescript": "3.9.2",
         "web-ext": "4.2.0"
     }
