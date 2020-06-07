@@ -37,7 +37,7 @@ async function onCopyRequested(msg: PerformCopyMessage): Promise<LinksCopiedMess
 }
 
 async function onMessageReceived(msg: Message): Promise<LinksCopiedMessage> {
-    if (msg.subject === Subject.COPY_REQUESTED) {
+    if (msg.subject === Subject.copyRequested) {
         return onCopyRequested(msg);
     } else {
         throw new Error(`unknown message ${JSON.stringify(msg)}`);

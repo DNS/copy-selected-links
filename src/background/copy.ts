@@ -13,7 +13,7 @@ async function notify(title: string, message: string): Promise<void> {
 }
 
 async function afterCopying(data: Message): Promise<void> {
-    if (data.subject === Subject.LINKS_COPIED) {
+    if (data.subject === Subject.linksCopied) {
         const settings = await Settings.load();
 
         if (data.linksCopied > 0) {
