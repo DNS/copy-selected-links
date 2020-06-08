@@ -24,7 +24,7 @@
         "review": "bestzip dist/sources.zip .browserslistrc .editorconfig .eslintrc.json .gitignore .node-version .prettierrc.json license.md package.json readme.md src tsconfig.json web-ext-config.js yarn.lock"
     },
     "dependencies": {
-        "fast-deep-equal": "3.1.1",
+        "fast-deep-equal": "3.1.3",
         "ow": "0.17.0",
         "type-fest": "0.15.0",
         "webextension-polyfill-ts": "0.17.0"
