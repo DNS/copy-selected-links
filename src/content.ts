@@ -1,6 +1,6 @@
 import {LinksCopiedMessage, Message, PerformCopyMessage, Subject} from "./common/messages";
-import {Settings} from "./common/settings";
 import {browser} from "webextension-polyfill-ts";
+import {load} from "./common/settings/settings";
 import {copyToClipboard} from "./content/clipboard";
 
 const flag = Symbol.for("copy-selected-links-script-injection");
@@ -26,11 +26,11 @@ async function onCopyRequested(msg: PerformCopyMessage): Promise<LinksCopiedMess
     const foundLinks = [...new Set(hrefs)];
 
     if (foundLinks.length > 0) {
-        const settings = await Settings.load();
+        const settings = await load();
         const newline = msg.isWindows ? "\r\n" : "\n";
         const joined = foundLinks.join(newline);
 
-        await copyToClipboard(settings.get("finalNewline") ? joined + newline : joined);
+        await copyToClipboard(settings.finalNewline ? joined + newline : joined);
     }
 
     return new LinksCopiedMessage(foundLinks.length);

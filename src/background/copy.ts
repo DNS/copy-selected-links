@@ -1,7 +1,7 @@
 import {Menus, Tabs, browser} from "webextension-polyfill-ts";
 import {Message, PerformCopyMessage, Subject} from "../common/messages";
-import {Settings} from "../common/settings";
 import {noop as ignore} from "ts-essentials";
+import {load} from "../common/settings/settings";
 
 async function notify(title: string, message: string): Promise<void> {
     await browser.notifications.create({
@@ -14,14 +14,14 @@ async function notify(title: string, message: string): Promise<void> {
 
 async function afterCopying(data: Message): Promise<void> {
     if (data.subject === Subject.linksCopied) {
-        const settings = await Settings.load();
+        const settings = await load();
 
         if (data.linksCopied > 0) {
-            if (settings.get("popupSuccess")) {
+            if (settings.popupSuccess) {
                 return notify("", `Copied ${data.linksCopied} links to clipboard.`);
             }
         } else {
-            if (settings.get("popupFail")) {
+            if (settings.popupFail) {
                 return notify("", "No links found.");
             }
         }
