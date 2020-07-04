@@ -1,6 +1,5 @@
 import equal from "fast-deep-equal";
-import {browser} from "webextension-polyfill-ts";
-import {correct, isSetting, read, Settings, write} from "./io";
+import {correct, read, Settings, write} from "./io";
 
 export async function load(): Promise<Settings> {
     const raw = await read();
@@ -17,12 +16,4 @@ export async function validate(): Promise<boolean> {
         await write(validated);
         return false;
     }
-}
-
-export function monitor(callback: (settings: Settings) => void): void {
-    browser.storage.onChanged.addListener((changes, area) => {
-        if (area === "sync" && Object.keys(changes).some(isSetting)) {
-            load().then(callback).catch(console.error);
-        }
-    });
 }
