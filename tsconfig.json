@@ -1,11 +1,9 @@
 {
     "compilerOptions": {
-        "esModuleInterop": true,
-        "inlineSourceMap": false,
-        "lib": ["dom", "dom.iterable", "es2019"],
-        "module": "commonjs",
-        "removeComments": false,
+        "allowSyntheticDefaultImports": true, // necessary for libs with default exports
+        "inlineSourceMap": false, // maximum js parsing performance
+        "module": "commonjs", // for webext-polyfill
         "strict": true,
-        "target": "es6"
+        "target": "es2020" // compile as modernly as possible, parcel will downcompile anyway with babel and browserslist
     }
 }
