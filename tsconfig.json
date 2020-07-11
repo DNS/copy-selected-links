@@ -2,7 +2,7 @@
     "compilerOptions": {
         "allowSyntheticDefaultImports": true, // necessary for libs with default exports
         "inlineSourceMap": false, // maximum js parsing performance
-        "module": "commonjs", // for webext-polyfill
+        "moduleResolution": "node",
         "strict": true,
         "target": "es2020" // compile as modernly as possible, parcel will downcompile anyway with babel and browserslist
     }
