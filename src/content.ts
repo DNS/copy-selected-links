@@ -8,7 +8,7 @@ const register = window as {
     [flag]?: true;
 };
 
-async function onCopyRequested(msg: PerformCopyMessage): Promise<LinksCopiedMessage> {
+function getHrefs(msg: PerformCopyMessage): string[] {
     const selection = getSelection();
 
     if (selection == null) {
@@ -20,20 +20,26 @@ async function onCopyRequested(msg: PerformCopyMessage): Promise<LinksCopiedMess
         .map(link => link.href);
 
     if (msg.clickedLinkUrl != null) {
-        hrefs.unshift(msg.clickedLinkUrl);
+        // people probably drag from start to end
+        // so the clicked node is probably at the end
+        hrefs.push(msg.clickedLinkUrl);
     }
 
-    const foundLinks = [...new Set(hrefs)];
+    return hrefs.filter(href => href.trim() !== "");
+}
 
-    if (foundLinks.length > 0) {
+async function onCopyRequested(msg: PerformCopyMessage): Promise<LinksCopiedMessage> {
+    const hrefs = getHrefs(msg);
+
+    if (hrefs.length > 0) {
         const settings = await load();
         const newline = msg.isWindows ? "\r\n" : "\n";
-        const joined = foundLinks.join(newline);
+        const joined = hrefs.join(newline);
 
         await copyToClipboard(settings.finalNewline ? joined + newline : joined);
     }
 
-    return new LinksCopiedMessage(foundLinks.length);
+    return new LinksCopiedMessage(hrefs.length);
 }
 
 async function onMessageReceived(msg: Message): Promise<LinksCopiedMessage> {
