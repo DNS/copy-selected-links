@@ -19,11 +19,12 @@ function checkError(): void {
 }
 
 async function onClick(contextMenuInfo: Menus.OnClickData, tab?: Tabs.Tab): Promise<void> {
+    if (tab == null) {
+        throw new Error("invoked context menu without a tab?");
+    }
+
     switch (contextMenuInfo.menuItemId) {
         case CONTEXT_MENU_ID:
-            if (tab == null) {
-                throw new Error("invoked context menu without a tab?");
-            }
             await arrangeCopy(tab, contextMenuInfo.frameId, contextMenuInfo.linkUrl);
             break;
         default:
