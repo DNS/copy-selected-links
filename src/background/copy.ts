@@ -1,4 +1,3 @@
-import {noop as ignore} from "ts-essentials";
 import {browser, Tabs} from "webextension-polyfill-ts";
 import {Message, PerformCopyMessage, Subject} from "../common/messages";
 import {load} from "../common/settings/settings";
@@ -45,8 +44,8 @@ export async function arrangeCopy(tab: Tabs.Tab, frameId?: number, contextualUrl
             file: browser.extension.getURL("content.js"),
             runAt: "document_end"
         });
-    } catch (error) {
-        ignore(error);
+    } catch (notJsonable) {
+        // ignore
     }
 
     const message = new PerformCopyMessage(await isWindows, contextualUrl ?? null);
