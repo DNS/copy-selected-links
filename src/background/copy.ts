@@ -1,5 +1,5 @@
 import {noop as ignore} from "ts-essentials";
-import {browser, Menus, Tabs} from "webextension-polyfill-ts";
+import {browser, Tabs} from "webextension-polyfill-ts";
 import {Message, PerformCopyMessage, Subject} from "../common/messages";
 import {load} from "../common/settings/settings";
 
@@ -32,7 +32,7 @@ async function afterCopying(data: Message): Promise<void> {
 
 const isWindows = browser.runtime.getPlatformInfo().then(platformInfo => platformInfo.os === "win");
 
-export async function arrangeCopy(contextMenuInfo: Menus.OnClickData, tab: Tabs.Tab): Promise<void> {
+export async function arrangeCopy(tab: Tabs.Tab, frameId?: number, contextualUrl?: string): Promise<void> {
     if (tab.id == null) {
         throw new Error(`received a tab without an id?`);
     }
@@ -49,9 +49,8 @@ export async function arrangeCopy(contextMenuInfo: Menus.OnClickData, tab: Tabs.
         ignore(error);
     }
 
-    const response = (await browser.tabs.sendMessage(tab.id, new PerformCopyMessage(await isWindows, contextMenuInfo.linkUrl ?? null), {
-        frameId: contextMenuInfo.frameId
-    })) as Message;
+    const message = new PerformCopyMessage(await isWindows, contextualUrl ?? null);
+    const response = (await browser.tabs.sendMessage(tab.id, message, {frameId})) as Message;
 
     return afterCopying(response);
 }

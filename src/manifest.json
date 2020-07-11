@@ -23,5 +23,13 @@
         "scripts": ["background.ts"],
         "persistent": true
     },
-    "permissions": ["notifications", "clipboardWrite", "contextMenus", "storage", "activeTab"]
+    "permissions": ["notifications", "clipboardWrite", "contextMenus", "storage", "activeTab"],
+    "commands": {
+        "copy-selected-links": {
+            "suggested_key": {
+                "default": "Alt+Shift+C"
+            },
+            "description": "Copy the currently selected links."
+        }
+    }
 }
