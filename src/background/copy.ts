@@ -18,11 +18,11 @@ async function afterCopying(data: Message): Promise<void> {
 
         if (data.linksCopied > 0) {
             if (settings.popupSuccess) {
-                return notify("", `Copied ${data.linksCopied} links to clipboard.`);
+                await notify("", `Copied ${data.linksCopied} links to clipboard.`);
             }
         } else {
             if (settings.popupFail) {
-                return notify("", "No links found.");
+                await notify("", "No links found.");
             }
         }
     } else {
@@ -52,5 +52,5 @@ export async function arrangeCopy(tab: Tabs.Tab, frameId?: number, contextualUrl
     const message = new PerformCopyMessage(await isWindows, contextualUrl ?? null);
     const response = (await browser.tabs.sendMessage(tab.id, message, {frameId})) as Message;
 
-    return afterCopying(response);
+    await afterCopying(response);
 }

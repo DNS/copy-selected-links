@@ -24,7 +24,8 @@ async function onClick(contextMenuInfo: Menus.OnClickData, tab?: Tabs.Tab): Prom
             if (tab == null) {
                 throw new Error("invoked context menu without a tab?");
             }
-            return arrangeCopy(tab, contextMenuInfo.frameId, contextMenuInfo.linkUrl);
+            await arrangeCopy(tab, contextMenuInfo.frameId, contextMenuInfo.linkUrl);
+            break;
         default:
             throw new Error(`received unknown context menu command: ${contextMenuInfo.menuItemId}`);
     }

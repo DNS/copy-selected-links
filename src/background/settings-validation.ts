@@ -5,7 +5,9 @@ import OnInstalledDetailsType = Runtime.OnInstalledDetailsType;
 async function onInstall(details: OnInstalledDetailsType): Promise<void> {
     if (details.reason === "install" || details.reason === "update") {
         const valid = await validate();
-        return valid ? undefined : browser.runtime.openOptionsPage();
+        if (!valid) {
+            await browser.runtime.openOptionsPage();
+        }
     }
 }
 
