@@ -50,7 +50,7 @@ export async function arrangeCopy(tab: Tabs.Tab, frameId?: number, contextualUrl
     }
 
     const message = new PerformCopyMessage(await isWindows, contextualUrl ?? null);
-    const response = (await browser.tabs.sendMessage(tab.id, message, {frameId})) as Message;
+    const response = await browser.tabs.sendMessage(tab.id, message, {frameId}).then(msg => msg as Message);
 
     await afterCopying(response);
 }
