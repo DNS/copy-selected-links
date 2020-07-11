@@ -1,6 +1,6 @@
-import {Menus, Tabs, browser} from "webextension-polyfill-ts";
-import {Message, PerformCopyMessage, Subject} from "../common/messages";
 import {noop as ignore} from "ts-essentials";
+import {browser, Menus, Tabs} from "webextension-polyfill-ts";
+import {Message, PerformCopyMessage, Subject} from "../common/messages";
 import {load} from "../common/settings/settings";
 
 async function notify(title: string, message: string): Promise<void> {
@@ -32,16 +32,15 @@ async function afterCopying(data: Message): Promise<void> {
 
 const isWindows = browser.runtime.getPlatformInfo().then(platformInfo => platformInfo.os === "win");
 
-export async function arrangeCopy(contextMenuInfo: Menus.OnClickData, tab?: Tabs.Tab): Promise<void> {
-    if (tab == null || tab.id == null) {
-        throw new Error(`received context menu ${JSON.stringify(contextMenuInfo)} and tab ${JSON.stringify(tab)}?`);
+export async function arrangeCopy(contextMenuInfo: Menus.OnClickData, tab: Tabs.Tab): Promise<void> {
+    if (tab.id == null) {
+        throw new Error(`received a tab without an id?`);
     }
-    const tabId = tab.id;
 
     try {
         // this throws an error if the content script doesnt return a jsonable result
         // we cant guarantee the result of the content script because of bundling
-        await browser.tabs.executeScript(tabId, {
+        await browser.tabs.executeScript(tab.id, {
             allFrames: true,
             file: browser.extension.getURL("content.js"),
             runAt: "document_end"
@@ -50,7 +49,7 @@ export async function arrangeCopy(contextMenuInfo: Menus.OnClickData, tab?: Tabs
         ignore(error);
     }
 
-    const response = (await browser.tabs.sendMessage(tabId, new PerformCopyMessage(await isWindows, contextMenuInfo.linkUrl ?? null), {
+    const response = (await browser.tabs.sendMessage(tab.id, new PerformCopyMessage(await isWindows, contextMenuInfo.linkUrl ?? null), {
         frameId: contextMenuInfo.frameId
     })) as Message;
 

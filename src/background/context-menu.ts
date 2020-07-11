@@ -19,10 +19,14 @@ function checkError(): void {
 }
 
 async function onClick(contextMenuInfo: Menus.OnClickData, tab?: Tabs.Tab): Promise<void> {
-    if (contextMenuInfo.menuItemId === CONTEXT_MENU_ID) {
-        return arrangeCopy(contextMenuInfo, tab);
-    } else {
-        throw new Error(`received context menu ${JSON.stringify(contextMenuInfo)} and tab ${JSON.stringify(tab)}?`);
+    switch (contextMenuInfo.menuItemId) {
+        case CONTEXT_MENU_ID:
+            if (tab == null) {
+                throw new Error("invoked context menu without a tab?");
+            }
+            return arrangeCopy(contextMenuInfo, tab);
+        default:
+            throw new Error(`received unknown context menu command: ${contextMenuInfo.menuItemId}`);
     }
 }
 

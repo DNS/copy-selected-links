@@ -19,10 +19,10 @@ function getHrefs(msg: PerformCopyMessage): string[] {
         .filter(link => selection.containsNode(link, true))
         .map(link => link.href);
 
-    if (msg.clickedLinkUrl != null) {
+    if (msg.externalContextUrl != null) {
         // people probably drag from start to end
         // so the clicked node is probably at the end
-        hrefs.push(msg.clickedLinkUrl);
+        hrefs.push(msg.externalContextUrl);
     }
 
     return hrefs.filter(href => href.trim() !== "");

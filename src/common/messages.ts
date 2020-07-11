@@ -18,7 +18,7 @@ export class LinksCopiedMessage implements Sendable<Subject.linksCopied, LinksCo
 export class PerformCopyMessage implements Sendable<Subject.copyRequested, PerformCopyMessage> {
     public readonly subject = Subject.copyRequested;
 
-    public constructor(public readonly isWindows: boolean, public readonly clickedLinkUrl: string | null) {}
+    public constructor(public readonly isWindows: boolean, public readonly externalContextUrl: string | null) {}
 }
 
 export type Message = PerformCopyMessage | LinksCopiedMessage;
