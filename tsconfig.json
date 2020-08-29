@@ -5,5 +5,6 @@
         "moduleResolution": "node",
         "strict": true,
         "target": "es2020" // compile as modernly as possible, parcel will downcompile anyway with babel and browserslist
-    }
+    },
+    "include": ["src/**/*.ts"]
 }
