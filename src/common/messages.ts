@@ -1,35 +1,37 @@
-import {JsonValue} from "type-fest";
+const topics = {
+    copyRequested: "copyRequested",
+    linksCopied: "linksCopied"
+} as const;
 
-export enum Subject {
-    copyRequested = "copyRequested",
-    linksCopied = "linksCopied"
+export type RequestedMessage = {subject: typeof topics.copyRequested; isWindows: boolean; externalContextUrl: string | null};
+export function copyRequested(isWindows: boolean, externalContextUrl: string | null): RequestedMessage {
+    return {
+        externalContextUrl,
+        isWindows,
+        subject: topics.copyRequested
+    };
 }
 
-export type Sendable<S extends Subject, T extends Record<keyof T, JsonValue>> = {
-    subject: S;
-} & T;
-
-export class LinksCopiedMessage implements Sendable<Subject.linksCopied, LinksCopiedMessage> {
-    public readonly subject = Subject.linksCopied;
-
-    public constructor(public readonly linksCopied: number) {}
+export type CopiedMessage = {subject: typeof topics.linksCopied; linksCopied: number};
+export function copied(linksCopied: number): CopiedMessage {
+    return {
+        linksCopied,
+        subject: topics.linksCopied
+    };
 }
 
-export class PerformCopyMessage implements Sendable<Subject.copyRequested, PerformCopyMessage> {
-    public readonly subject = Subject.copyRequested;
+//
 
-    public constructor(public readonly isWindows: boolean, public readonly externalContextUrl: string | null) {}
+const subjects = Object.values(topics) as string[];
+
+export type Message = RequestedMessage | CopiedMessage;
+
+function hasSubject(value: {subject?: unknown}): value is {subject: string} {
+    return typeof value.subject == "string";
 }
-
-export type Message = PerformCopyMessage | LinksCopiedMessage;
 
 function isMessage(value: unknown): value is Message {
-    return (
-        typeof value == "object" &&
-        value != null &&
-        "subject" in value &&
-        (Object.values(Subject) as unknown[]).includes((value as Record<string, unknown>).subject)
-    );
+    return typeof value == "object" && value != null && hasSubject(value) && subjects.includes(value.subject);
 }
 
 export function asMessage(value: unknown): Message {

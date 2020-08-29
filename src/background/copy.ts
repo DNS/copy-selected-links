@@ -1,5 +1,5 @@
 import {browser, Tabs} from "webextension-polyfill-ts";
-import {Message, PerformCopyMessage, Subject} from "../common/messages";
+import {asMessage, copyRequested, Message} from "../common/messages";
 import {load} from "../common/settings/settings";
 
 async function notify(title: string, message: string): Promise<void> {
@@ -12,7 +12,7 @@ async function notify(title: string, message: string): Promise<void> {
 }
 
 async function afterCopying(data: Message): Promise<void> {
-    if (data.subject === Subject.linksCopied) {
+    if (data.subject === "linksCopied") {
         const settings = await load();
 
         if (data.linksCopied > 0) {
@@ -48,8 +48,8 @@ export async function arrangeCopy(tab: Tabs.Tab, frameId?: number, contextualUrl
         // ignore
     }
 
-    const message = new PerformCopyMessage(await isWindows, contextualUrl ?? null);
-    const response = await browser.tabs.sendMessage(tab.id, message, {frameId}).then(msg => msg as Message);
+    const message = copyRequested(await isWindows, contextualUrl ?? null);
+    const response = await browser.tabs.sendMessage(tab.id, message, {frameId}).then(asMessage);
 
     await afterCopying(response);
 }

@@ -1,8 +1,8 @@
-import {LinksCopiedMessage, PerformCopyMessage} from "../common/messages";
+import {copied, CopiedMessage, RequestedMessage} from "../common/messages";
 import {load} from "../common/settings/settings";
 import {copyToClipboard} from "./clipboard";
 
-function getHrefs(msg: PerformCopyMessage): string[] {
+function getHrefs(msg: RequestedMessage): string[] {
     const selection = getSelection();
 
     if (selection == null) {
@@ -22,7 +22,7 @@ function getHrefs(msg: PerformCopyMessage): string[] {
     return hrefs.filter(href => href.trim() !== "");
 }
 
-export async function onCopyRequested(msg: PerformCopyMessage): Promise<LinksCopiedMessage> {
+export async function onCopyRequested(msg: RequestedMessage): Promise<CopiedMessage> {
     const hrefs = getHrefs(msg);
 
     if (hrefs.length > 0) {
@@ -33,5 +33,5 @@ export async function onCopyRequested(msg: PerformCopyMessage): Promise<LinksCop
         await copyToClipboard(settings.finalNewline ? joined + newline : joined);
     }
 
-    return new LinksCopiedMessage(hrefs.length);
+    return copied(hrefs.length);
 }
