@@ -29,7 +29,7 @@ rules:
     "@typescript-eslint/restrict-template-expressions":
         - error
         - allowBoolean: true
-          allowNullable: true
+          allowNullish: true
           allowNumber: true
     # enforced through tsconfig
     "@typescript-eslint/typedef": off
