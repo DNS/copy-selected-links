@@ -64,11 +64,6 @@ rules:
               - target: "src/options"
                 from: "src/"
                 except: ["options/", "common/"]
-    lines-between-class-members:
-        - error
-        - always
-        - exceptAfterSingleLine: true
-    max-classes-per-file: off
     max-statements: off
     multiline-comment-style: off
     no-console:
