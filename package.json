@@ -11,7 +11,7 @@
         "bundle:watch": "web-ext run",
         "bundle:watch:chrome": "web-ext run -t chromium",
         "clean": "rimraf dist extension .cache",
-        "compile": "parcel build src/*.* --out-dir extension --no-autoinstall",
+        "compile": "parcel build src/*.* --out-dir extension",
         "compile:watch": "parcel watch src/*.* --out-dir extension --no-autoinstall --no-hmr",
         "develop": "npm-run-all clean compile -plr compile:watch bundle:watch",
         "develop:chrome": "npm-run-all clean compile -plr compile:watch bundle:watch:chrome",
