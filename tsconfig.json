@@ -1,6 +1,5 @@
 {
     "compilerOptions": {
-        "allowSyntheticDefaultImports": true, // necessary for libs with default exports
         "inlineSourceMap": false, // maximum js parsing performance
         "moduleResolution": "node",
         "strict": true,
