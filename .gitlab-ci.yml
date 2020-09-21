@@ -1,4 +1,4 @@
-image: node:13.14.0-alpine
+image: node:14.11.0-alpine
 
 install-build-verify:
     before_script:
