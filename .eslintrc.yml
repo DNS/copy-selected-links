@@ -62,6 +62,9 @@ rules:
               - target: "src/options"
                 from: "src/"
                 except: ["options/", "common/"]
+    import/no-unused-modules:
+        - error
+        - unusedExports: true
     max-statements: off
     multiline-comment-style: off
     no-console:
