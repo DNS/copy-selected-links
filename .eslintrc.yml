@@ -15,6 +15,7 @@ parserOptions:
     sourceType: module
 # https://github.com/eslint/eslint/tree/master/docs/rules
 # https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin/docs/rules
+# https://github.com/benmosher/eslint-plugin-import/tree/master/docs/rules
 rules:
     "@typescript-eslint/consistent-type-definitions": off
     "@typescript-eslint/consistent-type-imports": off
