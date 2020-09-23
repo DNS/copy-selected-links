@@ -13,26 +13,8 @@ parserOptions:
     ecmaVersion: 6
     project: tsconfig.json
     sourceType: module
-# https://github.com/eslint/eslint/tree/master/docs/rules
-# https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin/docs/rules
 rules:
-    "@typescript-eslint/consistent-type-definitions": off
-    "@typescript-eslint/consistent-type-imports": off
-    "@typescript-eslint/explicit-function-return-type":
-        - error
-        - allowExpressions: true
-          allowTypedFunctionExpressions: true
-    "@typescript-eslint/no-magic-numbers": off
-    "@typescript-eslint/no-parameter-properties": off
-    "@typescript-eslint/no-type-alias": off
-    "@typescript-eslint/prefer-readonly-parameter-types": off
-    "@typescript-eslint/restrict-template-expressions":
-        - error
-        - allowBoolean: true
-          allowNullish: true
-          allowNumber: true
-    # enforced through tsconfig
-    "@typescript-eslint/typedef": off
+    # https://github.com/eslint/eslint/tree/master/docs/rules
     capitalized-comments: off
     complexity: off
     consistent-return: off
@@ -60,6 +42,25 @@ rules:
         - error
         - never
     sort-imports: off
+
+    # https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin/docs/rules
+    "@typescript-eslint/consistent-type-definitions": off
+    "@typescript-eslint/consistent-type-imports": off
+    "@typescript-eslint/explicit-function-return-type":
+        - error
+        - allowExpressions: true
+          allowTypedFunctionExpressions: true
+    "@typescript-eslint/no-magic-numbers": off
+    "@typescript-eslint/no-parameter-properties": off
+    "@typescript-eslint/no-type-alias": off
+    "@typescript-eslint/prefer-readonly-parameter-types": off
+    "@typescript-eslint/restrict-template-expressions":
+        - error
+        - allowBoolean: true
+          allowNullish: true
+          allowNumber: true
+    # enforced through tsconfig
+    "@typescript-eslint/typedef": off
 
     # https://github.com/benmosher/eslint-plugin-import/tree/master/docs/rules
     import/no-amd: error
