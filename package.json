@@ -2,8 +2,8 @@
     "name": "copy-selected-links",
     "version": "0.0.0",
     "private": true,
-    "license": "MPL-2.0",
     "repository": "https://gitlab.com/Marnes/copy-selected-links.git",
+    "license": "MPL-2.0",
     "author": "Marnes <marnick.leau@gmail.com>",
     "scripts": {
         "build": "run-s clean prettify lint compile bundle review",
@@ -39,7 +39,7 @@
         "parcel-bundler": "1.12.4",
         "parcel-plugin-web-extension": "1.6.1",
         "prettier": "2.1.2",
-        "prettier-plugin-package": "1.0.0",
+        "prettier-plugin-packagejson": "2.2.6",
         "rimraf": "3.0.2",
         "sass": "1.26.11",
         "typescript": "4.0.3",
