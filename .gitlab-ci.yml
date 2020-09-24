@@ -1,8 +1,9 @@
 image: node:14.11.0
 
-install-build-verify:
-    script:
+ci:
+    before_script:
         - yarn install --frozen-lockfile
+    script:
         - yarn build
     after_script:
         - npx git-is-clean
