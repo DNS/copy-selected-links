@@ -10,8 +10,6 @@
         "clean": "rimraf dist extension .cache",
         "compile": "parcel build src/*.* --out-dir extension",
         "compile:watch": "parcel watch src/*.* --out-dir extension --no-autoinstall --no-hmr",
-        "develop": "npm-run-all clean compile -plr compile:watch start",
-        "develop:chrome": "npm-run-all clean compile -plr compile:watch start:chrome",
         "lint": "run-p lint:addon typecheck",
         "lint:addon": "eslint src/**/*.ts",
         "package": "web-ext build",
