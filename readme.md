@@ -7,20 +7,21 @@ Official downloads:
 -   [Firefox add-on](https://addons.mozilla.org/en-US/firefox/addon/copy-selected-links/)
 -   [Chrome extension](https://chrome.google.com/webstore/detail/copy-selected-links/kddpiojgkjnpmgiegglncafdpnigcbij)
 
-## For developers/reviewers
+## For developers & reviewers
 
-### Minimum setup
+### Setup
 
-1. install [yarn](https://yarnpkg.com)
-1. execute `yarn install --frozen-lockfile`
-    1. if necessary, check `.node-version`, or install [nvs](https://github.com/jasongin/nvs) and execute `nvs use`
+1. check `.node-version` and install [nodejs](https://nodejs.org/)  
+   (with [nvs](https://github.com/jasongin/nvs): execute `nvs use`)
+2. install [yarn](https://yarnpkg.com)
+3. execute `yarn install`
 
-### Compiling to webext `.zip` file
+### Compiling webext zip
 
 1. execute `yarn build`
-1. check `dist` dir
+2. check `dist` dir
 
 ### Testing
 
 1. install [Firefox Developer Edition](https://www.mozilla.org/firefox/developer/) or [your Chrome of choice](https://dev.chromium.org/getting-involved/dev-channel)
-1. execute `yarn develop` or `yarn develop:chrome`
+2. execute `yarn develop` or `yarn develop:chrome`
