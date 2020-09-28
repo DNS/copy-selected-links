@@ -2,9 +2,12 @@
     "extends": [
         "config:base",
         ":githubComToken(ywlagYl0zrkjRkXQtf8zFrgULw/45QtOMGJigFHXrhyydHLn5nYPcf6WAxpkeyYy14nezJs7EXrJnvOadtiD22dkLBbr9zIxEzoBJP/3rk3kYHh3nL262d4hYLA7nMd5SCHoeGvBkzjsKMiFk8A4nlKU0uS919DRMlIYUtOhlEsdc24dp+lFlZikbEy1zJrKKWkp2Pb8fT1VRZ29QvAnjsO/FRSACRUS/lCH3okvnUXAKDWjtqdqh9MHqPMWtdvjJD7X3+NBdWp8pM/6/Y9KYZ/j4/uYXXo6feKYV1oKhJCe2AE4UnJ9KEm75IOIe3WzvplGmVa5k0z+sDzkDvv+cQ==)",
+        ":automergeBranch",
+        ":automergePatch",
+        ":automergeTypes",
+        ":maintainLockFilesWeekly",
         ":pinVersions"
     ],
-    "ignorePaths": ["*/**/*.html"],
     "nvm": {
         "fileMatch": ["^\\.node-version$"]
     }
