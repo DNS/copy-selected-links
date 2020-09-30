@@ -21,7 +21,7 @@
     },
     "dependencies": {
         "fast-equals": "2.0.0",
-        "type-fest": "0.16.0",
+        "type-fest": "0.17.0",
         "webextension-polyfill-ts": "0.20.0"
     },
     "devDependencies": {
