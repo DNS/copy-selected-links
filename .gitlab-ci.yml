@@ -1,5 +1,9 @@
 image: node:14.12.0
 
+cache:
+    paths:
+        - node_modules/
+
 ci:
     before_script:
         - yarn install --frozen-lockfile
