@@ -14,7 +14,7 @@
         "eslint": "eslint src/**/*.ts",
         "lint": "run-p eslint tsc",
         "package": "web-ext build",
-        "prettier": "prettier --write --ignore-unknown --ignore-path .gitignore .",
+        "prettier": "prettier --write --list-different --ignore-unknown --ignore-path .gitignore .",
         "start": "web-ext run",
         "start:chrome": "web-ext run -t chromium",
         "tsc": "tsc --noEmit"
