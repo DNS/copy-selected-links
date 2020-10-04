@@ -5,9 +5,7 @@ cache:
         - node_modules/
 
 ci:
-    before_script:
-        - yarn install --frozen-lockfile
     script:
+        - yarn install --frozen-lockfile
         - yarn build
-    after_script:
         - npx git-is-clean
