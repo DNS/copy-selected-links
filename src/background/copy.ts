@@ -41,7 +41,7 @@ export async function arrangeCopy(tab: Tabs.Tab, frameId?: number, contextualUrl
         // we cant guarantee the result of the content script because of bundling
         await browser.tabs.executeScript(tab.id, {
             allFrames: true,
-            file: browser.runtime.getURL("content.js"),
+            file: "content.js",
             runAt: "document_end"
         });
     } catch (notJsonable: unknown) {
