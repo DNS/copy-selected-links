@@ -3,7 +3,9 @@ import {browser} from "webextension-polyfill-ts";
 import {bool, sanitize} from "./validation";
 
 const spec = {
+    deduplicateHrefs: bool(false),
     finalNewline: bool(true),
+    includeCommandTarget: bool(false),
     popupFail: bool(true),
     popupSuccess: bool(false)
 };

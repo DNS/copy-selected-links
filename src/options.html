@@ -23,6 +23,22 @@
         </section>
 
         <fieldset>
+            <legend>Link gathering</legend>
+
+            <section>
+                <input type="checkbox" id="includeCommandTarget" />
+                <label for="includeCommandTarget">Consider the context menu target a selected link</label>
+                <br />
+                <small>If the context menu is invoked on a link outside the selection, it can still be considered for copying.</small>
+            </section>
+
+            <section>
+                <input type="checkbox" id="deduplicateHrefs" />
+                <label for="deduplicateHrefs">Omit duplicate links</label>
+            </section>
+        </fieldset>
+
+        <fieldset>
             <legend>Notifications</legend>
 
             <section>
