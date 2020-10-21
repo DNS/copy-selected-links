@@ -20,6 +20,7 @@
         "tsc": "tsc --noEmit"
     },
     "dependencies": {
+        "basscss": "8.1.0",
         "fast-equals": "2.0.0",
         "type-fest": "0.18.0",
         "webextension-polyfill-ts": "0.20.0"
