@@ -6,7 +6,7 @@
     "license": "MPL-2.0",
     "author": "Marnes <marnick.leau@gmail.com>",
     "scripts": {
-        "build": "run-s clean prettier lint compile package bundle",
+        "build": "run-s clean prettier lint compile qa package bundle",
         "bundle": "bestzip dist/sources.zip .browserslistrc .editorconfig .eslintrc.yml .gitignore .node-version .prettierrc.yml license.md package.json readme.md src tsconfig.json web-ext-config.js yarn.lock",
         "clean": "rimraf dist extension .cache",
         "compile": "parcel build src/*.* --out-dir extension",
@@ -15,6 +15,7 @@
         "lint": "run-p eslint tsc",
         "package": "web-ext build",
         "prettier": "prettier --write --list-different --ignore-unknown --ignore-path .gitignore .",
+        "qa": "web-ext lint",
         "start": "web-ext run",
         "start:chrome": "web-ext run -t chromium",
         "tsc": "tsc --noEmit"
