@@ -1,11 +1,11 @@
 image: node:14.15.0
 
 cache:
-    paths:
-        - node_modules/
+  paths:
+    - node_modules/
 
 ci:
-    script:
-        - yarn install --frozen-lockfile
-        - yarn build
-        - npx git-is-clean
+  script:
+    - yarn install --frozen-lockfile
+    - yarn build
+    - npx git-is-clean
