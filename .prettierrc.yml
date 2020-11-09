@@ -1,6 +1,10 @@
 arrowParens: avoid
 bracketSpacing: false
 htmlWhitespaceSensitivity: ignore
+overrides:
+  - files: "*.{md,yml}"
+    options:
+      tabWidth: 2
 printWidth: 160
 proseWrap: never
 tabWidth: 4
