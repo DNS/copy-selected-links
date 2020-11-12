@@ -23,7 +23,7 @@
     "dependencies": {
         "basscss": "8.1.0",
         "fast-equals": "2.0.0",
-        "type-fest": "0.18.0",
+        "type-fest": "0.18.1",
         "webextension-polyfill-ts": "0.21.0"
     },
     "devDependencies": {
