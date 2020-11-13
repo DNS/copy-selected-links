@@ -25,7 +25,7 @@
         "basscss-sass": "4.0.0",
         "fast-equals": "2.0.0",
         "type-fest": "0.18.1",
-        "webextension-polyfill-ts": "0.21.0"
+        "webextension-polyfill-ts": "0.22.0"
     },
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "4.7.0",
