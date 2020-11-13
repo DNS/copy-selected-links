@@ -1623,6 +1623,13 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
+basscss-addons@^1.0.0-beta2:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/basscss-addons/-/basscss-addons-1.0.0.tgz#08611481c07a185544c84311197b6c18b648cee8"
+  integrity sha1-CGEUgcB6GFVEyEMRGXtsGLZIzug=
+  dependencies:
+    colors.css "^3.0.0"
+
 basscss-align@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/basscss-align/-/basscss-align-1.0.2.tgz#294aa689d6f99da86e4af4c5c2892870855c1c37"
@@ -1668,6 +1675,14 @@ basscss-position@^2.0.3:
   resolved "https://registry.yarnpkg.com/basscss-position/-/basscss-position-2.0.3.tgz#467180a1f8f386e9072ed8d08294d2a6e0ba4305"
   integrity sha1-RnGAofjzhukHLtjQgpTSpuC6QwU=
 
+basscss-sass@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/basscss-sass/-/basscss-sass-4.0.0.tgz#c2d629b62566eb2048f72231cdbcc9efe0c26308"
+  integrity sha1-wtYptiVm6yBI9yIxzbzJ7+DCYwg=
+  dependencies:
+    basscss "^8.0.0"
+    basscss-addons "^1.0.0-beta2"
+
 basscss-type-scale@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/basscss-type-scale/-/basscss-type-scale-1.0.6.tgz#f2a4d77252f7119414aa7baf9df290c6921c0542"
@@ -1678,7 +1693,7 @@ basscss-typography@^3.0.4:
   resolved "https://registry.yarnpkg.com/basscss-typography/-/basscss-typography-3.0.4.tgz#ec946a2bad8dd1af97be9ea108ad4bb7be932464"
   integrity sha512-PMCxUfYPpAj8gQV8qI09lfNp7eWNrKtQFkCN2fZjLyReSY/wnw8QP8irpvbJ67vSEhlkA6ZP8j7vmTDoxkyu8g==
 
-basscss@8.1.0:
+basscss@^8.0.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/basscss/-/basscss-8.1.0.tgz#ede4ed0a8a8433fa18edda90a90d2311d1223695"
   integrity sha512-SJ48HWDKqX1OnzeZgqwweFPVM98h0lNtvC+megWPCEJ1R6LIbx6dnj3rpCJueElVn9giWipZhoozMEBRAIlnUw==
@@ -2277,6 +2292,11 @@ colorette@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/colorette/-/colorette-1.2.1.tgz#4d0b921325c14faf92633086a536db6e89564b1b"
   integrity sha512-puCDz0CzydiSYOrnXpz/PKd69zRrribezjtE9yd4zvytoRc8+RY/KJPvtPFKZS3E3wP6neGyMe0vOTlHO5L3Pw==
+
+colors.css@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/colors.css/-/colors.css-3.0.0.tgz#511cf42fb8a7199a8cbef49c88a4ea4f1d8f9efc"
+  integrity sha1-URz0L7inGZqMvvSciKTqTx2Pnvw=
 
 colors@0.5.x:
   version "0.5.1"
