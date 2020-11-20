@@ -3,6 +3,9 @@ import {arrangeCopy} from "./copy";
 
 async function copyLinks(): Promise<void> {
     const [tab] = await browser.tabs.query({active: true, currentWindow: true});
+    if (tab == null) {
+        throw new Error("there's no active tab?");
+    }
     arrangeCopy(tab).catch(console.error);
 }
 

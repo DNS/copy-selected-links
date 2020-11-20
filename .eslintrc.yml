@@ -54,6 +54,7 @@ rules:
     - error
     - ignoreArrowShorthand: true
   "@typescript-eslint/no-magic-numbers": off
+  "@typescript-eslint/no-non-null-assertion": off
   "@typescript-eslint/no-parameter-properties": off
   "@typescript-eslint/no-type-alias": off
   "@typescript-eslint/prefer-readonly-parameter-types": off
