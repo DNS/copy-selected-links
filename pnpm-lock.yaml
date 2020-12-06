@@ -10,7 +10,7 @@ devDependencies:
   bestzip: 2.1.7
   cssnano: 4.1.10
   eslint: 7.15.0
-  eslint-config-prettier: 6.15.0_eslint@7.15.0
+  eslint-config-prettier: 7.0.0_eslint@7.15.0
   eslint-plugin-import: 2.22.1_eslint@7.15.0
   eslint-plugin-prettier: 3.2.0_eslint@7.15.0+prettier@2.2.1
   npm-run-all: 4.1.5
@@ -3652,16 +3652,15 @@ packages:
       source-map: 0.6.1
     resolution:
       integrity: sha512-6hTjO1NAWkHnDk3OqQ4YrCuwwmGHL9S3nPlzBOUG/R44rda3wLNrfvQ5fkSGjyhHFKM7ALPKcKGrwvCLe0lC7Q==
-  /eslint-config-prettier/6.15.0_eslint@7.15.0:
+  /eslint-config-prettier/7.0.0_eslint@7.15.0:
     dependencies:
       eslint: 7.15.0
-      get-stdin: 6.0.0
     dev: true
     hasBin: true
     peerDependencies:
-      eslint: '>=3.14.1'
+      eslint: '>=7.0.0'
     resolution:
-      integrity: sha512-a1+kOYLR8wMGustcgAjdydMsQ2A/2ipRPwRKUmfYaSxc9ZPcrku080Ctl6zrZzZNs/U82MjSv+qKREkoq3bJaw==
+      integrity: sha512-8Y8lGLVPPZdaNA7JXqnvETVC7IiVRgAP6afQu9gOQRn90YY3otMNh+x7Vr2vMePQntF+5erdSUBqSzCmU/AxaQ==
   /eslint-import-resolver-node/0.3.4:
     dependencies:
       debug: 2.6.9
@@ -4505,12 +4504,6 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-3Xzn3hh8Bsi/NTeWrHHgmfCYDrw=
-  /get-stdin/6.0.0:
-    dev: true
-    engines:
-      node: '>=4'
-    resolution:
-      integrity: sha512-jp4tHawyV7+fkkSKyvjuLZswblUtz+SQKzSWnBbii16BuZksJlU1wuBYXY75r+duh/llF1ur6oNwi+2ZzjKZ7g==
   /get-stream/2.3.1:
     dependencies:
       object-assign: 4.1.1
@@ -9825,7 +9818,7 @@ specifiers:
   bestzip: 2.1.7
   cssnano: 4.1.10
   eslint: 7.15.0
-  eslint-config-prettier: 6.15.0
+  eslint-config-prettier: 7.0.0
   eslint-plugin-import: 2.22.1
   eslint-plugin-prettier: 3.2.0
   fast-equals: 2.0.0
