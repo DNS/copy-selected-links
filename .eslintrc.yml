@@ -63,6 +63,7 @@ rules:
     - allowBoolean: true
       allowNullish: true
       allowNumber: true
+  "@typescript-eslint/sort-type-union-intersection-members": off
   # enforced through tsconfig
   "@typescript-eslint/typedef": off
 
