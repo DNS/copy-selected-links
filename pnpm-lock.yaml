@@ -17,7 +17,7 @@ devDependencies:
   parcel-bundler: 1.12.4
   parcel-plugin-web-extension: 1.6.1
   prettier: 2.2.1
-  prettier-plugin-packagejson: 2.2.8_prettier@2.2.1
+  prettier-plugin-packagejson: 2.2.9_prettier@2.2.1
   rimraf: 3.0.2
   sass: 1.32.0
   typescript: 4.1.3
@@ -6911,15 +6911,15 @@ packages:
       node: '>=6.0.0'
     resolution:
       integrity: sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==
-  /prettier-plugin-packagejson/2.2.8_prettier@2.2.1:
+  /prettier-plugin-packagejson/2.2.9_prettier@2.2.1:
     dependencies:
       prettier: 2.2.1
-      sort-package-json: 1.48.0
+      sort-package-json: 1.48.1
     dev: true
     peerDependencies:
       prettier: '>= 1.16.0'
     resolution:
-      integrity: sha512-hc9sg5wgMyefVglP1Sabv3M8EFMH7IPN3WHB5gZRebsbxxHGz0ApW3siMwj7oKqqQPf+qDHAec6alFixuZtGXg==
+      integrity: sha512-znjjFUNZSzwfa4s9aBfgdy/5EqwvG+BFAcKQ95RpMhVkFRHL+wsuPk0nsuShLhsMWRH01XPzixWKEd9Oz6TLyg==
   /prettier/2.2.1:
     dev: true
     engines:
@@ -7736,7 +7736,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-855pvK+VkU7PaKYPc+Jjnmt4EzejQHyhhF33q31qG8x7maDzkeFhAAThdCYay11CISO+qAMwjOBP+fPZe0IPyg==
-  /sort-package-json/1.48.0:
+  /sort-package-json/1.48.1:
     dependencies:
       detect-indent: 6.0.0
       detect-newline: 3.1.0
@@ -7747,7 +7747,7 @@ packages:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-VAC5THvyGFQFeVLbKcGNPzny5u/heOwks9tzTTLvL8nX9v7zZjpx36/itcJtqp8gI+r57Rw1RVYT6Ecy+3N6+Q==
+      integrity: sha512-YvDm1iBzhphfXtctTS0XIBlIW/2N1DZNHx3YMcZnptpZhchqH4zazUOuEWmjfNXndwamITMt9hFPliqwx1SHvQ==
   /source-map-resolve/0.5.3:
     dependencies:
       atob: 2.1.2
@@ -9117,7 +9117,7 @@ specifiers:
   parcel-bundler: 1.12.4
   parcel-plugin-web-extension: 1.6.1
   prettier: 2.2.1
-  prettier-plugin-packagejson: 2.2.8
+  prettier-plugin-packagejson: 2.2.9
   rimraf: 3.0.2
   sass: 1.32.0
   type-fest: 0.20.2
