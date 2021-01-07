@@ -19,7 +19,7 @@ devDependencies:
   prettier: 2.2.1
   prettier-plugin-packagejson: 2.2.9_prettier@2.2.1
   rimraf: 3.0.2
-  sass: 1.32.0
+  sass: 1.32.2
   typescript: 4.1.3
   web-ext: 5.4.1
 lockfileVersion: 5.2
@@ -4092,7 +4092,7 @@ packages:
     resolution:
       integrity: sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw==
   /fsevents/2.1.3:
-    deprecated: Please update to v 2.2.x
+    deprecated: '"Please update to latest v2.3 or v2.2"'
     dev: true
     engines:
       node: ^8.16.0 || ^10.6.0 || >=11.0.0
@@ -7464,7 +7464,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
-  /sass/1.32.0:
+  /sass/1.32.2:
     dependencies:
       chokidar: 3.4.3
     dev: true
@@ -7472,7 +7472,7 @@ packages:
       node: '>=8.9.0'
     hasBin: true
     resolution:
-      integrity: sha512-fhyqEbMIycQA4blrz/C0pYhv2o4x2y6FYYAH0CshBw3DXh5D5wyERgxw0ptdau1orc/GhNrhF7DFN2etyOCEng==
+      integrity: sha512-u1pUuzqwz3SAgvHSWp1k0mRhX82b2DdlVnP6UIetQPZtYbuJUDaPQhZE12jyjB7vYeOScfz9WPsZJB6Rpk7heA==
   /sax/1.2.4:
     dev: true
     resolution:
@@ -9119,7 +9119,7 @@ specifiers:
   prettier: 2.2.1
   prettier-plugin-packagejson: 2.2.9
   rimraf: 3.0.2
-  sass: 1.32.0
+  sass: 1.32.2
   type-fest: 0.20.2
   typescript: 4.1.3
   web-ext: 5.4.1
