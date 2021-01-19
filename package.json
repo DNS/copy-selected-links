@@ -29,8 +29,8 @@
         "webextension-polyfill-ts": "0.22.0"
     },
     "devDependencies": {
-        "@typescript-eslint/eslint-plugin": "4.13.0",
-        "@typescript-eslint/parser": "4.13.0",
+        "@typescript-eslint/eslint-plugin": "4.14.0",
+        "@typescript-eslint/parser": "4.14.0",
         "bestzip": "2.1.7",
         "cssnano": "4.1.10",
         "eslint": "7.18.0",
