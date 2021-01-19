@@ -10,9 +10,9 @@ devDependencies:
   bestzip: 2.1.7
   cssnano: 4.1.10
   eslint: 7.18.0
-  eslint-config-prettier: 7.1.0_eslint@7.18.0
+  eslint-config-prettier: 7.2.0_eslint@7.18.0
   eslint-plugin-import: 2.22.1_eslint@7.18.0
-  eslint-plugin-prettier: 3.3.1_efe762de77ffca883b5e24b22265768d
+  eslint-plugin-prettier: 3.3.1_23a112576b8ab4365b1ec4ba623342d0
   npm-run-all: 4.1.5
   parcel-bundler: 1.12.4
   parcel-plugin-web-extension: 1.6.1
@@ -3452,7 +3452,7 @@ packages:
       source-map: 0.6.1
     resolution:
       integrity: sha512-6hTjO1NAWkHnDk3OqQ4YrCuwwmGHL9S3nPlzBOUG/R44rda3wLNrfvQ5fkSGjyhHFKM7ALPKcKGrwvCLe0lC7Q==
-  /eslint-config-prettier/7.1.0_eslint@7.18.0:
+  /eslint-config-prettier/7.2.0_eslint@7.18.0:
     dependencies:
       eslint: 7.18.0
     dev: true
@@ -3460,7 +3460,7 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
     resolution:
-      integrity: sha512-9sm5/PxaFG7qNJvJzTROMM1Bk1ozXVTKI0buKOyb0Bsr1hrwi0H/TzxF/COtf1uxikIK8SwhX7K6zg78jAzbeA==
+      integrity: sha512-rV4Qu0C3nfJKPOAhFujFxB7RMP+URFyQqqOZW9DMRD7ZDTFyjaIlETU3xzHELt++4ugC0+Jm084HQYkkJe+Ivg==
   /eslint-import-resolver-node/0.3.4:
     dependencies:
       debug: 2.6.9
@@ -3508,10 +3508,10 @@ packages:
       eslint: ^5 || ^6 || ^7
     resolution:
       integrity: sha512-WF1+eZo2Sh+bQNjZuVNwT0dA61zuJORsLh+1Sww7+O6GOPw+WPWIIRfTWNqrmaXaDMhM4SXAqYPcNlhRMiH13g==
-  /eslint-plugin-prettier/3.3.1_efe762de77ffca883b5e24b22265768d:
+  /eslint-plugin-prettier/3.3.1_23a112576b8ab4365b1ec4ba623342d0:
     dependencies:
       eslint: 7.18.0
-      eslint-config-prettier: 7.1.0_eslint@7.18.0
+      eslint-config-prettier: 7.2.0_eslint@7.18.0
       prettier: 2.2.1
       prettier-linter-helpers: 1.0.0
     dev: true
@@ -9136,7 +9136,7 @@ specifiers:
   bestzip: 2.1.7
   cssnano: 4.1.10
   eslint: 7.18.0
-  eslint-config-prettier: 7.1.0
+  eslint-config-prettier: 7.2.0
   eslint-plugin-import: 2.22.1
   eslint-plugin-prettier: 3.3.1
   fast-equals: 2.0.0
