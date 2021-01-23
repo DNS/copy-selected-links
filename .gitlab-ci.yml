@@ -1,4 +1,4 @@
-image: node:14.15.4
+image: node:14.15.4-alpine
 
 cache:
   paths:
@@ -6,12 +6,15 @@ cache:
 
 ci:
   variables:
+    # can't cache outside project dir, so override the default to cache the store
     npm_config_store_dir: .pnpm-store
-  before_script:
-    - npm install -g pnpm
   script:
+    # necessary with alpine's minimal image
+    - apk add --no-cache git make python util-linux
+    # pnpm does not come bundled
+    - npm install -g pnpm
     - pnpm install --frozen-lockfile
     - pnpm build
     - pnpx git-is-clean
-  after_script:
+    # keep ci cache lean
     - pnpm store prune
