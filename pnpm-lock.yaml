@@ -3,7 +3,7 @@ dependencies:
   fast-equals: 2.0.0
   type-fest: 0.20.2
   webextension-polyfill: 0.7.0
-  webextension-polyfill-ts: 0.22.0
+  webextension-polyfill-ts: 0.24.0
 devDependencies:
   '@typescript-eslint/eslint-plugin': 4.14.1_c92627de29ddf8f42a4f4f9eaac8feea
   '@typescript-eslint/parser': 4.14.1_eslint@7.19.0+typescript@4.1.3
@@ -8804,12 +8804,12 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-f+NHiYwbTS0X6eSLkBDWoCYkkIJweVazGf4MD8S+kRX/5z40WsYsnRdVWG+p34Z6rCyNvlHHrnO2S1W8WWg7Tw==
-  /webextension-polyfill-ts/0.22.0:
+  /webextension-polyfill-ts/0.24.0:
     dependencies:
       webextension-polyfill: 0.7.0
     dev: false
     resolution:
-      integrity: sha512-3P33ClMwZ/qiAT7UH1ROrkRC1KM78umlnPpRhdC/292UyoTTW9NcjJEqDsv83HbibcTB6qCtpVeuB2q2/oniHQ==
+      integrity: sha512-JUHpVzu8WeDVFsVeyzi1Hsd7N2ylKXMlQPAfpYGktzflzwFXlvqiA48UnaH5rmv/CTQEHI0T3qfK3wVBW6nbUA==
   /webextension-polyfill/0.7.0:
     dev: false
     resolution:
@@ -9153,4 +9153,4 @@ specifiers:
   typescript: 4.1.3
   web-ext: 5.5.0
   webextension-polyfill: 0.7.0
-  webextension-polyfill-ts: 0.22.0
+  webextension-polyfill-ts: 0.24.0
