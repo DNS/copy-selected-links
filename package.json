@@ -24,7 +24,7 @@
     "dependencies": {
         "basscss-sass": "4.0.0",
         "fast-equals": "2.0.0",
-        "type-fest": "0.21.0",
+        "type-fest": "0.21.1",
         "webextension-polyfill": "0.7.0",
         "webextension-polyfill-ts": "0.25.0"
     },
