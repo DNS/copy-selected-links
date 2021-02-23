@@ -1,7 +1,7 @@
 dependencies:
   basscss-sass: 4.0.0
   fast-equals: 2.0.0
-  type-fest: 0.21.1
+  type-fest: 0.21.2
   webextension-polyfill: 0.7.0
   webextension-polyfill-ts: 0.25.0
 devDependencies:
@@ -8459,12 +8459,12 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-0fr/mIH1dlO+x7TlcMy+bIDqKPsw/70tVyeHW787goQjhmqaZe10uwLujubK9q9Lg6Fiho1KUKDYz0Z7k7g5/g==
-  /type-fest/0.21.1:
+  /type-fest/0.21.2:
     dev: false
     engines:
       node: '>=10'
     resolution:
-      integrity: sha512-IRDHjLrSaDb8NdGkqMXWjB6L/4ZhC9y2OtmheHmdkrhufHi8uRvkfJHzW7XKog8RAVZsgZ8JsZqDFg97aC99Xw==
+      integrity: sha512-pvQl0WNazvfQ0rq2XDdhpWv49sohh2t+buFbglaJ9N9+Xj4BhFRpuo+uJxemeARteRxRloJ1m+8gBR6Z2Nfktg==
   /type-fest/0.8.1:
     dev: true
     engines:
@@ -9158,7 +9158,7 @@ specifiers:
   prettier-plugin-packagejson: 2.2.10
   rimraf: 3.0.2
   sass: 1.32.8
-  type-fest: 0.21.1
+  type-fest: 0.21.2
   typescript: 4.1.5
   web-ext: 5.5.0
   webextension-polyfill: 0.7.0
