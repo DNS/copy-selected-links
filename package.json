@@ -12,7 +12,6 @@
         "compile": "parcel build src/*.* --out-dir extension",
         "compile:watch": "parcel watch src/*.* --out-dir extension --no-autoinstall --no-hmr",
         "eslint": "eslint src/**/*.ts",
-        "preinstall": "npx only-allow pnpm",
         "lint": "run-p eslint tsc",
         "package": "web-ext build",
         "prettier": "prettier --write --list-different --ignore-unknown --ignore-path .gitignore . !pnpm-lock.yaml",
