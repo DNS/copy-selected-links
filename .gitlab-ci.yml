@@ -4,10 +4,14 @@ cache:
   paths:
     - .pnpm-store/
 
+variables:
+  # can't cache outside project dir, so override the default to cache the store
+  npm_config_store_dir: .pnpm-store
+  npm_config_side_effects_cache: "true"
+
 ci:
-  variables:
-    # can't cache outside project dir, so override the default to cache the store
-    npm_config_store_dir: .pnpm-store
+  except:
+    - schedules
   script:
     # necessary with alpine's minimal image
     - apk add --no-cache git make python util-linux
@@ -16,5 +20,12 @@ ci:
     - pnpm install --frozen-lockfile
     - pnpm build
     - pnpx git-is-clean
-    # keep ci cache lean
+
+prune:
+  only:
+    - schedules
+  script:
+    - npm install -g pnpm
+    # don't prune current dependencies
+    - pnpm install --frozen-lockfile
     - pnpm store prune
