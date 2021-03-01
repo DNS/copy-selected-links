@@ -25,7 +25,4 @@ prune:
   only:
     - schedules
   script:
-    - npm install -g pnpm
-    # don't prune current dependencies
-    - pnpm install --frozen-lockfile
-    - pnpm store prune
+    - rm -rf .pnpm-store
