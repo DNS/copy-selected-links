@@ -8,7 +8,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 4.21.0_35a5aea22e0e38f5e47be9122770cb30
   '@typescript-eslint/parser': 4.21.0_eslint@7.23.0+typescript@4.2.3
   bestzip: 2.2.0
-  cssnano: 4.1.10
+  cssnano: 4.1.11
   eslint: 7.23.0
   eslint-config-prettier: 8.1.0_eslint@7.23.0
   eslint-plugin-import: 2.22.1_eslint@7.23.0
@@ -2834,6 +2834,43 @@ packages:
       node: '>=6.9.0'
     resolution:
       integrity: sha512-x0YHHx2h6p0fCl1zY9L9roD7rnlltugGu7zXSKQx6k2rYw0Hi3IqxcoAGF7u9Q5w1nt7vK0ulxV8Lo+EvllGsA==
+  /cssnano-preset-default/4.0.8:
+    dependencies:
+      css-declaration-sorter: 4.0.1
+      cssnano-util-raw-cache: 4.0.1
+      postcss: 7.0.35
+      postcss-calc: 7.0.5
+      postcss-colormin: 4.0.3
+      postcss-convert-values: 4.0.1
+      postcss-discard-comments: 4.0.2
+      postcss-discard-duplicates: 4.0.2
+      postcss-discard-empty: 4.0.1
+      postcss-discard-overridden: 4.0.1
+      postcss-merge-longhand: 4.0.11
+      postcss-merge-rules: 4.0.3
+      postcss-minify-font-values: 4.0.2
+      postcss-minify-gradients: 4.0.2
+      postcss-minify-params: 4.0.2
+      postcss-minify-selectors: 4.0.2
+      postcss-normalize-charset: 4.0.1
+      postcss-normalize-display-values: 4.0.2
+      postcss-normalize-positions: 4.0.2
+      postcss-normalize-repeat-style: 4.0.2
+      postcss-normalize-string: 4.0.2
+      postcss-normalize-timing-functions: 4.0.2
+      postcss-normalize-unicode: 4.0.1
+      postcss-normalize-url: 4.0.1
+      postcss-normalize-whitespace: 4.0.2
+      postcss-ordered-values: 4.1.2
+      postcss-reduce-initial: 4.0.3
+      postcss-reduce-transforms: 4.0.2
+      postcss-svgo: 4.0.3
+      postcss-unique-selectors: 4.0.1
+    dev: true
+    engines:
+      node: '>=6.9.0'
+    resolution:
+      integrity: sha512-LdAyHuq+VRyeVREFmuxUZR1TXjQm8QQU/ktoo/x7bz+SdOge1YKc5eMN6pRW7YWBmyq59CqYba1dJ5cUukEjLQ==
   /cssnano-util-get-arguments/4.0.0:
     dev: true
     engines:
@@ -2871,6 +2908,17 @@ packages:
       node: '>=6.9.0'
     resolution:
       integrity: sha512-5wny+F6H4/8RgNlaqab4ktc3e0/blKutmq8yNlBFXA//nSFFAqAngjNVRzUvCgYROULmZZUoosL/KSoZo5aUaQ==
+  /cssnano/4.1.11:
+    dependencies:
+      cosmiconfig: 5.2.1
+      cssnano-preset-default: 4.0.8
+      is-resolvable: 1.1.0
+      postcss: 7.0.35
+    dev: true
+    engines:
+      node: '>=6.9.0'
+    resolution:
+      integrity: sha512-6gZm2htn7xIPJOHY824ERgj8cNPgPxyCSnkXc4v7YvNW+TdVfzgngHcEhy/8D11kUWRUMbke+tC+AUcUsnMz2g==
   /csso/4.2.0:
     dependencies:
       css-tree: 1.1.3
@@ -6731,6 +6779,16 @@ packages:
       node: '>=6.9.0'
     resolution:
       integrity: sha512-C6wyjo3VwFm0QgBy+Fu7gCYOkCmgmClghO+pjcxvrcBKtiKt0uCF+hvbMO1fyv5BMImRK90SMb+dwUnfbGd+jw==
+  /postcss-svgo/4.0.3:
+    dependencies:
+      postcss: 7.0.35
+      postcss-value-parser: 3.3.1
+      svgo: 1.3.2
+    dev: true
+    engines:
+      node: '>=6.9.0'
+    resolution:
+      integrity: sha512-NoRbrcMWTtUghzuKSoIm6XV+sJdvZ7GZSc3wdBN0W19FTtp2ko8NqLsgoh/m9CzNhU3KLPvQmjIwtaNFkaFTvw==
   /postcss-unique-selectors/4.0.1:
     dependencies:
       alphanum-sort: 1.0.2
@@ -8911,7 +8969,7 @@ specifiers:
   '@typescript-eslint/parser': 4.21.0
   basscss-sass: 4.0.0
   bestzip: 2.2.0
-  cssnano: 4.1.10
+  cssnano: 4.1.11
   eslint: 7.23.0
   eslint-config-prettier: 8.1.0
   eslint-plugin-import: 2.22.1
