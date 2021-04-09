@@ -1,6 +1,6 @@
 dependencies:
   basscss-sass: 4.0.0
-  fast-equals: 2.0.0
+  fast-equals: 2.0.1
   type-fest: 1.0.1
   webextension-polyfill: 0.7.0
   webextension-polyfill-ts: 0.25.0
@@ -3826,10 +3826,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-xJuoT5+L99XlZ8twedaRf6Ax2TgQVxvgZOYoPKqZufmJib0tL2tegPBOZb1pVNgIhlqDlA0eO0c3wBvQcmzx4w==
-  /fast-equals/2.0.0:
+  /fast-equals/2.0.1:
     dev: false
     resolution:
-      integrity: sha512-u6RBd8cSiLLxAiC04wVsLV6GBFDOXcTCgWkd3wEoFXgidPSoAJENqC9m7Jb2vewSvjBIfXV6icKeh3GTKfIaXA==
+      integrity: sha512-jIHAbyu5Txdi299DitHXr4wuvw7ajz8S4xVgShJmQOUD6TovsKzvMoHoq9G8+dO6xeKWrwH3DURT+ZDKnwjSsA==
   /fast-glob/2.2.7:
     dependencies:
       '@mrmlnc/readdir-enhanced': 2.2.1
@@ -8974,7 +8974,7 @@ specifiers:
   eslint-config-prettier: 8.1.0
   eslint-plugin-import: 2.22.1
   eslint-plugin-prettier: 3.3.1
-  fast-equals: 2.0.0
+  fast-equals: 2.0.1
   npm-run-all: 4.1.5
   parcel-bundler: 1.12.5
   parcel-plugin-web-extension: 1.6.1
