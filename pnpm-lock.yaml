@@ -12,7 +12,7 @@ devDependencies:
   eslint: 7.24.0
   eslint-config-prettier: 8.1.0_eslint@7.24.0
   eslint-plugin-import: 2.22.1_eslint@7.24.0
-  eslint-plugin-prettier: 3.3.1_b9c73a8f62f15c88eece82c557486b0e
+  eslint-plugin-prettier: 3.4.0_b9c73a8f62f15c88eece82c557486b0e
   npm-run-all: 4.1.5
   parcel-bundler: 1.12.5
   parcel-plugin-web-extension: 1.6.1
@@ -3459,7 +3459,7 @@ packages:
       eslint: ^5 || ^6 || ^7
     resolution:
       integrity: sha512-WF1+eZo2Sh+bQNjZuVNwT0dA61zuJORsLh+1Sww7+O6GOPw+WPWIIRfTWNqrmaXaDMhM4SXAqYPcNlhRMiH13g==
-  /eslint-plugin-prettier/3.3.1_b9c73a8f62f15c88eece82c557486b0e:
+  /eslint-plugin-prettier/3.4.0_b9c73a8f62f15c88eece82c557486b0e:
     dependencies:
       eslint: 7.24.0
       eslint-config-prettier: 8.1.0_eslint@7.24.0
@@ -3476,7 +3476,7 @@ packages:
       eslint-config-prettier:
         optional: true
     resolution:
-      integrity: sha512-Rq3jkcFY8RYeQLgk2cCwuc0P7SEFwDravPhsJZOQ5N4YI4DSg50NyqJ/9gdZHzQlHf8MvafSesbNJCcP/FF6pQ==
+      integrity: sha512-UDK6rJT6INSfcOo545jiaOwB701uAIt2/dR7WnFQoGCVl1/EMqdANBmwUaqqQ45aXprsTGzSa39LI1PyuRBxxw==
   /eslint-scope/5.1.1:
     dependencies:
       esrecurse: 4.3.0
@@ -8907,7 +8907,7 @@ specifiers:
   eslint: 7.24.0
   eslint-config-prettier: 8.1.0
   eslint-plugin-import: 2.22.1
-  eslint-plugin-prettier: 3.3.1
+  eslint-plugin-prettier: 3.4.0
   fast-equals: 2.0.1
   npm-run-all: 4.1.5
   parcel-bundler: 1.12.5
