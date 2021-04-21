@@ -2,7 +2,7 @@ dependencies:
   basscss-sass: 4.0.0
   fast-equals: 2.0.1
   type-fest: 1.0.2
-  webextension-polyfill: 0.7.0
+  webextension-polyfill: 0.8.0
   webextension-polyfill-ts: 0.25.0
 devDependencies:
   '@typescript-eslint/eslint-plugin': 4.22.0_9acede93a3623dd7abe65c65a7010e73
@@ -8567,6 +8567,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-su48BkMLxqzTTvPSE1eWxKToPS2Tv5DLGxKexLEVpwFd6Po6N8hhSLIvG6acPAg7qERoEaDL+Y5HQJeJeml5Aw==
+  /webextension-polyfill/0.8.0:
+    dev: false
+    resolution:
+      integrity: sha512-a19+DzlT6Kp9/UI+mF9XQopeZ+n2ussjhxHJ4/pmIGge9ijCDz7Gn93mNnjpZAk95T4Tae8iHZ6sSf869txqiQ==
   /webidl-conversions/4.0.2:
     dev: true
     resolution:
@@ -8804,5 +8808,5 @@ specifiers:
   type-fest: 1.0.2
   typescript: 4.2.4
   web-ext: 6.1.0
-  webextension-polyfill: 0.7.0
+  webextension-polyfill: 0.8.0
   webextension-polyfill-ts: 0.25.0
