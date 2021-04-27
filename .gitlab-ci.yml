@@ -14,7 +14,7 @@ ci:
     - schedules
   script:
     # necessary with alpine's minimal image
-    - apk add --no-cache git make python util-linux
+    - apk add --no-cache git make python3 util-linux
     # pnpm does not come bundled
     - npm install -g pnpm
     - pnpm install --frozen-lockfile
