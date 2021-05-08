@@ -5,14 +5,14 @@ dependencies:
   webextension-polyfill: 0.8.0
   webextension-polyfill-ts: 0.25.0
 devDependencies:
-  '@typescript-eslint/eslint-plugin': 4.22.1_f2cf9a191be19a59b06aad4f4e4a9af1
-  '@typescript-eslint/parser': 4.22.1_eslint@7.25.0+typescript@4.2.4
+  '@typescript-eslint/eslint-plugin': 4.22.1_b96c9280c6ac79e4dfcda76a733858e3
+  '@typescript-eslint/parser': 4.22.1_eslint@7.26.0+typescript@4.2.4
   bestzip: 2.2.0
   cssnano: 4.1.11
-  eslint: 7.25.0
-  eslint-config-prettier: 8.3.0_eslint@7.25.0
-  eslint-plugin-import: 2.22.1_eslint@7.25.0
-  eslint-plugin-prettier: 3.4.0_ed07edc0d33fb90bb2bebf56b9b5e0f9
+  eslint: 7.26.0
+  eslint-config-prettier: 8.3.0_eslint@7.26.0
+  eslint-plugin-import: 2.22.1_eslint@7.26.0
+  eslint-plugin-prettier: 3.4.0_7abce37ca9bca0aaa6aa91e2037aefea
   npm-run-all: 4.1.5
   parcel-bundler: 1.12.5
   parcel-plugin-web-extension: 1.6.1
@@ -1100,6 +1100,22 @@ packages:
       node: ^10.12.0 || >=12.0.0
     resolution:
       integrity: sha512-2ZPCc+uNbjV5ERJr+aKSPRwZgKd2z11x0EgLvb1PURmUrn9QNRXFqje0Ldq454PfAVyaJYyrDvvIKSFP4NnBog==
+  /@eslint/eslintrc/0.4.1:
+    dependencies:
+      ajv: 6.12.6
+      debug: 4.3.1
+      espree: 7.3.1
+      globals: 12.4.0
+      ignore: 4.0.6
+      import-fresh: 3.3.0
+      js-yaml: 3.14.1
+      minimatch: 3.0.4
+      strip-json-comments: 3.1.1
+    dev: true
+    engines:
+      node: ^10.12.0 || >=12.0.0
+    resolution:
+      integrity: sha512-5v7TDE9plVhvxQeWLXDTvFvJBdH6pEsdnl2g/dAptmuFEPedQ4Erq5rsDsX+mvAM610IhNaO2W5V1dOOnDKxkQ==
   /@iarna/toml/2.2.5:
     dev: true
     resolution:
@@ -1242,13 +1258,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-A1b8SU4D10uoPjwb0lnHmmu8wZhR9d+9o2PKBQT2jU5YPTKsxac6M2qGAdY7VcL+dHHhARVUDmeg0rOrcd9EjA==
-  /@typescript-eslint/eslint-plugin/4.22.1_f2cf9a191be19a59b06aad4f4e4a9af1:
+  /@typescript-eslint/eslint-plugin/4.22.1_b96c9280c6ac79e4dfcda76a733858e3:
     dependencies:
-      '@typescript-eslint/experimental-utils': 4.22.1_eslint@7.25.0+typescript@4.2.4
-      '@typescript-eslint/parser': 4.22.1_eslint@7.25.0+typescript@4.2.4
+      '@typescript-eslint/experimental-utils': 4.22.1_eslint@7.26.0+typescript@4.2.4
+      '@typescript-eslint/parser': 4.22.1_eslint@7.26.0+typescript@4.2.4
       '@typescript-eslint/scope-manager': 4.22.1
       debug: 4.3.1
-      eslint: 7.25.0
+      eslint: 7.26.0
       functional-red-black-tree: 1.0.1
       lodash: 4.17.21
       regexpp: 3.1.0
@@ -1267,13 +1283,13 @@ packages:
         optional: true
     resolution:
       integrity: sha512-kVTAghWDDhsvQ602tHBc6WmQkdaYbkcTwZu+7l24jtJiYvm9l+/y/b2BZANEezxPDiX5MK2ZecE+9BFi/YJryw==
-  /@typescript-eslint/experimental-utils/4.22.1_eslint@7.25.0+typescript@4.2.4:
+  /@typescript-eslint/experimental-utils/4.22.1_eslint@7.26.0+typescript@4.2.4:
     dependencies:
       '@types/json-schema': 7.0.7
       '@typescript-eslint/scope-manager': 4.22.1
       '@typescript-eslint/types': 4.22.1
       '@typescript-eslint/typescript-estree': 4.22.1_typescript@4.2.4
-      eslint: 7.25.0
+      eslint: 7.26.0
       eslint-scope: 5.1.1
       eslint-utils: 2.1.0
     dev: true
@@ -1284,13 +1300,13 @@ packages:
       typescript: '*'
     resolution:
       integrity: sha512-svYlHecSMCQGDO2qN1v477ax/IDQwWhc7PRBiwAdAMJE7GXk5stF4Z9R/8wbRkuX/5e9dHqbIWxjeOjckK3wLQ==
-  /@typescript-eslint/parser/4.22.1_eslint@7.25.0+typescript@4.2.4:
+  /@typescript-eslint/parser/4.22.1_eslint@7.26.0+typescript@4.2.4:
     dependencies:
       '@typescript-eslint/scope-manager': 4.22.1
       '@typescript-eslint/types': 4.22.1
       '@typescript-eslint/typescript-estree': 4.22.1_typescript@4.2.4
       debug: 4.3.1
-      eslint: 7.25.0
+      eslint: 7.26.0
       typescript: 4.2.4
     dev: true
     engines:
@@ -3427,9 +3443,9 @@ packages:
       source-map: 0.6.1
     resolution:
       integrity: sha512-6hTjO1NAWkHnDk3OqQ4YrCuwwmGHL9S3nPlzBOUG/R44rda3wLNrfvQ5fkSGjyhHFKM7ALPKcKGrwvCLe0lC7Q==
-  /eslint-config-prettier/8.3.0_eslint@7.25.0:
+  /eslint-config-prettier/8.3.0_eslint@7.26.0:
     dependencies:
-      eslint: 7.25.0
+      eslint: 7.26.0
     dev: true
     hasBin: true
     peerDependencies:
@@ -3452,14 +3468,14 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-6j9xxegbqe8/kZY8cYpcp0xhbK0EgJlg3g9mib3/miLaExuuwc3n5UEfSnU6hWMbT0FAYVvDbL9RrRgpUeQIvA==
-  /eslint-plugin-import/2.22.1_eslint@7.25.0:
+  /eslint-plugin-import/2.22.1_eslint@7.26.0:
     dependencies:
       array-includes: 3.1.3
       array.prototype.flat: 1.2.4
       contains-path: 0.1.0
       debug: 2.6.9
       doctrine: 1.5.0
-      eslint: 7.25.0
+      eslint: 7.26.0
       eslint-import-resolver-node: 0.3.4
       eslint-module-utils: 2.6.0
       has: 1.0.3
@@ -3483,10 +3499,10 @@ packages:
       eslint: ^5 || ^6 || ^7
     resolution:
       integrity: sha512-WF1+eZo2Sh+bQNjZuVNwT0dA61zuJORsLh+1Sww7+O6GOPw+WPWIIRfTWNqrmaXaDMhM4SXAqYPcNlhRMiH13g==
-  /eslint-plugin-prettier/3.4.0_ed07edc0d33fb90bb2bebf56b9b5e0f9:
+  /eslint-plugin-prettier/3.4.0_7abce37ca9bca0aaa6aa91e2037aefea:
     dependencies:
-      eslint: 7.25.0
-      eslint-config-prettier: 8.3.0_eslint@7.25.0
+      eslint: 7.26.0
+      eslint-config-prettier: 8.3.0_eslint@7.26.0
       prettier: 2.2.1
       prettier-linter-helpers: 1.0.0
     dev: true
@@ -3581,10 +3597,10 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-k9gaHeHiFmGCDQ2rEfvULlSLruz6tgfA8DEn+rY9/oYPFFTlz55mM/Q/Rij1b2Y42jwZiK3lXvNTw6w6TXzcKQ==
-  /eslint/7.25.0:
+  /eslint/7.26.0:
     dependencies:
       '@babel/code-frame': 7.12.11
-      '@eslint/eslintrc': 0.4.0
+      '@eslint/eslintrc': 0.4.1
       ajv: 6.12.6
       chalk: 4.1.1
       cross-spawn: 7.0.3
@@ -3625,7 +3641,7 @@ packages:
       node: ^10.12.0 || >=12.0.0
     hasBin: true
     resolution:
-      integrity: sha512-TVpSovpvCNpLURIScDRB6g5CYu/ZFq9GfX2hLNIV4dSBKxIWojeDODvYl3t0k0VtMxYeR8OXPCFE5+oHMlGfhw==
+      integrity: sha512-4R1ieRf52/izcZE7AlLy56uIHHDLT74Yzz2Iv2l6kDaYvEu9x+wMB5dZArVL8SYGXSYV2YAg70FcW5Y5nGGNIg==
   /espree/7.3.1:
     dependencies:
       acorn: 7.4.1
@@ -8896,7 +8912,7 @@ specifiers:
   basscss-sass: 4.0.0
   bestzip: 2.2.0
   cssnano: 4.1.11
-  eslint: 7.25.0
+  eslint: 7.26.0
   eslint-config-prettier: 8.3.0
   eslint-plugin-import: 2.22.1
   eslint-plugin-prettier: 3.4.0
