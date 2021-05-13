@@ -19,7 +19,7 @@ devDependencies:
   prettier: 2.3.0
   prettier-plugin-packagejson: 2.2.11_prettier@2.3.0
   rimraf: 3.0.2
-  sass: 1.32.12
+  sass: 1.32.13
   typescript: 4.2.4
   web-ext: 6.1.0
 lockfileVersion: 5.2
@@ -7407,7 +7407,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
-  /sass/1.32.12:
+  /sass/1.32.13:
     dependencies:
       chokidar: 3.5.1
     dev: true
@@ -7415,7 +7415,7 @@ packages:
       node: '>=8.9.0'
     hasBin: true
     resolution:
-      integrity: sha512-zmXn03k3hN0KaiVTjohgkg98C3UowhL1/VSGdj4/VAAiMKGQOE80PFPxFP2Kyq0OUskPKcY5lImkhBKEHlypJA==
+      integrity: sha512-dEgI9nShraqP7cXQH+lEXVf73WOPCse0QlFzSD8k+1TcOxCMwVXfQlr0jtoluZysQOyJGnfr21dLvYKDJq8HkA==
   /sax/1.2.4:
     dev: true
     resolution:
@@ -8917,7 +8917,7 @@ specifiers:
   prettier: 2.3.0
   prettier-plugin-packagejson: 2.2.11
   rimraf: 3.0.2
-  sass: 1.32.12
+  sass: 1.32.13
   type-fest: 1.1.1
   typescript: 4.2.4
   web-ext: 6.1.0
