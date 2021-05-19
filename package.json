@@ -4,7 +4,7 @@
     "private": true,
     "repository": "https://gitlab.com/Marnes/copy-selected-links.git",
     "license": "MPL-2.0",
-    "author": "Marnes <marnick.leau@gmail.com>",
+    "author": "Marnes <leaumar@mailbox.org>",
     "scripts": {
         "build": "run-s clean prettier lint compile qa package bundle",
         "bundle": "bestzip dist/sources.zip .browserslistrc .editorconfig .eslintrc.yml .gitignore .node-version .prettierrc.yml license.md package.json pnpm-lock.yaml readme.md src tsconfig.json web-ext-config.js",
