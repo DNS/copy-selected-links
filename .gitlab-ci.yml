@@ -21,6 +21,10 @@ ci:
     - pnpm build
     - pnpx git-is-clean
 
+  artifacts:
+    paths:
+      - dist/copy_selected_links-*.zip
+
 prune:
   only:
     - schedules
