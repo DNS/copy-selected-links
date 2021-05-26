@@ -5,8 +5,8 @@ dependencies:
   webextension-polyfill: 0.8.0
   webextension-polyfill-ts: 0.25.0
 devDependencies:
-  '@typescript-eslint/eslint-plugin': 4.24.0_793776cb10ece467d2ef6de95ba4fe34
-  '@typescript-eslint/parser': 4.24.0_eslint@7.27.0+typescript@4.2.4
+  '@typescript-eslint/eslint-plugin': 4.25.0_6fb86b31e39dbd15f93824c03ca6ca0c
+  '@typescript-eslint/parser': 4.25.0_eslint@7.27.0+typescript@4.2.4
   bestzip: 2.2.0
   cssnano: 4.1.11
   eslint: 7.27.0
@@ -1243,11 +1243,11 @@ packages:
     dev: true
     resolution:
       integrity: sha512-A1b8SU4D10uoPjwb0lnHmmu8wZhR9d+9o2PKBQT2jU5YPTKsxac6M2qGAdY7VcL+dHHhARVUDmeg0rOrcd9EjA==
-  /@typescript-eslint/eslint-plugin/4.24.0_793776cb10ece467d2ef6de95ba4fe34:
+  /@typescript-eslint/eslint-plugin/4.25.0_6fb86b31e39dbd15f93824c03ca6ca0c:
     dependencies:
-      '@typescript-eslint/experimental-utils': 4.24.0_eslint@7.27.0+typescript@4.2.4
-      '@typescript-eslint/parser': 4.24.0_eslint@7.27.0+typescript@4.2.4
-      '@typescript-eslint/scope-manager': 4.24.0
+      '@typescript-eslint/experimental-utils': 4.25.0_eslint@7.27.0+typescript@4.2.4
+      '@typescript-eslint/parser': 4.25.0_eslint@7.27.0+typescript@4.2.4
+      '@typescript-eslint/scope-manager': 4.25.0
       debug: 4.3.1
       eslint: 7.27.0
       functional-red-black-tree: 1.0.1
@@ -1267,13 +1267,13 @@ packages:
       typescript:
         optional: true
     resolution:
-      integrity: sha512-qbCgkPM7DWTsYQGjx9RTuQGswi+bEt0isqDBeo+CKV0953zqI0Tp7CZ7Fi9ipgFA6mcQqF4NOVNwS/f2r6xShw==
-  /@typescript-eslint/experimental-utils/4.24.0_eslint@7.27.0+typescript@4.2.4:
+      integrity: sha512-Qfs3dWkTMKkKwt78xp2O/KZQB8MPS1UQ5D3YW2s6LQWBE1074BE+Rym+b1pXZIX3M3fSvPUDaCvZLKV2ylVYYQ==
+  /@typescript-eslint/experimental-utils/4.25.0_eslint@7.27.0+typescript@4.2.4:
     dependencies:
       '@types/json-schema': 7.0.7
-      '@typescript-eslint/scope-manager': 4.24.0
-      '@typescript-eslint/types': 4.24.0
-      '@typescript-eslint/typescript-estree': 4.24.0_typescript@4.2.4
+      '@typescript-eslint/scope-manager': 4.25.0
+      '@typescript-eslint/types': 4.25.0
+      '@typescript-eslint/typescript-estree': 4.25.0_typescript@4.2.4
       eslint: 7.27.0
       eslint-scope: 5.1.1
       eslint-utils: 2.1.0
@@ -1284,12 +1284,12 @@ packages:
       eslint: '*'
       typescript: '*'
     resolution:
-      integrity: sha512-IwTT2VNDKH1h8RZseMH4CcYBz6lTvRoOLDuuqNZZoThvfHEhOiZPQCow+5El3PtyxJ1iDr6UXZwYtE3yZQjhcw==
-  /@typescript-eslint/parser/4.24.0_eslint@7.27.0+typescript@4.2.4:
+      integrity: sha512-f0doRE76vq7NEEU0tw+ajv6CrmPelw5wLoaghEHkA2dNLFb3T/zJQqGPQ0OYt5XlZaS13MtnN+GTPCuUVg338w==
+  /@typescript-eslint/parser/4.25.0_eslint@7.27.0+typescript@4.2.4:
     dependencies:
-      '@typescript-eslint/scope-manager': 4.24.0
-      '@typescript-eslint/types': 4.24.0
-      '@typescript-eslint/typescript-estree': 4.24.0_typescript@4.2.4
+      '@typescript-eslint/scope-manager': 4.25.0
+      '@typescript-eslint/types': 4.25.0
+      '@typescript-eslint/typescript-estree': 4.25.0_typescript@4.2.4
       debug: 4.3.1
       eslint: 7.27.0
       typescript: 4.2.4
@@ -1303,26 +1303,26 @@ packages:
       typescript:
         optional: true
     resolution:
-      integrity: sha512-dj1ZIh/4QKeECLb2f/QjRwMmDArcwc2WorWPRlB8UNTZlY1KpTVsbX7e3ZZdphfRw29aTFUSNuGB8w9X5sS97w==
-  /@typescript-eslint/scope-manager/4.24.0:
+      integrity: sha512-OZFa1SKyEJpAhDx8FcbWyX+vLwh7OEtzoo2iQaeWwxucyfbi0mT4DijbOSsTgPKzGHr6GrF2V5p/CEpUH/VBxg==
+  /@typescript-eslint/scope-manager/4.25.0:
     dependencies:
-      '@typescript-eslint/types': 4.24.0
-      '@typescript-eslint/visitor-keys': 4.24.0
+      '@typescript-eslint/types': 4.25.0
+      '@typescript-eslint/visitor-keys': 4.25.0
     dev: true
     engines:
       node: ^8.10.0 || ^10.13.0 || >=11.10.1
     resolution:
-      integrity: sha512-9+WYJGDnuC9VtYLqBhcSuM7du75fyCS/ypC8c5g7Sdw7pGL4NDTbeH38eJPfzIydCHZDoOgjloxSAA3+4l/zsA==
-  /@typescript-eslint/types/4.24.0:
+      integrity: sha512-2NElKxMb/0rya+NJG1U71BuNnp1TBd1JgzYsldsdA83h/20Tvnf/HrwhiSlNmuq6Vqa0EzidsvkTArwoq+tH6w==
+  /@typescript-eslint/types/4.25.0:
     dev: true
     engines:
       node: ^8.10.0 || ^10.13.0 || >=11.10.1
     resolution:
-      integrity: sha512-tkZUBgDQKdvfs8L47LaqxojKDE+mIUmOzdz7r+u+U54l3GDkTpEbQ1Jp3cNqqAU9vMUCBA1fitsIhm7yN0vx9Q==
-  /@typescript-eslint/typescript-estree/4.24.0_typescript@4.2.4:
+      integrity: sha512-+CNINNvl00OkW6wEsi32wU5MhHti2J25TJsJJqgQmJu3B3dYDBcmOxcE5w9cgoM13TrdE/5ND2HoEnBohasxRQ==
+  /@typescript-eslint/typescript-estree/4.25.0_typescript@4.2.4:
     dependencies:
-      '@typescript-eslint/types': 4.24.0
-      '@typescript-eslint/visitor-keys': 4.24.0
+      '@typescript-eslint/types': 4.25.0
+      '@typescript-eslint/visitor-keys': 4.25.0
       debug: 4.3.1
       globby: 11.0.3
       is-glob: 4.0.1
@@ -1338,16 +1338,16 @@ packages:
       typescript:
         optional: true
     resolution:
-      integrity: sha512-kBDitL/by/HK7g8CYLT7aKpAwlR8doshfWz8d71j97n5kUa5caHWvY0RvEUEanL/EqBJoANev8Xc/mQ6LLwXGA==
-  /@typescript-eslint/visitor-keys/4.24.0:
+      integrity: sha512-1B8U07TGNAFMxZbSpF6jqiDs1cVGO0izVkf18Q/SPcUAc9LhHxzvSowXDTvkHMWUVuPpagupaW63gB6ahTXVlg==
+  /@typescript-eslint/visitor-keys/4.25.0:
     dependencies:
-      '@typescript-eslint/types': 4.24.0
+      '@typescript-eslint/types': 4.25.0
       eslint-visitor-keys: 2.1.0
     dev: true
     engines:
       node: ^8.10.0 || ^10.13.0 || >=11.10.1
     resolution:
-      integrity: sha512-4ox1sjmGHIxjEDBnMCtWFFhErXtKA1Ec0sBpuz0fqf3P+g3JFGyTxxbF06byw0FRsPnnbq44cKivH7Ks1/0s6g==
+      integrity: sha512-AmkqV9dDJVKP/TcZrbf6s6i1zYXt5Hl8qOLrRDTFfRNae4+LB8A4N3i+FLZPW85zIxRy39BgeWOfMS3HoH5ngg==
   /abab/2.0.5:
     dev: true
     resolution:
@@ -8882,8 +8882,8 @@ packages:
     resolution:
       integrity: sha512-zshzwQW7gG7hjpBlgeQP9RuyPGNxvJdzR8SUM3QhxCnLjWN2E7j3dOvpeDcQoETfHx0urRS7EtmVToql7YpU4A==
 specifiers:
-  '@typescript-eslint/eslint-plugin': 4.24.0
-  '@typescript-eslint/parser': 4.24.0
+  '@typescript-eslint/eslint-plugin': 4.25.0
+  '@typescript-eslint/parser': 4.25.0
   basscss-sass: 4.0.0
   bestzip: 2.2.0
   cssnano: 4.1.11
