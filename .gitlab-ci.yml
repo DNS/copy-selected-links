@@ -2,24 +2,17 @@ image: node:14.17.0-alpine
 
 cache:
   paths:
-    - .pnpm-store/
-
-variables:
-  # can't cache outside project dir, so override the default to cache the store
-  npm_config_store_dir: .pnpm-store
-  npm_config_side_effects_cache: "true"
+    - .yarn/cache/
+    - .yarn/unplugged/
+    - .yarn/build-state.yml
 
 ci:
-  except:
-    - schedules
   script:
     # necessary with alpine's minimal image
     - apk add --no-cache git make python3 util-linux
-    # pnpm does not come bundled
-    - npm install -g pnpm
-    - pnpm install --frozen-lockfile
-    - pnpm build
-    - pnpx git-is-clean
+    - yarn install --immutable
+    - yarn build
+    - yarn dlx git-is-clean
 
   artifacts:
     paths:

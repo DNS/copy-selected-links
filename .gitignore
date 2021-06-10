@@ -1,6 +1,8 @@
-/node_modules/
-# for gitlabi ci
-/.pnpm-store/
+# https://yarnpkg.com/advanced/qa#which-files-should-be-gitignored
+/.yarn/*
+!/.yarn/plugins/
+!/.yarn/releases/
+/.pnp.js
 
 /.cache/
 /dist/
