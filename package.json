@@ -30,7 +30,7 @@
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "4.28.0",
         "@typescript-eslint/parser": "4.28.0",
-        "@yarnpkg/pnpify": "3.0.0-rc.6",
+        "@yarnpkg/pnpify": "3.0.0-rc.7",
         "babel-types": "6.26.0",
         "bestzip": "2.2.0",
         "cssnano": "4.1.11",
