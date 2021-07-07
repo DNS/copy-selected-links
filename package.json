@@ -28,8 +28,8 @@
         "webextension-polyfill-ts": "0.25.0"
     },
     "devDependencies": {
-        "@typescript-eslint/eslint-plugin": "4.28.1",
-        "@typescript-eslint/parser": "4.28.1",
+        "@typescript-eslint/eslint-plugin": "4.28.2",
+        "@typescript-eslint/parser": "4.28.2",
         "@yarnpkg/pnpify": "3.0.0-rc.10",
         "babel-types": "6.26.0",
         "bestzip": "2.2.0",
