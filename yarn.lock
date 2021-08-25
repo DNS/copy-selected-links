@@ -3688,7 +3688,7 @@ __metadata:
     prettier-plugin-package: 1.3.0
     rimraf: 3.0.2
     sass: 1.38.1
-    type-fest: 2.0.0
+    type-fest: 2.1.0
     typescript: 4.3.5
     web-ext: 6.3.0
     webextension-polyfill: 0.8.0
@@ -11525,10 +11525,10 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"type-fest@npm:2.0.0":
-  version: 2.0.0
-  resolution: "type-fest@npm:2.0.0"
-  checksum: 39931a4e712c508c81aa2d5419f556fd9281e71b106c66869c2493e7a8be64a0e11c86a76eda517211e3b214a745bfa9b61c9764bc66654c571095eb74d86a4a
+"type-fest@npm:2.1.0":
+  version: 2.1.0
+  resolution: "type-fest@npm:2.1.0"
+  checksum: 6925ec82ba3f234753b3451967d663730919636ade6868896e69348db6fca393fe9447a89df1a295c6b1d1f532cc6a05b3bd3c6af4cebf243f0c2c36272155ba
   languageName: node
   linkType: hard
 
