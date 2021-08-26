@@ -1564,9 +1564,9 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*":
-  version: 16.7.1
-  resolution: "@types/node@npm:16.7.1"
-  checksum: 65347e932d8dde3b94d5e24d17ba85e79763797b80da85af96a8c4b89e72f7aea1b61ea04f471a70c9db4ab9273fb678808e9400c539912c291819268622598f
+  version: 16.7.2
+  resolution: "@types/node@npm:16.7.2"
+  checksum: 5fde3f4f4c215ef81277571b695157072a5060d52afd21c4ddb01a0268422e98c53fecf5a99a2b707de93c5a5dc8a78d6425abffa211c656ee5ae0718a536ebb
   languageName: node
   linkType: hard
 
@@ -2919,7 +2919,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"browserslist@npm:^4.0.0, browserslist@npm:^4.1.0, browserslist@npm:^4.16.6, browserslist@npm:^4.16.7":
+"browserslist@npm:^4.0.0, browserslist@npm:^4.1.0, browserslist@npm:^4.16.6, browserslist@npm:^4.16.8":
   version: 4.16.8
   resolution: "browserslist@npm:4.16.8"
   dependencies:
@@ -3697,12 +3697,12 @@ __metadata:
   linkType: soft
 
 "core-js-compat@npm:^3.14.0, core-js-compat@npm:^3.16.0":
-  version: 3.16.2
-  resolution: "core-js-compat@npm:3.16.2"
+  version: 3.16.3
+  resolution: "core-js-compat@npm:3.16.3"
   dependencies:
-    browserslist: ^4.16.7
+    browserslist: ^4.16.8
     semver: 7.0.0
-  checksum: 2ab3f6a7973a9b2037c97e11ad6eff1b749902426acc167c132936d13816c436e8d84396ec074c0aa6ff00a2390bde6f7fb187210b760bdb75820cb02c8f29e0
+  checksum: 0c7ec429ae3f8bb9bae5e88444ea6682d705faafa43269a0d276f300e54d997e79ee127df36084890bddf40f1a0bcaad28165e048b263c31c62cf7cb4d6f2875
   languageName: node
   linkType: hard
 
@@ -4090,12 +4090,12 @@ __metadata:
   linkType: hard
 
 "deasync@npm:^0.1.14":
-  version: 0.1.22
-  resolution: "deasync@npm:0.1.22"
+  version: 0.1.23
+  resolution: "deasync@npm:0.1.23"
   dependencies:
     bindings: ^1.5.0
     node-addon-api: ^1.7.1
-  checksum: 114429a31810a183ebf322422e3f499a8eff17f35c0c85ec9a408cf4203025efc07093b220fed28e179729252439ab5ab1d0c84679d570a68625ab95a73dfc87
+  checksum: 52f8a7e3a6a80b2361319884e96fe42024536a2ea897cf3bbc197bd0f81781e99c0ba27f59271cc7383b98b8831168bf135f07aa9869231f901644a22fe6460b
   languageName: node
   linkType: hard
 
@@ -4538,9 +4538,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.3.811":
-  version: 1.3.814
-  resolution: "electron-to-chromium@npm:1.3.814"
-  checksum: 3e688a890321426f1781090ada726d73326685a43e3d94c30f7baedc970f4cb9cbc3a9cfe1b3af7538b0c3bcefef96a098fc3cd3d57ce43393f547d68e922074
+  version: 1.3.818
+  resolution: "electron-to-chromium@npm:1.3.818"
+  checksum: 15995ef9a1ec3f9b46fdab61c02a59b5ff13852fc18db959ae57b837db0476337d139faab57bf937259611cb5d284cc26576256516b7e524ee5a6998771d3d13
   languageName: node
   linkType: hard
 
@@ -8004,8 +8004,8 @@ fsevents@~2.3.2:
   linkType: hard
 
 "node-gyp@npm:latest":
-  version: 8.1.0
-  resolution: "node-gyp@npm:8.1.0"
+  version: 8.2.0
+  resolution: "node-gyp@npm:8.2.0"
   dependencies:
     env-paths: ^2.2.0
     glob: ^7.1.4
@@ -8015,11 +8015,11 @@ fsevents@~2.3.2:
     npmlog: ^4.1.2
     rimraf: ^3.0.2
     semver: ^7.3.5
-    tar: ^6.1.0
+    tar: ^6.1.2
     which: ^2.0.2
   bin:
     node-gyp: bin/node-gyp.js
-  checksum: 6e014ff491cc4fdd25c41e38f9f92ab665d3b2e1ef7cd18e292aff9b293ef485c6bb93194461a5538d3bfa4b678258df974800660dd7d40865866ef3188c5481
+  checksum: 90876d42d66a58d6999eb3403cd2157a514214a1e1795e3ceee486b1172b713586db38a61e0182ac4f9d06d095c7b4b332c42c1a243aadc1549ab5552109e9c4
   languageName: node
   linkType: hard
 
@@ -11204,7 +11204,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"tar@npm:^6.0.2, tar@npm:^6.0.5, tar@npm:^6.1.0":
+"tar@npm:^6.0.2, tar@npm:^6.0.5, tar@npm:^6.1.2":
   version: 6.1.10
   resolution: "tar@npm:6.1.10"
   dependencies:
@@ -11232,15 +11232,15 @@ fsevents@~2.3.2:
   linkType: hard
 
 "terser@npm:^5.6.1":
-  version: 5.7.1
-  resolution: "terser@npm:5.7.1"
+  version: 5.7.2
+  resolution: "terser@npm:5.7.2"
   dependencies:
     commander: ^2.20.0
     source-map: ~0.7.2
     source-map-support: ~0.5.19
   bin:
     terser: bin/terser
-  checksum: 0a1ad5f9be4a2a815f14e85d16437dd73116f5d1b5c0623a292c5bcbdf7dc73c93a966063344678a04891d9433dfda055c1e2ad542e1295ad58837526e9fe848
+  checksum: 18f949a5c12f0de1ddd56ada109abaacbd615c8755295a93631515f74186658f6794a93389ae8c615406d6cddadadc7f5a83353928cfcdfe7a941aaec2261f31
   languageName: node
   linkType: hard
 
