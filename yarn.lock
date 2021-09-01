@@ -1581,9 +1581,9 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*":
-  version: 16.7.9
-  resolution: "@types/node@npm:16.7.9"
-  checksum: dd8970adbb82a188c4b253df8303b9e4e5e3423ff8c35243b240bb448b056a2723f58fe17228e4bcb1b1f98b3f37108c0bdfda7efd88ed839e098502cf73992f
+  version: 16.7.10
+  resolution: "@types/node@npm:16.7.10"
+  checksum: 0518803caa1a14f4070e770a280eda1c4b4581a425cbda481cdd54b1f34a7ea497ff067fd23b90e3d4f4fdcfba15c1316182875e9cf9f5b2e880de1e595de053
   languageName: node
   linkType: hard
 
@@ -4563,9 +4563,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.3.811":
-  version: 1.3.824
-  resolution: "electron-to-chromium@npm:1.3.824"
-  checksum: e4ba8867f82b13de0f87390d9ac23696163b826ac598e8ccf7090bc40b77c0c15b29b268866f79658cb8365e718e21112e005a431760dbbb359c3000ad61b868
+  version: 1.3.826
+  resolution: "electron-to-chromium@npm:1.3.826"
+  checksum: ffcb018db436816a1a1e3a0f13ce4bc33fa8d405a8ab10bf0cff100c819e8f8819ef75be05c1238297b53816f6e3d2987ea49c2d7ddd0633fc7f8af4aee8948b
   languageName: node
   linkType: hard
 
