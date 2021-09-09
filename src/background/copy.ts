@@ -44,7 +44,7 @@ export async function arrangeCopy(tab: Tabs.Tab, frameId?: number, contextualUrl
             file: "content.js",
             runAt: "document_end"
         });
-    } catch (notJsonable: unknown) {
+    } catch (notJsonable) {
         // ignore
     }
 

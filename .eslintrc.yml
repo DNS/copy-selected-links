@@ -52,6 +52,7 @@ rules:
   "@typescript-eslint/no-confusing-void-expression":
     - error
     - ignoreArrowShorthand: true
+  "@typescript-eslint/no-implicit-any-catch": off
   "@typescript-eslint/no-magic-numbers": off
   "@typescript-eslint/no-non-null-assertion": off
   "@typescript-eslint/no-parameter-properties": off
