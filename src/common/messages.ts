@@ -1,14 +1,31 @@
 const topics = {
     copyRequested: "copyRequested",
-    linksCopied: "linksCopied"
+    linksCopied: "linksCopied",
+    linksPicked: "linksPicked",
+    linksRequested: "linksRequested"
 } as const;
 
-export type RequestedMessage = {subject: typeof topics.copyRequested; isWindows: boolean; externalContextUrl: string | null};
-export function copyRequested(isWindows: boolean, externalContextUrl: string | null): RequestedMessage {
+export type CopyRequestedMessage = {
+    subject: typeof topics.copyRequested;
+    isWindows: boolean;
+    externalContextUrl: string | null;
+};
+export function copyRequested(isWindows: boolean, externalContextUrl: string | null): CopyRequestedMessage {
     return {
         externalContextUrl,
         isWindows,
         subject: topics.copyRequested
+    };
+}
+
+export type LinksRequestedMessage = {
+    subject: typeof topics.linksRequested;
+    externalContextUrl: string | null;
+};
+export function linksRequested(externalContextUrl: string | null): LinksRequestedMessage {
+    return {
+        externalContextUrl,
+        subject: topics.linksRequested
     };
 }
 
@@ -20,11 +37,19 @@ export function copied(linksCopied: number): CopiedMessage {
     };
 }
 
+export type LinksPickedMessage = {subject: typeof topics.linksPicked; hrefs: string[]};
+export function linksPicked(hrefs: string[]): LinksPickedMessage {
+    return {
+        hrefs,
+        subject: topics.linksPicked
+    };
+}
+
 //
 
 const subjects = Object.values(topics) as string[];
 
-export type Message = RequestedMessage | CopiedMessage;
+export type Message = CopyRequestedMessage | CopiedMessage | LinksPickedMessage | LinksRequestedMessage;
 
 function hasSubject(value: {subject?: unknown}): value is {subject: string} {
     return typeof value.subject == "string";

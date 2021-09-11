@@ -7,12 +7,18 @@ const spec = {
     finalNewline: bool(true),
     includeCommandTarget: bool(false),
     popupFail: bool(true),
-    popupSuccess: bool(false)
+    popupSuccess: bool(false),
+    showCopyMenuAction: bool(true),
+    showOpenMenuAction: bool(false)
 };
 
 export type Settings = {
     readonly [P in keyof typeof spec]: ReturnType<typeof spec[P]>;
 };
+
+export function isSetting(key: string): key is keyof Settings {
+    return key in spec;
+}
 
 export async function read(): Promise<Record<keyof Settings, JsonValue>> {
     const json = await browser.storage.sync.get(Object.keys(spec));
