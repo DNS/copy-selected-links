@@ -1633,7 +1633,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:4.31.1":
+"@typescript-eslint/eslint-plugin@npm:^4.31.1":
   version: 4.31.1
   resolution: "@typescript-eslint/eslint-plugin@npm:4.31.1"
   dependencies:
@@ -1670,7 +1670,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:4.31.1":
+"@typescript-eslint/parser@npm:^4.31.1":
   version: 4.31.1
   resolution: "@typescript-eslint/parser@npm:4.31.1"
   dependencies:
@@ -1834,7 +1834,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@yarnpkg/pnpify@npm:3.0.1":
+"@yarnpkg/pnpify@npm:^3.0.1":
   version: 3.0.1
   resolution: "@yarnpkg/pnpify@npm:3.0.1"
   dependencies:
@@ -2529,7 +2529,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-types@npm:6.26.0, babel-types@npm:^6.15.0":
+"babel-types@npm:^6.15.0, babel-types@npm:^6.26.0":
   version: 6.26.0
   resolution: "babel-types@npm:6.26.0"
   dependencies:
@@ -2653,7 +2653,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"basscss-sass@npm:4.0.0":
+"basscss-sass@npm:^4.0.0":
   version: 4.0.0
   resolution: "basscss-sass@npm:4.0.0"
   dependencies:
@@ -2705,7 +2705,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bestzip@npm:2.2.0":
+"bestzip@npm:^2.2.0":
   version: 2.2.0
   resolution: "bestzip@npm:2.2.0"
   dependencies:
@@ -3686,31 +3686,31 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "copy-selected-links@workspace:."
   dependencies:
-    "@typescript-eslint/eslint-plugin": 4.31.1
-    "@typescript-eslint/parser": 4.31.1
-    "@yarnpkg/pnpify": 3.0.1
-    babel-types: 6.26.0
-    basscss-sass: 4.0.0
-    bestzip: 2.2.0
-    cssnano: 4.1.11
-    eslint: 7.32.0
-    eslint-config-prettier: 8.3.0
-    eslint-import-resolver-node: 0.3.6
-    eslint-plugin-import: 2.24.2
-    eslint-plugin-prettier: 4.0.0
-    fast-equals: 2.0.3
-    npm-run-all: 4.1.5
-    parcel-bundler: 1.12.5
-    parcel-plugin-web-extension: 1.6.1
-    prettier: 2.4.1
-    prettier-plugin-package: 1.3.0
-    rimraf: 3.0.2
-    sass: 1.41.0
-    type-fest: 2.3.2
-    typescript: 4.4.3
-    web-ext: 6.4.0
-    webextension-polyfill: 0.8.0
-    webextension-polyfill-ts: 0.26.0
+    "@typescript-eslint/eslint-plugin": ^4.31.1
+    "@typescript-eslint/parser": ^4.31.1
+    "@yarnpkg/pnpify": ^3.0.1
+    babel-types: ^6.26.0
+    basscss-sass: ^4.0.0
+    bestzip: ^2.2.0
+    cssnano: ^4.1.11
+    eslint: ^7.32.0
+    eslint-config-prettier: ^8.3.0
+    eslint-import-resolver-node: ^0.3.6
+    eslint-plugin-import: ^2.24.2
+    eslint-plugin-prettier: ^4.0.0
+    fast-equals: ^2.0.3
+    npm-run-all: ^4.1.5
+    parcel-bundler: ^1.12.5
+    parcel-plugin-web-extension: ^1.6.1
+    prettier: ^2.4.1
+    prettier-plugin-package: ^1.3.0
+    rimraf: ^3.0.2
+    sass: ^1.41.0
+    type-fest: ^2.3.2
+    typescript: ^4.4.3
+    web-ext: ^6.4.0
+    webextension-polyfill: ^0.8.0
+    webextension-polyfill-ts: ^0.26.0
   languageName: unknown
   linkType: soft
 
@@ -4057,7 +4057,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cssnano@npm:4.1.11, cssnano@npm:^4.0.0, cssnano@npm:^4.1.11":
+"cssnano@npm:^4.0.0, cssnano@npm:^4.1.11":
   version: 4.1.11
   resolution: "cssnano@npm:4.1.11"
   dependencies:
@@ -4811,7 +4811,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-prettier@npm:8.3.0":
+"eslint-config-prettier@npm:^8.3.0":
   version: 8.3.0
   resolution: "eslint-config-prettier@npm:8.3.0"
   peerDependencies:
@@ -4822,7 +4822,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-import-resolver-node@npm:0.3.6, eslint-import-resolver-node@npm:^0.3.6":
+"eslint-import-resolver-node@npm:^0.3.6":
   version: 0.3.6
   resolution: "eslint-import-resolver-node@npm:0.3.6"
   dependencies:
@@ -4842,7 +4842,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-import@npm:2.24.2":
+"eslint-plugin-import@npm:^2.24.2":
   version: 2.24.2
   resolution: "eslint-plugin-import@npm:2.24.2"
   dependencies:
@@ -4876,7 +4876,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-prettier@npm:4.0.0":
+"eslint-plugin-prettier@npm:^4.0.0":
   version: 4.0.0
   resolution: "eslint-plugin-prettier@npm:4.0.0"
   dependencies:
@@ -4942,7 +4942,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:7.32.0":
+"eslint@npm:7.32.0, eslint@npm:^7.32.0":
   version: 7.32.0
   resolution: "eslint@npm:7.32.0"
   dependencies:
@@ -5240,7 +5240,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-equals@npm:2.0.3":
+"fast-equals@npm:^2.0.3":
   version: 2.0.3
   resolution: "fast-equals@npm:2.0.3"
   checksum: ef475f52cb93f67c9452da3aed0d60a7cf63c844325cfd741b2863b2e9037a79c81e7f6786295b7f84501971626dce9e8b5d1e02c08506514a75d9cd9703240e
@@ -8188,7 +8188,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"npm-run-all@npm:4.1.5":
+"npm-run-all@npm:^4.1.5":
   version: 4.1.5
   resolution: "npm-run-all@npm:4.1.5"
   dependencies:
@@ -8631,7 +8631,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"parcel-bundler@npm:1.12.5, parcel-bundler@npm:^1.9.0":
+"parcel-bundler@npm:^1.12.5, parcel-bundler@npm:^1.9.0":
   version: 1.12.5
   resolution: "parcel-bundler@npm:1.12.5"
   dependencies:
@@ -8700,7 +8700,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"parcel-plugin-web-extension@npm:1.6.1":
+"parcel-plugin-web-extension@npm:^1.6.1":
   version: 1.6.1
   resolution: "parcel-plugin-web-extension@npm:1.6.1"
   dependencies:
@@ -9509,7 +9509,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"prettier-plugin-package@npm:1.3.0":
+"prettier-plugin-package@npm:^1.3.0":
   version: 1.3.0
   resolution: "prettier-plugin-package@npm:1.3.0"
   peerDependencies:
@@ -9518,7 +9518,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.4.1":
+"prettier@npm:^2.4.1":
   version: 2.4.1
   resolution: "prettier@npm:2.4.1"
   bin:
@@ -10211,17 +10211,6 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"rimraf@npm:3.0.2, rimraf@npm:^3.0.0, rimraf@npm:^3.0.2":
-  version: 3.0.2
-  resolution: "rimraf@npm:3.0.2"
-  dependencies:
-    glob: ^7.1.3
-  bin:
-    rimraf: bin.js
-  checksum: 87f4164e396f0171b0a3386cc1877a817f572148ee13a7e113b238e48e8a9f2f31d009a92ec38a591ff1567d9662c6b67fd8818a2dbbaed74bc26a87a2a4a9a0
-  languageName: node
-  linkType: hard
-
 "rimraf@npm:^2.6.2":
   version: 2.7.1
   resolution: "rimraf@npm:2.7.1"
@@ -10230,6 +10219,17 @@ fsevents@~2.3.2:
   bin:
     rimraf: ./bin.js
   checksum: cdc7f6eacb17927f2a075117a823e1c5951792c6498ebcce81ca8203454a811d4cf8900314154d3259bb8f0b42ab17f67396a8694a54cae3283326e57ad250cd
+  languageName: node
+  linkType: hard
+
+"rimraf@npm:^3.0.0, rimraf@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "rimraf@npm:3.0.2"
+  dependencies:
+    glob: ^7.1.3
+  bin:
+    rimraf: bin.js
+  checksum: 87f4164e396f0171b0a3386cc1877a817f572148ee13a7e113b238e48e8a9f2f31d009a92ec38a591ff1567d9662c6b67fd8818a2dbbaed74bc26a87a2a4a9a0
   languageName: node
   linkType: hard
 
@@ -10300,7 +10300,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"sass@npm:1.41.0":
+"sass@npm:^1.41.0":
   version: 1.41.0
   resolution: "sass@npm:1.41.0"
   dependencies:
@@ -11579,17 +11579,17 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"type-fest@npm:2.3.2":
-  version: 2.3.2
-  resolution: "type-fest@npm:2.3.2"
-  checksum: 0550c83b5f3c01c345ef60077947f0b18e38282359bcf24f17699046fbcf2e6be57db3e4a55ab68d9df1d1afc7a915c446749404c9e7e17b918f74a7560b5c0d
-  languageName: node
-  linkType: hard
-
 "type-fest@npm:^0.20.2":
   version: 0.20.2
   resolution: "type-fest@npm:0.20.2"
   checksum: 4fb3272df21ad1c552486f8a2f8e115c09a521ad7a8db3d56d53718d0c907b62c6e9141ba5f584af3f6830d0872c521357e512381f24f7c44acae583ad517d73
+  languageName: node
+  linkType: hard
+
+"type-fest@npm:^2.3.2":
+  version: 2.3.2
+  resolution: "type-fest@npm:2.3.2"
+  checksum: 0550c83b5f3c01c345ef60077947f0b18e38282359bcf24f17699046fbcf2e6be57db3e4a55ab68d9df1d1afc7a915c446749404c9e7e17b918f74a7560b5c0d
   languageName: node
   linkType: hard
 
@@ -11609,7 +11609,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-typescript@4.4.3:
+typescript@^4.4.3:
   version: 4.4.3
   resolution: "typescript@npm:4.4.3"
   bin:
@@ -11619,7 +11619,7 @@ typescript@4.4.3:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@4.4.3#~builtin<compat/typescript>":
+"typescript@patch:typescript@^4.4.3#~builtin<compat/typescript>":
   version: 4.4.3
   resolution: "typescript@patch:typescript@npm%3A4.4.3#~builtin<compat/typescript>::version=4.4.3&hash=32657b"
   bin:
@@ -12006,7 +12006,7 @@ typescript@4.4.3:
   languageName: node
   linkType: hard
 
-"web-ext@npm:6.4.0":
+"web-ext@npm:^6.4.0":
   version: 6.4.0
   resolution: "web-ext@npm:6.4.0"
   dependencies:
@@ -12046,7 +12046,7 @@ typescript@4.4.3:
   languageName: node
   linkType: hard
 
-"webextension-polyfill-ts@npm:0.26.0":
+"webextension-polyfill-ts@npm:^0.26.0":
   version: 0.26.0
   resolution: "webextension-polyfill-ts@npm:0.26.0"
   dependencies:
@@ -12055,7 +12055,7 @@ typescript@4.4.3:
   languageName: node
   linkType: hard
 
-"webextension-polyfill@npm:0.8.0, webextension-polyfill@npm:^0.8.0":
+"webextension-polyfill@npm:^0.8.0":
   version: 0.8.0
   resolution: "webextension-polyfill@npm:0.8.0"
   checksum: 56286e6216e15834fdcdc3dcf611000d96b49c9d925de3d657eb5f1e294074180dd3efe78a0966223eb311ac3a0ac5fdf71d324b836bf05724455ffd6c7c98c3

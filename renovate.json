@@ -1,5 +1,5 @@
 {
-    "extends": ["config:base", ":automergeBranch", ":automergePatch", ":automergeTypes", ":pinVersions"],
+    "extends": ["config:base", ":automergeBranch", ":automergePatch", ":automergeTypes", ":preserveSemverRanges"],
     "nvm": {
         "fileMatch": ["^\\.node-version$"]
     }
