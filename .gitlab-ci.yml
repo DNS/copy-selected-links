@@ -17,9 +17,3 @@ ci:
   artifacts:
     paths:
       - dist/copy_selected_links-*.zip
-
-prune:
-  only:
-    - schedules
-  script:
-    - rm -rf .pnpm-store
