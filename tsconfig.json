@@ -1,5 +1,7 @@
 {
     "compilerOptions": {
+        "esModuleInterop": true,
+        "importHelpers": true,
         "inlineSourceMap": false, // maximum js parsing performance
         "moduleResolution": "node",
         "noUncheckedIndexedAccess": true,

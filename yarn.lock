@@ -3700,6 +3700,7 @@ __metadata:
     prettier-plugin-package: ^1.3.0
     rimraf: ^3.0.2
     sass: ^1.41.0
+    tslib: ^2.3.1
     type-fest: ^2.3.2
     typescript: ^4.4.3
     web-ext: ^6.4.0
@@ -11504,7 +11505,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.2.0":
+"tslib@npm:^2.2.0, tslib@npm:^2.3.1":
   version: 2.3.1
   resolution: "tslib@npm:2.3.1"
   checksum: 5ae2f209c5127bad284974c78916f02c72082615f65889a7ed0c7ca6d5f935c30338a0ee7310e1d9652dabc7b7507fd2905035487446d09d45fc1f19de71cf05
