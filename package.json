@@ -34,7 +34,7 @@
         "@yarnpkg/pnpify": "^3.0.1",
         "babel-types": "^6.26.0",
         "bestzip": "^2.2.0",
-        "cssnano": "^4.1.11",
+        "cssnano": "^5.0.0",
         "eslint": "^7.32.0",
         "eslint-config-prettier": "^8.3.0",
         "eslint-import-resolver-node": "^0.3.6",
