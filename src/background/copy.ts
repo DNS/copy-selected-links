@@ -1,4 +1,4 @@
-import {browser, Tabs} from "webextension-polyfill-ts";
+import browser, {Tabs} from "webextension-polyfill";
 import {asMessage, copyRequested, Message} from "../common/messages";
 import {load} from "../common/settings/settings";
 

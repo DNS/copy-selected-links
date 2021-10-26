@@ -1624,6 +1624,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/webextension-polyfill@npm:^0.8.1":
+  version: 0.8.1
+  resolution: "@types/webextension-polyfill@npm:0.8.1"
+  checksum: 4b24da446c7e24331cdd4f927f253fbf591cd55ff40798ffd53e47d22bf6b60ad0524516cd48d271bde7fb2fa9e641b839b634e312e74dd9891e7242c44a9f2c
+  languageName: node
+  linkType: hard
+
 "@types/yauzl@npm:2.9.2":
   version: 2.9.2
   resolution: "@types/yauzl@npm:2.9.2"
@@ -3680,6 +3687,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "copy-selected-links@workspace:."
   dependencies:
+    "@types/webextension-polyfill": ^0.8.1
     "@typescript-eslint/eslint-plugin": ^5.0.0
     "@typescript-eslint/parser": ^5.0.0
     "@yarnpkg/pnpify": ^3.0.1
@@ -3705,7 +3713,6 @@ __metadata:
     typescript: ^4.4.3
     web-ext: ^6.4.0
     webextension-polyfill: ^0.8.0
-    webextension-polyfill-ts: ^0.26.0
   languageName: unknown
   linkType: soft
 
@@ -12049,15 +12056,6 @@ typescript@^4.4.3:
   bin:
     web-ext: bin/web-ext
   checksum: 90b525fa170b1b1b68d9f29961155ef86dda5c9e95d5609ad1dc11f60747c4a1c9d5a2e622327996286ead172c466553652b4af49641f663199cfb83e01a056e
-  languageName: node
-  linkType: hard
-
-"webextension-polyfill-ts@npm:^0.26.0":
-  version: 0.26.0
-  resolution: "webextension-polyfill-ts@npm:0.26.0"
-  dependencies:
-    webextension-polyfill: ^0.8.0
-  checksum: f5b90e8396e9c2e8f8004252b5155fbd5a7dd355fed43956f898a7ebec2a6a650d04f57095ef8c23ff120bfc554d207f75d7b98f42dd686b1704091fe46a6aa3
   languageName: node
   linkType: hard
 

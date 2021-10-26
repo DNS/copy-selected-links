@@ -1,4 +1,4 @@
-import {Menus, Tabs, browser} from "webextension-polyfill-ts";
+import browser, {Menus, Tabs} from "webextension-polyfill";
 import {arrangeCopy} from "./copy";
 
 const CONTEXT_MENU_ID = "copySelectedLinks_CopySelectedLinks";

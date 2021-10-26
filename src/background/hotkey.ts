@@ -1,4 +1,4 @@
-import {browser} from "webextension-polyfill-ts";
+import browser from "webextension-polyfill";
 import {arrangeCopy} from "./copy";
 
 async function copyLinks(): Promise<void> {

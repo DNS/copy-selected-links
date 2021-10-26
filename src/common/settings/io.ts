@@ -1,5 +1,5 @@
 import {JsonValue} from "type-fest";
-import {browser} from "webextension-polyfill-ts";
+import browser from "webextension-polyfill";
 import {bool, sanitize} from "./validation";
 
 const spec = {
