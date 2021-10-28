@@ -3709,7 +3709,7 @@ __metadata:
     rimraf: ^3.0.2
     sass: ^1.43.4
     tslib: ^2.3.1
-    type-fest: ^2.3.2
+    type-fest: ^2.3.4
     typescript: ^4.4.3
     web-ext: ^6.4.0
     webextension-polyfill: ^0.8.0
@@ -11599,10 +11599,10 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^2.3.2":
-  version: 2.3.4
-  resolution: "type-fest@npm:2.3.4"
-  checksum: 759d11b35f6ab14a3e8197e52a328abdd6e8fc10c2056174bf8be13c3d55d7d235ae5ae799adbb26b5c70af3db14578ab660b896305e06ccd3946b63b5f605a9
+"type-fest@npm:^2.3.4":
+  version: 2.5.2
+  resolution: "type-fest@npm:2.5.2"
+  checksum: 8a444e9439ff59aed42f28cdabe0009dd5a7795dde741616a7905f8d9b0b5891621c7221689965f5ed2d9f021fb8ff7a29ae593b34fb0a5d7584c018c515ba81
   languageName: node
   linkType: hard
 
