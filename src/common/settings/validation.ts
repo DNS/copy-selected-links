@@ -1,4 +1,4 @@
-import {JsonValue} from "type-fest";
+import type {JsonValue} from "type-fest";
 
 export function bool(def: boolean) {
     return (stored: unknown): boolean => (typeof stored === "boolean" ? stored : def);
