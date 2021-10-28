@@ -1,6 +1,7 @@
 {
-    "extends": ["config:base", ":automergeBranch", ":automergePatch", ":automergeTypes", ":preserveSemverRanges"],
+    "extends": ["config:base", ":automergeBranch", ":automergePatch", ":automergeTypes"],
     "nvm": {
         "fileMatch": ["^\\.node-version$"]
-    }
+    },
+    "rangeStrategy": "bump"
 }
