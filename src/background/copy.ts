@@ -1,6 +1,7 @@
 import browser, {Tabs} from "webextension-polyfill";
 import {asMessage, copyRequested, Message} from "../common/messages";
 import {load} from "../common/settings/settings";
+import {injectContentScript} from "./inject";
 
 async function notify(title: string, message: string): Promise<void> {
     await browser.notifications.create({
@@ -36,17 +37,7 @@ export async function arrangeCopy(tab: Tabs.Tab, frameId?: number, contextualUrl
         throw new Error(`received a tab without an id?`);
     }
 
-    try {
-        // this throws an error if the content script doesnt return a jsonable result
-        // we cant guarantee the result of the content script because of bundling
-        await browser.tabs.executeScript(tab.id, {
-            allFrames: true,
-            file: "content.js",
-            runAt: "document_end"
-        });
-    } catch (notJsonable) {
-        // ignore
-    }
+    await injectContentScript(tab.id);
 
     const message = copyRequested(await isWindows, contextualUrl ?? null);
     const response = await browser.tabs.sendMessage(tab.id, message, {frameId}).then(asMessage);

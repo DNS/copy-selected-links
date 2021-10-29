@@ -1,7 +1,15 @@
+import {noop} from "ts-essentials";
 import browser, {Menus, Tabs} from "webextension-polyfill";
+import {Settings} from "../common/settings/io";
+import {monitor} from "../common/settings/monitoring";
+import {load} from "../common/settings/settings";
 import {arrangeCopy} from "./copy";
+import {arrangeOpen} from "./open";
 
-const CONTEXT_MENU_ID = "copySelectedLinks_CopySelectedLinks";
+const CONTEXT_MENU_IDS = {
+    copyLinks: "copySelectedLinks_CopySelectedLinks",
+    openLinks: "copySelectedLinks_OpenSelectedLinks"
+} as const;
 
 async function createContextMenu(options: Menus.CreateCreatePropertiesType): Promise<void> {
     return new Promise((resolve, reject) => {
@@ -15,28 +23,53 @@ async function createContextMenu(options: Menus.CreateCreatePropertiesType): Pro
     });
 }
 
-async function signalTabForCopying(contextMenuInfo: Menus.OnClickData, tab?: Tabs.Tab): Promise<void> {
+async function reactToContextMenu(contextMenuInfo: Menus.OnClickData, tab?: Tabs.Tab): Promise<void> {
     if (tab == null) {
         throw new Error("invoked context menu without a tab?");
     }
 
     switch (contextMenuInfo.menuItemId) {
-        case CONTEXT_MENU_ID:
+        case CONTEXT_MENU_IDS.copyLinks:
             await arrangeCopy(tab, contextMenuInfo.frameId, contextMenuInfo.linkUrl);
+            break;
+        case CONTEXT_MENU_IDS.openLinks:
+            await arrangeOpen(tab, contextMenuInfo.frameId, contextMenuInfo.linkUrl);
             break;
         default:
             throw new Error(`received unknown context menu command: ${contextMenuInfo.menuItemId}`);
     }
 }
 
-export function registerMenu(): void {
-    browser.contextMenus.onClicked.addListener((data, tab) => void signalTabForCopying(data, tab).catch(console.error));
+async function manageMenus(settings: Settings): Promise<void> {
+    await browser.contextMenus.remove(CONTEXT_MENU_IDS.copyLinks).catch(noop);
+    await browser.contextMenus.remove(CONTEXT_MENU_IDS.openLinks).catch(noop);
 
-    createContextMenu({
-        contexts: ["selection", "link"],
-        documentUrlPatterns: ["*://*/*", "file:///*"],
-        id: CONTEXT_MENU_ID,
-        title: "Copy selected links",
-        type: "normal"
-    }).catch(console.error);
+    if (settings.showCopyMenuAction) {
+        await createContextMenu({
+            contexts: ["selection", "link"],
+            documentUrlPatterns: ["*://*/*", "file:///*"],
+            id: CONTEXT_MENU_IDS.copyLinks,
+            title: "Copy selected links",
+            type: "normal"
+        });
+    }
+
+    if (settings.showOpenMenuAction) {
+        await createContextMenu({
+            contexts: ["selection", "link"],
+            documentUrlPatterns: ["*://*/*", "file:///*"],
+            id: CONTEXT_MENU_IDS.openLinks,
+            title: "Open selected links",
+            type: "normal"
+        });
+    }
+}
+
+export function registerMenu(): void {
+    browser.contextMenus.onClicked.addListener((data, tab) => void reactToContextMenu(data, tab).catch(console.error));
+
+    load().then(manageMenus).catch(console.error);
+
+    monitor("showCopyMenuAction", settings => void manageMenus(settings).catch(console.error));
+    monitor("showOpenMenuAction", settings => void manageMenus(settings).catch(console.error));
 }

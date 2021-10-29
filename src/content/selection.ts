@@ -1,9 +1,7 @@
-import {copied, CopiedMessage, RequestedMessage} from "../common/messages";
-import {load} from "../common/settings/settings";
-import {copyToClipboard} from "./clipboard";
+import {CopyRequestedMessage, LinksRequestedMessage} from "../common/messages";
 import {Settings} from "../common/settings/io";
 
-function getHrefs(msg: RequestedMessage, settings: Settings): string[] {
+export function getHrefs(msg: CopyRequestedMessage | LinksRequestedMessage, settings: Settings): string[] {
     const selection = getSelection();
 
     if (selection == null) {
@@ -23,19 +21,4 @@ function getHrefs(msg: RequestedMessage, settings: Settings): string[] {
     const significant = hrefs.filter(href => href.trim() !== "");
 
     return settings.deduplicateHrefs ? [...new Set(significant)] : significant;
-}
-
-export async function onCopyRequested(msg: RequestedMessage): Promise<CopiedMessage> {
-    const settings = await load();
-
-    const hrefs = getHrefs(msg, settings);
-
-    if (hrefs.length > 0) {
-        const newline = msg.isWindows ? "\r\n" : "\n";
-        const joined = hrefs.join(newline);
-
-        await copyToClipboard(settings.finalNewline ? joined + newline : joined);
-    }
-
-    return copied(hrefs.length);
 }
