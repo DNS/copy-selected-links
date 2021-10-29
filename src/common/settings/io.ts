@@ -1,8 +1,10 @@
 import type {JsonValue} from "type-fest";
 import browser from "webextension-polyfill";
-import {bool, sanitize} from "./validation";
+import {PATTERN_VARIABLES} from "../pattern";
+import {bool, notBlank, sanitize, str} from "./validation";
 
 const spec = {
+    copyPattern: str(PATTERN_VARIABLES.url, notBlank),
     deduplicateHrefs: bool(false),
     finalNewline: bool(true),
     includeCommandTarget: bool(false),

@@ -28,12 +28,14 @@ async function reactToContextMenu(contextMenuInfo: Menus.OnClickData, tab?: Tabs
         throw new Error("invoked context menu without a tab?");
     }
 
+    const {linkText: text, linkUrl: url} = contextMenuInfo;
+
     switch (contextMenuInfo.menuItemId) {
         case CONTEXT_MENU_IDS.copyLinks:
-            await arrangeCopy(tab, contextMenuInfo.frameId, contextMenuInfo.linkUrl);
+            await arrangeCopy(tab, contextMenuInfo.frameId, url == null || text == null ? undefined : {text, url});
             break;
         case CONTEXT_MENU_IDS.openLinks:
-            await arrangeOpen(tab, contextMenuInfo.frameId, contextMenuInfo.linkUrl);
+            await arrangeOpen(tab, contextMenuInfo.frameId, url);
             break;
         default:
             throw new Error(`received unknown context menu command: ${contextMenuInfo.menuItemId}`);

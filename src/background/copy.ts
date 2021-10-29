@@ -1,6 +1,7 @@
 import browser, {Tabs} from "webextension-polyfill";
 import {asMessage, copyRequested, Message} from "../common/messages";
 import {load} from "../common/settings/settings";
+import {Link} from "../common/types";
 import {injectContentScript} from "./inject";
 
 async function notify(title: string, message: string): Promise<void> {
@@ -32,14 +33,14 @@ async function afterCopying(data: Message): Promise<void> {
 
 const isWindows = browser.runtime.getPlatformInfo().then(platformInfo => platformInfo.os === "win");
 
-export async function arrangeCopy(tab: Tabs.Tab, frameId?: number, contextualUrl?: string): Promise<void> {
+export async function arrangeCopy(tab: Tabs.Tab, frameId?: number, externalContextLink?: Link): Promise<void> {
     if (tab.id == null) {
         throw new Error(`received a tab without an id?`);
     }
 
     await injectContentScript(tab.id);
 
-    const message = copyRequested(await isWindows, contextualUrl ?? null);
+    const message = copyRequested(await isWindows, externalContextLink);
     const response = await browser.tabs.sendMessage(tab.id, message, {frameId}).then(asMessage);
 
     await afterCopying(response);

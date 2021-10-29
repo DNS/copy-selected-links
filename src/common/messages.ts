@@ -1,3 +1,5 @@
+import {Link} from "./types";
+
 const topics = {
     copyRequested: "copyRequested",
     linksCopied: "linksCopied",
@@ -8,11 +10,11 @@ const topics = {
 export type CopyRequestedMessage = {
     subject: typeof topics.copyRequested;
     isWindows: boolean;
-    externalContextUrl: string | null;
+    externalContextLink: Link | undefined;
 };
-export function copyRequested(isWindows: boolean, externalContextUrl: string | null): CopyRequestedMessage {
+export function copyRequested(isWindows: boolean, externalContextLink: Link | undefined): CopyRequestedMessage {
     return {
-        externalContextUrl,
+        externalContextLink,
         isWindows,
         subject: topics.copyRequested
     };
