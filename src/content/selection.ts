@@ -22,5 +22,5 @@ export function getLinks(msg: CopyRequestedMessage | LinksRequestedMessage, sett
 
     const significant = links.filter(link => link.text.trim() !== "" && link.url.trim() !== "");
 
-    return settings.deduplicateHrefs ? deduplicateBy(significant, link => link.text) : significant;
+    return settings.deduplicateHrefs ? deduplicateBy(significant, link => link.url) : significant;
 }
