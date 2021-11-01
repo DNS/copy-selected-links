@@ -7252,11 +7252,11 @@ fsevents@~2.3.2:
   linkType: hard
 
 "keyv@npm:^4.0.0":
-  version: 4.0.3
-  resolution: "keyv@npm:4.0.3"
+  version: 4.0.4
+  resolution: "keyv@npm:4.0.4"
   dependencies:
     json-buffer: 3.0.1
-  checksum: 63527e3d010dd9b8f8e62435130cdb1518de7b7d0ebafcff1359611caa0e79c7f80f1863ff73e712d99ce69fa06be62b66a78fb5cfee6483f2f95eeac340f12b
+  checksum: b077fa68ea37f3e9c8926b8fd8155f6ae97e3a8b6e324d6424010a43844a4a4f432e218e3aa637de64411da6404823309e708683bc03b4cc673a91e48ceee3af
   languageName: node
   linkType: hard
 
