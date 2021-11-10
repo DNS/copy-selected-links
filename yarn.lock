@@ -3735,7 +3735,7 @@ __metadata:
     sass: ^1.43.4
     ts-essentials: ^9.0.0
     tslib: ^2.3.1
-    type-fest: ^2.5.2
+    type-fest: ^2.5.3
     typescript: ^4.4.4
     web-ext: ^6.5.0
     webextension-polyfill: ^0.8.0
@@ -11540,10 +11540,10 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^2.5.2":
-  version: 2.5.2
-  resolution: "type-fest@npm:2.5.2"
-  checksum: 8a444e9439ff59aed42f28cdabe0009dd5a7795dde741616a7905f8d9b0b5891621c7221689965f5ed2d9f021fb8ff7a29ae593b34fb0a5d7584c018c515ba81
+"type-fest@npm:^2.5.3":
+  version: 2.5.3
+  resolution: "type-fest@npm:2.5.3"
+  checksum: 4ab7de5ce14d2451a7ef3c91746505bf5d9b0db49fc83cd57c1aee0ac7eb910c36896bc944c117e201f9f8554d98856ba0b72e32fb6436d3a928399fd51e5c1b
   languageName: node
   linkType: hard
 
