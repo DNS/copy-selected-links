@@ -1,3 +1,7 @@
+# Superseded
+
+This repository has been phased out for maintenance reasons. It is superseded by [a new metaproject](https://gitlab.com/Marnes/webextensions). Please go there instead.
+
 # Copy Selected Links
 
 ## For users
